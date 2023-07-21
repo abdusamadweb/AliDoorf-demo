@@ -1,0 +1,40 @@
+@use "./scss" as *;
+
+:root {
+  --cl-main: #eee;
+  --bg-body: #fff;
+  --bg-header-inner: #eeeeee30;
+  --bor-header-inner: #ccc;
+  --cl-txt-white: #111;
+  --cl-txt-black: #fff;
+  --cl-menu-burger: #5c2610;
+  --cl-menu-burger-txt: #5c2610;
+  --bg-chat: #F1F1F1;
+  --bg-chat-contact: #fff;
+  --bor-chat-inp: #ccc;
+}
+
+.dark-theme {
+  --bg-body: #23110D;
+  --bg-header-inner: transparent;
+  --bor-header-inner: #eeeeee20;
+  --cl-txt-white: #fff;
+  --cl-txt-black: #111;
+  --cl-menu-burger: #ffc47e;
+  --cl-menu-burger-txt: #fff;
+  --bg-chat: #33190F;
+  --bg-chat-contact: #23110D;
+  --bor-chat-inp: #ffffff14;
+}
+
+body {
+  font-family: $font-family-sc;
+  color: $txt-color;
+  background: var(--bg-color);
+}
+
+.App {
+  min-height: 100vh;
+  height: 100%;
+  @include transition-color-bg;
+}

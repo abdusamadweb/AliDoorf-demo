@@ -1,0 +1,92 @@
+// Lato
+
+@font-face {
+  font-family: 'LatoWebLight';
+  font-weight: 700;
+  font-style: normal;
+  src: local('Lato Bold'), local('Lato-Bold'),
+  url('../assets/fonts/lato/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LatoWebLight';
+  font-weight: 600;
+  font-style: normal;
+  src: local('Lato Semibold'), local('Lato-Semibold'),
+  url('../assets/fonts/lato/Lato-Semibold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'LatoWebLight';
+  font-weight: 500;
+  font-style: normal;
+  src: local('Lato Medium'), local('Lato-Medium'),
+  url('../assets/fonts/lato/Lato-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LatoWebLight';
+  font-weight: 400;
+  font-style: normal;
+  src: local('Lato Regular'), local('Lato-Regular'),
+  url('../assets/fonts/lato/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LatoWebLight';
+  font-weight: 300;
+  font-style: normal;
+  src: local('Lato Light'), local('Lato-Light'),
+  url('../assets/fonts/lato/Lato-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LatoWebLight';
+  font-weight: 200;
+  font-style: normal;
+  src: local('Lato Thin'), local('Lato-Thin'),
+  url('../assets/fonts/lato/Lato-Thin.ttf') format('truetype');
+}
+
+
+// Gotham
+
+@font-face {
+  font-family: 'Gotham Pro';
+  font-weight: 800;
+  font-style: normal;
+  src: local('Gotham Black'), local('Gotham-Black'),
+  url('../assets/fonts/gotham/gothampro_black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gotham Pro';
+  font-weight: 700;
+  font-style: normal;
+  src: local('Gotham Bold'), local('Gotham-Bold'),
+  url('../assets/fonts/gotham/gothampro_bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gotham Pro';
+  font-weight: 500;
+  font-style: normal;
+  src: local('Gotham Medium'), local('Gotham-Medium'),
+  url('../assets/fonts/gotham/gothampro_medium.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Gotham Pro';
+  font-weight: 400;
+  font-style: normal;
+  src: local('Gotham Pro'), local('Gotham-Regular'),
+  url('../assets/fonts/gotham/gothampro.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Gotham Pro';
+  font-weight: 300;
+  font-style: normal;
+  src: local('Gotham Light'), local('Gotham-Light'),
+  url('../assets/fonts/gotham/gothampro_light.ttf') format('ttf');
+}

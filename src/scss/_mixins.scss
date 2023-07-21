@@ -1,0 +1,4 @@
+@mixin transition-color-bg {
+  transition: all 0.3s ease,
+  background-color 0.3s ease;
+}
