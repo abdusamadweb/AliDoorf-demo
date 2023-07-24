@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="video" />
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="video">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bg-clip-num1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/direction1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/direction2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/direction3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/new2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/news1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/news3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/slider1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/slider2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/slider3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/slider4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/Alidoorf.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about-company/About.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about-company/About.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/contact/Contact.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/contact/Contact.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/News.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/News.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/technogies/Tech.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/technogies/Tech.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/direction/Direction.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/direction/Direction.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/hero/Hero.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/ScrollTop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/icons/ScrollTop.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/HeaderNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/HeaderNav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/HomeChatUs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/hero/ChatUs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_variables.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,28 +52,37 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2M7wXrOklV85xDy2T29KOM5bEmZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Acer/Documents/Front-End/React/alidoorf/my-app",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "editing.templates",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -44,6 +92,8 @@
       <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\assets\styles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\home\hero" />
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\home\direction" />
       <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\assets\fonts\Lato" />
     </key>
   </component>
@@ -79,6 +129,10 @@
       <workItem from="1689787593548" duration="1530000" />
       <workItem from="1689839102731" duration="4669000" />
       <workItem from="1689845656015" duration="5113000" />
+      <workItem from="1690010209629" duration="14607000" />
+      <workItem from="1690100905817" duration="14067000" />
+      <workItem from="1690184144220" duration="15822000" />
+      <workItem from="1690218900006" duration="6768000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -88,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689940323077</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="video">
+      <option name="closed" value="true" />
+      <created>1689940883646</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689940883646</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +168,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="video" />
     <option name="LAST_COMMIT_MESSAGE" value="video" />
   </component>

@@ -1,25 +1,35 @@
 import './Header.scss'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ScrollTop from "../../assets/icons/ScrollTop";
 import {Link} from "react-router-dom";
 import HeaderNav from "./HeaderNav";
 
 const Header = ({ darkMode, setDarkMode }) => {
 
-    const [scrollCount, setScrollCount] = useState(0)
     const [mousePosition, setMousePosition] = useState({
         left: 0,
         top: 0
     })
-
-    const [openNav, setOpenNav] = useState(false)
-
     const handleMouseMove = (e) => {
         setMousePosition({
             left: e.movementX,
             top: e.movementY
         })
     }
+
+    const [openNav, setOpenNav] = useState(false)
+
+
+    const [scrollCount, setScrollCount] = useState(0)
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
+    const handleScroll = () => {
+        const maxScrollY = document.documentElement.scrollHeight - document.documentElement.clientHeight
+        const scrollY = window.pageYOffset
+        setScrollCount(((scrollY * 100) / maxScrollY).toFixed())
+    }
+
 
     return (
         <div className='header'>
@@ -70,6 +80,7 @@ const Header = ({ darkMode, setDarkMode }) => {
                                 <span
                                     className='circle'
                                     onMouseMoveCapture={(e)=> handleMouseMove(e)}
+                                    onMouseLeave={() => setMousePosition({left: 0, top: 0})}
                                     style={{transform: `translate(${mousePosition.left * 3.125}px, ${mousePosition.top * 3.125}px)`}}
                                 />
                                 <div className={`sticks ${openNav ? 'active' : ''}`}>
@@ -93,11 +104,14 @@ const Header = ({ darkMode, setDarkMode }) => {
                     </div>
                 </div>
                 <div className='header__slider'>
-                    nmadr
+                    <span>alidoorf</span>
+                    <span>primeloft</span>
+                    <span>alidoorf</span>
+                    <span>primeloft</span>
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default Header

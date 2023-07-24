@@ -1,0 +1,80 @@
+@use '../../../scss' as *;
+
+.direction {
+  padding-block: 5rem;
+
+  &__titles {
+    .subtitle {
+      text-transform: uppercase;
+      padding: 10px 1rem;
+      color: var(--cl-sub);
+      background: var(--bg-sub);
+    }
+
+    .title {
+      text-transform: uppercase;
+      color: var(--cl-tit);
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    .item {
+      position: relative;
+      width: 33.333%;
+      height: 500px;
+      transition: width 0.6s ease;
+      z-index: 2;
+
+      &:hover {
+        width: 80%;
+
+        .item__hover {
+          opacity: 1;
+        }
+      }
+
+      &__img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+      .bg {
+        position: absolute;
+        inset: 0;
+        background: #00000070;
+        z-index: -1;
+      }
+
+      &__title {
+        top: 92%;
+        font-size: 22px;
+        text-transform: uppercase;
+        color: #cccccccc;
+      }
+
+      &__hover {
+        width: 100%;
+        text-align: center;
+        color: #111;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+
+        .title {
+          font-size: 30px;
+          text-transform: uppercase;
+          margin-bottom: 5px;
+          color: #fff;
+        }
+
+        .desc {
+          font-size: 18px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

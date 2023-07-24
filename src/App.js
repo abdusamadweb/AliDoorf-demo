@@ -9,6 +9,7 @@ import {useLayoutEffect, useState} from "react"
 import Header from "./components/header/Header"
 import Home from "./pages/home/Home"
 import Footer from "./components/footer/Footer";
+import Alidoorf from "./pages/alidoorf-page/Alidoorf";
 
 const Wrapper = ({ children }) => {
   const location = useLocation()
@@ -31,10 +32,11 @@ function App() {
 
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/alidoorf' element={<Alidoorf />} />
 
           </Routes>
 
-          {/*<Footer />*/}
+          <Footer />
 
         </Wrapper>
       </BrowserRouter>

@@ -9,9 +9,24 @@
   --cl-txt-black: #fff;
   --cl-menu-burger: #5c2610;
   --cl-menu-burger-txt: #5c2610;
+  --cl-menu-txt-bg: #0D0D0D;
   --bg-chat: #F1F1F1;
   --bg-chat-contact: #fff;
   --bor-chat-inp: #ccc;
+  --bg-global-sub: #f1f1f1;
+  --cl-contact: #b37735;
+
+  // direction page
+  --cl-sub: #fff;
+  --bg-sub: #33190F;
+  --cl-tit: #111;
+
+  // about page
+  --cl-bor: #ccc;
+  --cl-ab-slider-txt: #fff;
+  --bg-ab-slider-txt: #111;
+  --bg-ab-slider-dot: #5d5b59;
+  --bg-ab-slider-dot-active: #5C2610;
 }
 
 .dark-theme {
@@ -22,19 +37,79 @@
   --cl-txt-black: #111;
   --cl-menu-burger: #ffc47e;
   --cl-menu-burger-txt: #fff;
+  --cl-menu-txt-bg: #eaeaea;
   --bg-chat: #33190F;
   --bg-chat-contact: #23110D;
   --bor-chat-inp: #ffffff14;
+  --bg-global-sub: #33190f;
+  --cl-contact: #FFC47E;
+
+  // direction page
+  --cl-sub: #111;
+  --bg-sub: #f1f1f1;
+  --cl-tit: #fff;
+
+  // about page
+  --cl-bor: #ffffff20;
+  --cl-ab-slider-txt: #111;
+  --bg-ab-slider-txt: #fff;
+  --bg-ab-slider-dot: #d2a387;
+  --bg-ab-slider-dot-active: #FFC47E;
 }
 
 body {
-  font-family: $font-family-sc;
+  font-family: $font-family;
   color: $txt-color;
-  background: var(--bg-color);
+  scroll-behavior: smooth;
 }
 
 .App {
   min-height: 100vh;
   height: 100%;
   @include transition-color-bg;
+}
+
+.page {
+  padding-left: calc(($header-main-width + $header-slider-width) + 1rem);
+  padding-right: 3rem;
+
+  @include tablet {
+    padding-left: calc($header-main-width-tablet + 1rem);
+  }
+
+  &.bg-cl {
+    background: var(--bg-body);
+    @include transition-color-bg;
+  }
+}
+
+
+.titles {
+  position: relative;
+  padding-bottom: 2rem;
+
+  .subtitle {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 1rem;
+    margin-bottom: 1rem;
+    color: var(--cl-txt-white);
+    background: var(--bg-global-sub);
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 35px;
+    color: var(--cl-txt-white);
+  }
+}
+
+.no-copy {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

@@ -20,13 +20,25 @@
     grid-template-columns: $header-main-width $header-slider-width;
     background: var(--bg-header-inner);
     @include transition-color-bg;
+
+    @include tablet {
+      grid-template-columns: $header-main-width-tablet $header-slider-width-tablet;
+    }
   }
 
   &__main {
+    @include tablet {
+      padding-inline: 4px;
+      padding-bottom: 2rem;
+    }
 
     .logo .txt {
       text-transform: uppercase;
       color: var(--cl-txt-white);
+
+      @include tablet {
+        font-size: 12px;
+      }
     }
 
     .dark-light {
@@ -42,9 +54,18 @@
         background: var(--cl-txt-white);
         transition: background-color 0.4s ease-in-out;
 
+        @include tablet {
+          width: 27px;
+          height: 27px;
+        }
+
         .icon {
           font-size: 14px;
           color: var(--cl-txt-black);
+
+          @include tablet {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -84,6 +105,10 @@
             font-size: 20px;
             color: var(--cl-txt-white);
             @include transition-color-bg;
+
+            @include tablet {
+              font-size: 18px;
+            }
           }
 
           .name {
@@ -99,6 +124,12 @@
             transition: transform 0.6s cubic-bezier(0.75, -0.5, 0, 1.75),
             visibility 0.3s ease-in-out,
             opacity 0.3s ease-in-out;
+            z-index: 11;
+
+            @include tablet {
+              font-weight: 500;
+              font-size: 12px;
+            }
           }
 
           &:hover {
@@ -129,6 +160,11 @@
     flex: 1;
     padding-inline: 8px;
 
+    @include tablet {
+      padding-inline: 2px;
+      padding-bottom: 2rem;
+    }
+
     &::before, &::after {
       position: absolute;
       top: 0;
@@ -147,11 +183,17 @@
     .horizontal-title {
       position: absolute;
       top: 55px;
-      left: 10px;
+      left: 5px;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       transform: rotate(-90deg);
+
+      @include tablet {
+        top: 60px;
+        left: -8px;
+        font-size: 13px;
+      }
     }
 
     .navs {
@@ -187,12 +229,22 @@
           opacity: 0;
           transition: transform 0.4s ease-out,
           opacity 0.3s ease-out;
+
+          @include tablet {
+            width: 40px;
+            height: 40px;
+          }
         }
 
         .sticks {
           width: 25px;
           height: 25px;
           margin: 0 auto 2px;
+
+          @include tablet {
+            width: 23px;
+            height: 23px;
+          }
 
           &.active {
             .stick1 {
@@ -236,6 +288,11 @@
         .txt {
           color: var(--cl-menu-burger-txt);
           @include transition-color-bg;
+
+          @include tablet {
+            font-weight: 500;
+            font-size: 12px;
+          }
         }
       }
 
@@ -246,6 +303,7 @@
         transform: translateY(-120%);
         width: calc(100% - $header-main-width);
         height: 100%;
+        padding-left: 2rem;
         background: var(--bg-chat-contact);
         opacity: 0;
         @include transition-color-bg;
@@ -253,9 +311,157 @@
         transform 1s cubic-bezier(0.7, 0, 0.175, 1);
         z-index: $header-index;
 
+        @include tablet {
+          width: calc(100% - $header-main-width-tablet);
+        }
+
         &.active {
           transform: translateY(0);
           opacity: 1;
+        }
+
+        .content {
+          width: 700px;
+
+          @include tablet {
+            width: 500px;
+            margin-right: 10vw;
+          }
+        }
+
+        .nav {
+          position: relative;
+          width: 100%;
+          grid-template-columns: 70% 30%;
+          justify-items: stretch;
+          margin-bottom: 4rem;
+
+          &__home {
+            position: absolute;
+            top: 0;
+            left: 43%;
+
+            @include tablet {
+              left: 47%;
+            }
+
+            .icon {
+              font-size: 24px;
+              color: var(--cl-txt-white);
+              @include transition-color-bg
+            }
+          }
+
+          &__titles {
+
+            .title {
+              position: relative;
+              font-weight: 800;
+              font-size: 26px;
+              text-transform: uppercase;
+              margin-bottom: 1.5rem;
+              
+              &::before {
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                width: 20%;
+                height: 2px;
+                content: '';
+                background: #ccc;
+              }
+
+              &.title2::before {
+                width: 50%;
+              }
+            }
+
+            .list {
+              text-align: start;
+            }
+
+            .item {
+              text-align: start;
+
+              &:not(:last-child) {
+                margin-bottom: 10px;
+              }
+
+              &__link {
+                font-weight: 500;
+                font-size: 22px;
+                text-transform: capitalize;
+                color: var(--cl-txt-white);
+                transition: color 0.2s ease-in-out;
+
+                &:hover {
+                  color: var(--cl-menu-burger);
+                }
+              }
+            }
+          }
+        }
+
+        .contact {
+          width: 100%;
+
+          &__titles {
+            margin-bottom: 2rem;
+
+            .title {
+              display: block;
+              font-weight: 500;
+              font-size: 20px;
+              margin-bottom: 5px;
+            }
+
+            .mail {
+              font-weight: 500;
+              font-size: 14px;
+              color: var(--cl-txt-white);
+
+              &.tel {
+                position: relative;
+                padding-right: 1rem;
+                margin-right: 1rem;
+
+                &::after {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 1.5px;
+                  height: 100%;
+                  content: '';
+                  background: var(--cl-txt-white);
+                }
+              }
+            }
+
+            .address {
+              max-width: 600px;
+              font-style: normal;
+              font-weight: 500;
+            }
+
+            .link {
+
+              &__img {
+                width: 25px;
+                height: 25px;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+
+        .txt-bg {
+          position: absolute;
+          font-size: 18vw;
+          line-height: 1.15;
+          margin-right: 5vw;
+          color: var(--cl-menu-txt-bg);
+          opacity: 0.05;
+          z-index: -1;
         }
       }
     }
@@ -268,6 +474,11 @@
         text-align: center;
         color: var(--cl-txt-white);
         @include transition-color-bg;
+
+        @include tablet {
+          font-weight: 500;
+          font-size: 12px;
+        }
       }
 
       .scroll {
@@ -277,6 +488,12 @@
         &__img {
           width: 70px;
           height: 70px;
+          transition: transform 0.1s ease;
+
+          @include tablet {
+            width: 60px;
+            height: 60px;
+          }
         }
 
         &__count {
@@ -293,6 +510,11 @@
     position: relative;
     flex: 1;
     width: $header-slider-width;
+
+    @include tablet {
+      width: $header-slider-width-tablet;
+      display: none;
+    }
 
     &::before {
       position: absolute;
