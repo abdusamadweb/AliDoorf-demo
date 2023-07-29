@@ -1,0 +1,67 @@
+@use '../../../scss/index' as *;
+
+.catalog {
+  &.page {
+    padding-right: 0;
+  }
+
+  &__title {
+    position: relative;
+    font-weight: 300;
+    font-size: 62px;
+    padding-left: 3rem;
+    margin-bottom: 4rem;
+    color: var(--cl-txt-white);
+    z-index: 2;
+
+    &::before {
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 100px;
+      height: 85px;
+      content: '';
+      background: var(--bg-chat);
+      transform: skew(-10deg);
+      z-index: -1;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    .item {
+      &__link {
+        position: relative;
+        width: 100%;
+        height: 400px;
+
+        @include breakpoint-down(1700px) {
+          height: 300px;
+        }
+        @include breakpoint-down(1300px) {
+          height: 250px;
+        }
+
+        .img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .txt {
+          position: absolute;
+          top: 10%;
+          left: 0;
+          font-weight: 500;
+          letter-spacing: 2px;
+          padding: 12px 1rem;
+          color: var(--cl-contact);
+          background: var(--bg-global-sub);
+        }
+      }
+    }
+  }
+}

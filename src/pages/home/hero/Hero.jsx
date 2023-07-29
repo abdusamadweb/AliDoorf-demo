@@ -31,10 +31,10 @@ const Hero = () => {
             </div>
             <div className="container">
                 <div className="home__titles">
-                    <div className="subtitle before fw500">
+                    <div className="subtitle before">
                         <span className='txt'>Официальный сайт фабрики</span>
                     </div>
-                    <h1 className='title mt1'>
+                    <h1 className='title mt1 lato fw300'>
                         <span className='txt'>23 года</span>
                         на рынке дверей
                     </h1>

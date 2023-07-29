@@ -27,6 +27,14 @@
   --bg-ab-slider-txt: #111;
   --bg-ab-slider-dot: #5d5b59;
   --bg-ab-slider-dot-active: #5C2610;
+
+  --bg-modal: #fff;
+  --cl-modal-tit: #333;
+  --bor-modal-inp: #ccc;
+  --bor-modal-inp-txt: 400;
+
+  // footer
+  --cl-foot-link: #b37735;
 }
 
 .dark-theme {
@@ -55,6 +63,23 @@
   --bg-ab-slider-txt: #fff;
   --bg-ab-slider-dot: #d2a387;
   --bg-ab-slider-dot-active: #FFC47E;
+
+  --bg-modal: #33190F;
+  --cl-modal-tit: #FFC47E;
+  --bor-modal-inp: transparrent;
+  --bor-modal-inp-txt: 700;
+
+  // footer
+  --cl-foot-link: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #31373e;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ffffffaa;
+  border-radius: 50px;
 }
 
 body {
@@ -71,7 +96,7 @@ body {
 
 .page {
   padding-left: calc(($header-main-width + $header-slider-width) + 1rem);
-  padding-right: 3rem;
+  padding-right: 2rem;
 
   @include tablet {
     padding-left: calc($header-main-width-tablet + 1rem);
@@ -103,6 +128,13 @@ body {
     font-size: 35px;
     color: var(--cl-txt-white);
   }
+}
+
+.gotham {
+  font-family: $font-family;
+}
+.lato {
+  font-family: $font-family-sc;
 }
 
 .no-copy {

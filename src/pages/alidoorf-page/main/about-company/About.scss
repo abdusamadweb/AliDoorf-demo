@@ -1,4 +1,4 @@
-@use '../../../scss' as *;
+@use '../../../../scss/index' as *;
 
 .about {
 
@@ -139,11 +139,11 @@
         -webkit-background-clip: text;
         color: transparent;
         background-clip: text;
-        background-image: url('../../../assets/images/bg-clip-num1.jpg');
+        background-image: url('../../../../assets/images/bg-clip-num1.jpg');
         transform: scale3d(1, 1.2, 1);
 
         &.number2 {
-          background-image: url('../../../assets/images/video-pre.jpg');
+          background-image: url('../../../../assets/images/video-pre.jpg');
         }
       }
 

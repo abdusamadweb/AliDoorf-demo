@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 
 const Footer = () => {
 
+    // when hover 1
     const [mousePosition, setMousePosition] = useState({
         left: 0,
         top: 0
@@ -14,7 +15,7 @@ const Footer = () => {
             top: e.movementY
         })
     }
-
+    // when hover 2
     const [mousePosition2, setMousePosition2] = useState({
         left: 0,
         top: 0
@@ -36,7 +37,7 @@ const Footer = () => {
                             <Link className='logo' to='/'>
                                 <h1 className='logo__title'>alidoorf</h1>
                             </Link>
-                            <h5 className="txt">Подписывайтесь</h5>
+                            <h5 className="txt fw400">Подписывайтесь</h5>
                         </div>
                         <div className='row between no-wrap'>
                             <p className='desc'>
@@ -49,7 +50,7 @@ const Footer = () => {
                                     target='_blank'
                                     onMouseMoveCapture={(e)=> handleMouseMove(e)}
                                     onMouseLeave={() => setMousePosition({left: 0, top: 0})}
-                                    style={{transform: `translate(${mousePosition.left * 2.125}px, ${mousePosition.top * 2.125}px)`}}
+                                    style={{transform: `translate(${mousePosition.left * 3.125}px, ${mousePosition.top * 3.125}px)`}}
                                 >
                                     <i className="fa-brands fa-youtube icon"/>
                                 </a>
@@ -59,22 +60,33 @@ const Footer = () => {
                                     target='_blank'
                                     onMouseMoveCapture={(e)=> handleMouseMove2(e)}
                                     onMouseLeave={() => setMousePosition2({left: 0, top: 0})}
-                                    style={{transform: `translate(${mousePosition2.left * 2.125}px, ${mousePosition2.top * 2.125}px)`}}
+                                    style={{transform: `translate(${mousePosition2.left * 3.125}px, ${mousePosition2.top * 3.125}px)`}}
                                 >
                                     <i className="fa-brands fa-vk icon"/>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div className="footer__bot pt2">
+                    <div className="footer__bot row no-wrap between pt2">
                         <p className='copyright'>
-                            2000 - 2023 © Geona Doors. Все права защищены.
+                            2022 - 2023 © ALIDOORF. Все права защищены.
                         </p>
+                        <ul className='list row align-center'>
+                            <li className='item'>
+                                <Link className='item__link' to='/alidoorf/catalog'>католог</Link>
+                            </li>
+                            <li className='item'>
+                                <Link className='item__link' to='/alidoorf/about'>о компании</Link>
+                            </li>
+                            <li className='item'>
+                                <Link className='item__link' to='/contacts'>контакты</Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Footer;
+export default Footer

@@ -28,14 +28,13 @@
     }
 
     .txt {
-      font-weight: 500;
       font-size: 16px;
       letter-spacing: 2px;
     }
 
     .desc {
-      font-weight: 500;
-      font-size: 13px;
+      font-size: 14px;
+      line-height: 130%;
       letter-spacing: 2px;
       padding-right: 5rem;
     }
@@ -64,10 +63,23 @@
   }
 
   &__bot {
-
     .copyright {
-      font-weight: 500;
-      letter-spacing: 2px;
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
+
+    .list {
+      justify-content: flex-end;
+      row-gap: 1rem;
+      column-gap: 2rem;
+
+      .item {
+        &__link {
+          font-size: 13px;
+          text-transform: uppercase;
+          color: var(--cl-foot-link);
+        }
+      }
     }
   }
 }

@@ -1,0 +1,113 @@
+@use '../../../../scss/index' as *;
+
+.about-page {
+  .texts {
+    padding-block: 8rem;
+    border-top: 1px solid #301F1B;
+
+    &__inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      color: var(--cl-txt-white);
+      background: var(--bg-chat);
+
+      .diver {
+
+        .img {
+          position: relative;
+          top: -8%;
+          left: -2rem;
+        }
+
+        .margin {
+          margin-top: -2vw;
+        }
+
+        .desc {
+          line-height: 140%;
+          letter-spacing: 1px;
+        }
+
+        .icon {
+          width: 16px;
+          height: 16px;
+          margin-right: 1rem;
+        }
+        .link {
+          text-decoration: underline;
+          color: var(--cl-contact);
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      .wrapper {
+        position: relative;
+        z-index: 1;
+
+        .txt {
+          text-transform: uppercase;
+          line-height: 140%;
+        }
+
+        .title {
+          position: relative;
+
+          &::before, &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            content: '';
+            background: var(--cl-bor);
+          }
+          &::after {
+            width: 30%;
+            background: var(--cl-txt-white);
+          }
+        }
+
+        .desc {
+          line-height: 140%;
+          letter-spacing: 0.5px;
+        }
+
+        .btn {
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          position: relative;
+          padding: 14px 2rem;
+          border: 1px solid #ccc;
+          color: #111;
+          background: #fff;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            &::before {
+              top: 0;
+              left: 0;
+            }
+          }
+
+          &::before {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 100%;
+            height: 100%;
+            content: '';
+            border: 1px solid #ccc;
+            background: transparent;
+            transition: inset 0.3s ease;
+            z-index: -1;
+          }
+        }
+      }
+    }
+
+  }
+}

@@ -13,16 +13,16 @@ const HeaderNav = ({ openNav }) => {
                         <h2 className='title'>Alidoorf</h2>
                         <ul className='list row flex-column'>
                             <li className='item'>
-                                <NavLink className='item__link' to=''>Каталог</NavLink>
+                                <NavLink className='item__link' to='/alidoorf/catalog'>Каталог</NavLink>
                             </li>
                             <li className='item'>
-                                <NavLink className='item__link' to=''>О компании</NavLink>
+                                <NavLink className='item__link' to='/alidoorf/about'>О компании</NavLink>
                             </li>
                             <li className='item'>
-                                <NavLink className='item__link' to=''>Новости</NavLink>
+                                <NavLink className='item__link' to='/alidoorf/news'>Новости</NavLink>
                             </li>
                             <li className='item'>
-                                <NavLink className='item__link' to=''>Полезное</NavLink>
+                                <a className='item__link' href='#usefull'>Полезное</a>
                             </li>
                         </ul>
                     </div>
@@ -33,16 +33,16 @@ const HeaderNav = ({ openNav }) => {
                         <h2 className='title title2'>Primeloft</h2>
                         <ul className='list row flex-column'>
                             <li className='item'>
-                                <NavLink className='item__link' to=''>Каталог</NavLink>
+                                <NavLink className='item__link' to='/primeloft/catalog'>Каталог</NavLink>
                             </li>
                             <li className='item'>
-                                <NavLink className='item__link' to=''>О компании</NavLink>
+                                <NavLink className='item__link' to='/primeloft/about'>О компании</NavLink>
                             </li>
                             <li className='item'>
-                                <NavLink className='item__link' to=''>Новости</NavLink>
+                                <NavLink className='item__link' to='/primeloft/news'>Новости</NavLink>
                             </li>
                             <li className='item'>
-                                <NavLink className='item__link' to=''>Полезное</NavLink>
+                                <a className='item__link' href='#usefull'>Полезное</a>
                             </li>
                         </ul>
                     </div>

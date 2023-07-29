@@ -27,7 +27,8 @@
 
     .subtitle {
       .txt {
-        padding: 10px 1rem;
+        letter-spacing: 1px;
+        padding: 12px 1rem;
         color: #fff;
         background: #33190F;
 
@@ -39,7 +40,6 @@
 
     .title {
       font-size: 62px;
-      font-weight: 400;
       line-height: 140%;
       color: #fff;
 
@@ -55,6 +55,7 @@
     }
 
     .tel {
+      letter-spacing: 2px;
       color: #fff;
 
       @include tablet {

@@ -1,0 +1,33 @@
+@use '../../../../scss/index' as *;
+
+.news-page {
+  .news-hero {
+    min-height: 100vh;
+    height: 100%;
+    padding-top: calc(30vh + 1rem);
+    background-image: url('../../../../assets/images/news-page.jpg');
+    background-position: -200px center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    &.page {
+      padding-top: calc(35vh + 1rem);
+    }
+
+    .bg-shadow {
+      position: absolute;
+      inset: 0;
+      background: #000000aa;
+      z-index: 1;
+    }
+
+    &__title {
+      position: relative;
+      font-weight: 300;
+      font-size: 64px;
+      text-transform: capitalize;
+      color: #fff;
+      z-index: 2;
+    }
+  }
+}

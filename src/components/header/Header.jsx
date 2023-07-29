@@ -1,11 +1,17 @@
 import './Header.scss'
 import React, {useEffect, useState} from 'react';
 import ScrollTop from "../../assets/icons/ScrollTop";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import HeaderNav from "./HeaderNav";
 
 const Header = ({ darkMode, setDarkMode }) => {
 
+    const location  = useLocation()
+
+    const [openNav, setOpenNav] = useState(false)
+
+
+    // mouse effect hover
     const [mousePosition, setMousePosition] = useState({
         left: 0,
         top: 0
@@ -17,23 +23,29 @@ const Header = ({ darkMode, setDarkMode }) => {
         })
     }
 
-    const [openNav, setOpenNav] = useState(false)
 
-
+    // scroll count
     const [scrollCount, setScrollCount] = useState(0)
+    const [slideScrollCount, setSlideScrollCount] = useState(-100)
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
     })
     const handleScroll = () => {
         const maxScrollY = document.documentElement.scrollHeight - document.documentElement.clientHeight
         const scrollY = window.pageYOffset
+
         setScrollCount(((scrollY * 100) / maxScrollY).toFixed())
+        setSlideScrollCount(((scrollY * 100) / -maxScrollY))
     }
 
 
     return (
         <div className='header'>
-            <div className="header__inner">
+            <div className={`header__inner ${location.pathname === '/catalog' ? 'catalog-bg' : ''}`}>
+                {
+                    location.pathname === '/catalog' &&
+                    <div className='bg-shadow'/>
+                }
                 <div className='row'>
                     <div className='header__main row flex-column between align-center px2 pt1 pb3'>
                         <Link className='logo' to='/'>
@@ -67,7 +79,6 @@ const Header = ({ darkMode, setDarkMode }) => {
                         </ul>
                     </div>
                     <div className="header__sc row flex-column between align-center pt1 pb3">
-                        <span/>
                         <h2 className='horizontal-title fw300 fz14'>Главная</h2>
                         <div className='navs'>
                             <button
@@ -75,13 +86,13 @@ const Header = ({ darkMode, setDarkMode }) => {
                                 onClick={() => setOpenNav(prev => !prev)}
                                 onMouseMoveCapture={(e)=> handleMouseMove(e)}
                                 onMouseLeave={() => setMousePosition({left: 0, top: 0})}
-                                style={{transform: `translate(${mousePosition.left * 2.125}px, ${mousePosition.top * 2.125}px)`}}
+                                style={{transform: `translate(${mousePosition.left * 4.125}px, ${mousePosition.top * 4.125}px)`}}
                             >
                                 <span
                                     className='circle'
                                     onMouseMoveCapture={(e)=> handleMouseMove(e)}
                                     onMouseLeave={() => setMousePosition({left: 0, top: 0})}
-                                    style={{transform: `translate(${mousePosition.left * 3.125}px, ${mousePosition.top * 3.125}px)`}}
+                                    style={{transform: `translate(${mousePosition.left * 5.125}px, ${mousePosition.top * 5.125}px)`}}
                                 />
                                 <div className={`sticks ${openNav ? 'active' : ''}`}>
                                     <div className="row between">
@@ -95,7 +106,7 @@ const Header = ({ darkMode, setDarkMode }) => {
                             <HeaderNav openNav={openNav} />
                         </div>
                         <div className='scrolls'>
-                            <a className='scrolls__link fz14 mb2' href="">каталог</a>
+                            <Link className='scrolls__link fz14 mb2' to='/catalog'>каталог</Link>
                             <div className='scroll'>
                                 <ScrollTop />
                                 <span className='scroll__count'>{ scrollCount }%</span>
@@ -104,10 +115,16 @@ const Header = ({ darkMode, setDarkMode }) => {
                     </div>
                 </div>
                 <div className='header__slider'>
-                    <span>alidoorf</span>
-                    <span>primeloft</span>
-                    <span>alidoorf</span>
-                    <span>primeloft</span>
+                    <div className='txts' style={{transform: `translate(0px, ${slideScrollCount / 1.2}%)`}}>
+                        <span className='txt'>alidoorf</span>
+                        <span className='txt txt-stroke'>primeloft</span>
+                        <span className='txt'>alidoorf</span>
+                        <span className='txt txt-stroke'>primeloft</span>
+                        <span className='txt'>alidoorf</span>
+                        <span className='txt txt-stroke'>primeloft</span>
+                        <span className='txt'>alidoorf</span>
+                        <span className='txt txt-stroke'>primeloft</span>
+                    </div>
                 </div>
             </div>
         </div>

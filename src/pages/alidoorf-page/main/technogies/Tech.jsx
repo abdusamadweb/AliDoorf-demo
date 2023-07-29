@@ -1,10 +1,10 @@
 import './Tech.scss'
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import slider1 from '../../../assets/images/slider1.jpg'
-import slider2 from '../../../assets/images/slider2.jpg'
-import slider3 from '../../../assets/images/slider3.jpg'
-import slider4 from '../../../assets/images/slider4.jpg'
+import slider1 from '../../../../assets/images/slider1.jpg'
+import slider2 from '../../../../assets/images/slider2.jpg'
+import slider3 from '../../../../assets/images/slider3.jpg'
+import slider4 from '../../../../assets/images/slider4.jpg'
 
 // Import Swiper styles
 import 'swiper/css'

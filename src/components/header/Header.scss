@@ -24,6 +24,16 @@
     @include tablet {
       grid-template-columns: $header-main-width-tablet $header-slider-width-tablet;
     }
+
+    &.catalog-bg {
+      background-image: url('../../assets/images/catalog-bg.jpg');
+    }
+    
+    .bg-shadow {
+      position: absolute;
+      inset: 0;
+      background: #00000030;
+    }
   }
 
   &__main {
@@ -33,12 +43,18 @@
     }
 
     .logo .txt {
+      font-weight: 700;
       text-transform: uppercase;
       color: var(--cl-txt-white);
 
       @include tablet {
         font-size: 12px;
       }
+    }
+    .txt2 {
+      font-family: sans-serif;
+      text-transform: uppercase;
+      color: var(--cl-txt-white);
     }
 
     .dark-light {
@@ -105,6 +121,9 @@
             font-size: 20px;
             color: var(--cl-txt-white);
             @include transition-color-bg;
+            transition: transform 0.6s cubic-bezier(0.75, -0.5, 0, 1.6),
+            visibility 0.3s ease-in-out,
+            opacity 0.3s ease-in-out;
 
             @include tablet {
               font-size: 18px;
@@ -181,13 +200,15 @@
     }
 
     .horizontal-title {
-      position: absolute;
-      top: 55px;
-      left: 5px;
-      font-weight: 700;
+      position: relative;
+      top: 10px;
+      height: 120px;
+      text-align: end;
+      font-weight: 300;
       letter-spacing: 4px;
       text-transform: uppercase;
-      transform: rotate(-90deg);
+      transform: rotate(180deg);
+      writing-mode: vertical-lr;
 
       @include tablet {
         top: 60px;
@@ -198,7 +219,7 @@
 
     .navs {
       position: relative;
-      top: 70px;
+      top: 30px;
 
       .open-nav-btn {
         position: relative;
@@ -467,7 +488,6 @@
     }
 
     .scrolls {
-
       &__link {
         display: block;
         font-weight: 500;
@@ -488,7 +508,7 @@
         &__img {
           width: 70px;
           height: 70px;
-          transition: transform 0.1s ease;
+          transition: transform 0.1s linear;
 
           @include tablet {
             width: 60px;
@@ -510,6 +530,7 @@
     position: relative;
     flex: 1;
     width: $header-slider-width;
+    overflow: hidden;
 
     @include tablet {
       width: $header-slider-width-tablet;
@@ -525,6 +546,27 @@
       content: '';
       background: var(--bor-header-inner);
       mix-blend-mode: exclusion;
+    }
+
+    .txts {
+      transition: transform 0.4s ease-out;
+    }
+    .txt {
+      display: block;
+      font-size: 90px;
+      text-transform: uppercase;
+      writing-mode: vertical-lr;
+      margin-left: 1.3rem;
+      margin-bottom: 2rem;
+      transform: rotate(180deg);
+      will-change: transform;
+      opacity: 0.25;
+      pointer-events: none;
+
+      &.txt-stroke {
+        color: transparent;
+        -webkit-text-stroke: 1.2px var(--cl-txt-white);
+      }
     }
   }
 }

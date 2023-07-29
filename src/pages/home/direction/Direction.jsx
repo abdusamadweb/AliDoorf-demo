@@ -17,7 +17,7 @@ const Direction = () => {
                     <div className="direction__content row no-wrap">
                         <Link className='item' to='/alidoorf'>
                             <img className='item__img' src={dir1} alt="bg"/>
-                            <h4 className='item__title center-absolute'>двери</h4>
+                            <h4 className='item__title center-absolute center'>двери</h4>
                             <div className="item__hover center-absolute">
                                 <h3 className='title'>alidoorf</h3>
                                 <p className='desc'>Произвоство дверей</p>
@@ -26,19 +26,19 @@ const Direction = () => {
                         </Link>
                         <Link className='item' to='/primeloft'>
                             <img className='item__img' src={dir2} alt="bg"/>
-                            <h4 className='item__title center-absolute'>двери</h4>
+                            <h4 className='item__title center-absolute center'>прайм двери</h4>
                             <div className="item__hover center-absolute">
-                                <h3 className='title'>alidoorf</h3>
-                                <p className='desc'>Произвоство дверей</p>
+                                <h3 className='title'>primeloft</h3>
+                                <p className='desc'>Произвоство прайм дверей</p>
                             </div>
                             <div className="bg"/>
                         </Link>
                         <Link className='item' to='/mebel'>
                             <img className='item__img' src={dir3} alt="bg"/>
-                            <h4 className='item__title center-absolute'>двери</h4>
+                            <h4 className='item__title center-absolute center'>мебель</h4>
                             <div className="item__hover center-absolute">
-                                <h3 className='title'>alidoorf</h3>
-                                <p className='desc'>Произвоство дверей</p>
+                                <h3 className='title'>mebel</h3>
+                                <p className='desc'>Произвоство мебелей</p>
                             </div>
                             <div className="bg"/>
                         </Link>
