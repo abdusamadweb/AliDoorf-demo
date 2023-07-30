@@ -91,7 +91,6 @@ body {
 .App {
   min-height: 100vh;
   height: 100%;
-  @include transition-color-bg;
 }
 
 .page {

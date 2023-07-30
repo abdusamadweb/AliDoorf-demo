@@ -115,9 +115,7 @@ const Header = ({ darkMode, setDarkMode }) => {
                     </div>
                 </div>
                 <div className='header__slider'>
-                    <div className='txts' style={{transform: `translate(0px, ${slideScrollCount / 1.2}%)`}}>
-                        <span className='txt'>alidoorf</span>
-                        <span className='txt txt-stroke'>primeloft</span>
+                    <div className='txts' style={{transform: `translate(0px, ${slideScrollCount / 1.32}%)`}}>
                         <span className='txt'>alidoorf</span>
                         <span className='txt txt-stroke'>primeloft</span>
                         <span className='txt'>alidoorf</span>
