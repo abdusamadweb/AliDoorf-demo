@@ -18,6 +18,7 @@ import Primeloft from "./pages/primeloft-page/Primeloft";
 import PrimeCatalog from "./pages/primeloft-page/catalog/PrimeCatalog";
 import PrimeAbout from "./pages/primeloft-page/about/PrimeAbout";
 import PrimeNewsPage from "./pages/primeloft-page/news/PrimeNewsPage";
+import Contacts from "./pages/contacts/Contacts";
 
 const Wrapper = ({children}) => {
     const location = useLocation()
@@ -62,6 +63,8 @@ function App() {
                             <Route path='/primeloft/news' element={<PrimeNewsPage/>}/>
 
                             <Route path='/mebel' element={<Alidoorf/>}/>
+
+                            <Route path='/contacts' element={<Contacts/>}/>
 
                         </Routes>
 

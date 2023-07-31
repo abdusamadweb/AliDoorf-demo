@@ -1,0 +1,27 @@
+@use '../../scss' as *;
+
+.contacts {
+
+  &__title {
+    position: relative;
+    font-weight: 300;
+    font-size: 62px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      content: '';
+      background: var();
+      transform: rotate(15deg);
+    }
+  }
+
+  .link-icon {
+    width: 25px;
+    height: auto;
+    object-fit: contain;
+  }
+}

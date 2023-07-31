@@ -26,7 +26,7 @@ const Header = ({ darkMode, setDarkMode }) => {
 
     // scroll count
     const [scrollCount, setScrollCount] = useState(0)
-    const [slideScrollCount, setSlideScrollCount] = useState(-100)
+    const [slideScrollCount, setSlideScrollCount] = useState(-75)
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
     })
@@ -35,7 +35,8 @@ const Header = ({ darkMode, setDarkMode }) => {
         const scrollY = window.pageYOffset
 
         setScrollCount(((scrollY * 100) / maxScrollY).toFixed())
-        setSlideScrollCount(((scrollY * 100) / -maxScrollY))
+
+        setSlideScrollCount(((scrollY * 75) / maxScrollY) - 75)
     }
 
 
@@ -115,7 +116,7 @@ const Header = ({ darkMode, setDarkMode }) => {
                     </div>
                 </div>
                 <div className='header__slider'>
-                    <div className='txts' style={{transform: `translate(0px, ${slideScrollCount / 1.32}%)`}}>
+                    <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}%)`}}>
                         <span className='txt'>alidoorf</span>
                         <span className='txt txt-stroke'>primeloft</span>
                         <span className='txt'>alidoorf</span>
