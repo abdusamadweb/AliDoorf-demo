@@ -6,6 +6,7 @@
     position: relative;
     font-weight: 300;
     font-size: 62px;
+    color: var(--cl-txt-white);
 
     &::before {
       position: absolute;
@@ -14,7 +15,7 @@
       width: 40px;
       height: 40px;
       content: '';
-      background: var();
+      background: var(--bg-sub);
       transform: rotate(15deg);
     }
   }
