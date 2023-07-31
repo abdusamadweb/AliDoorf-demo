@@ -12,7 +12,7 @@ const AboutFacts = () => {
                         <span className="subtitle">Преимущества</span>
                         <h2 className="title">
                             Конкурентные преимущества
-                            Фабрики дверей Geona
+                            Фабрики дверей Alidoorf
                         </h2>
                     </div>
                     <ul className="facts__body grid">

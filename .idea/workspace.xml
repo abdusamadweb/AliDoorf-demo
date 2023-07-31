@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="ohio">
-      <change beforePath="$PROJECT_DIR$/src/scss/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/facts/AboutFacts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/facts/AboutFacts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/about-company/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/about-company/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contacts/Contacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contacts/Contacts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/about/facts/AboutFacts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/about/facts/AboutFacts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/about/texts/AboutTexts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/about/texts/AboutTexts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/main/about-company/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/main/about-company/About.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +118,7 @@
       <workItem from="1690726572545" duration="1769000" />
       <workItem from="1690730361667" duration="54000" />
       <workItem from="1690780321416" duration="8308000" />
-      <workItem from="1690789381909" duration="752000" />
+      <workItem from="1690789381909" duration="1356000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -185,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690790140900</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ohio">
+      <option name="closed" value="true" />
+      <created>1690790152926</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690790152926</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
