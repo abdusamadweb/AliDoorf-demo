@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="full" />
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="ohio">
+      <change beforePath="$PROJECT_DIR$/src/scss/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_fonts.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +111,7 @@
       <workItem from="1690726572545" duration="1769000" />
       <workItem from="1690730361667" duration="54000" />
       <workItem from="1690780321416" duration="8308000" />
-      <workItem from="1690789381909" duration="411000" />
+      <workItem from="1690789381909" duration="752000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -167,7 +169,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690789621572</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ohio">
+      <option name="closed" value="true" />
+      <created>1690789833008</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690789833008</updated>
+    </task>
+    <task id="LOCAL-00009" summary="ohio">
+      <option name="closed" value="true" />
+      <created>1690790140900</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1690790140900</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,11 +205,11 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="video" />
-    <MESSAGE value="ohio" />
     <MESSAGE value="semi finished" />
     <MESSAGE value="slider" />
     <MESSAGE value="slider full" />
     <MESSAGE value="full" />
-    <option name="LAST_COMMIT_MESSAGE" value="full" />
+    <MESSAGE value="ohio" />
+    <option name="LAST_COMMIT_MESSAGE" value="ohio" />
   </component>
 </project>
