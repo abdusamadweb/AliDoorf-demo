@@ -24,6 +24,13 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
 
+    @include breakpoint-down(850px) {
+      grid-template-columns: 1fr 1fr !important;
+    }
+    @include breakpoint-down(700px) {
+      grid-template-columns: 1fr !important;
+    }
+
     .item {
       color: var(--cl-txt-white);
       overflow: hidden;
@@ -41,6 +48,9 @@
 
         @include breakpoint-down(1600px) {
           height: 165px;
+        }
+        @include mobile {
+          height: 250px;
         }
       }
 

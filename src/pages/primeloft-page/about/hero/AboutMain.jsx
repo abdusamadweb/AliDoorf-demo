@@ -6,15 +6,35 @@ const AboutMain = () => {
     const [popupModal, setPopupModal] = useState(false)
 
 
+    const [textActive, setTextActive] = useState(1)
+    const texts = ['Корпусную мебель', 'Декор', 'Входные двери', 'Противопожарные двери']
+    setTimeout(() => {
+        setTextActive(textActive < 4 ? textActive+1 : textActive-3)
+    }, 2000)
+
+
+
     return (
         <div className='about page'>
             <div className="bg-shadow"/>
             <div className="container">
                 <div className="about__titles">
                     <span className="title mb2">О компании</span>
-                    <h2 className='subtitle mb2'>
+                    <h2 className='subtitle lato mb2'>
                         <span className='txt'>Производим</span>
-
+                        <span className='txt2'>
+                            {
+                                texts.map((i, num) => (
+                                    <b className='bold'>
+                                        {
+                                            i.split('').map(t => (
+                                                <i className={textActive === num+1 ? 'in' : 'out'}>{ t }</i>
+                                            ))
+                                        }
+                                    </b>
+                                ))
+                            }
+                        </span>
                     </h2>
                     <button className='btn' onClick={() => setPopupModal(true)}>заявка на сотрудничество</button>
                 </div>

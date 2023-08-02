@@ -24,8 +24,8 @@
     grid-template-columns: 1fr 0.6fr;
     gap: 2rem;
 
-    @include breakpoint-down(1300px) {
-      grid-template-columns: 60% 40%;
+    @include breakpoint-down(850px) {
+      grid-template-columns: 1fr;
     }
 
     .form {
@@ -72,6 +72,10 @@
       padding: 3rem 2rem;
       background: var(--bg-chat);
       @include transition-color-bg;
+
+      @include breakpoint-down(850px) {
+        padding-top: 1.5rem;
+      }
 
       &::before, &::after {
         position: absolute;

@@ -1,30 +1,105 @@
 @use '../../scss' as *;
 
 .contacts {
+  color: var(--cl-txt-white);
+
+  @include mobile {
+    padding-top: 6rem;
+  }
 
   &__title {
     position: relative;
     font-weight: 300;
     font-size: 62px;
-    color: var(--cl-txt-white);
+    margin-bottom: 4rem;
     z-index: 2;
+
+    @include breakpoint-down(850px) {
+      font-size: 40px;
+    }
 
     &::before {
       position: absolute;
-      top: 0;
+      top: -5px;
       left: 0;
-      width: 40px;
-      height: 40px;
-      content: '';
-      background: var(--bg-sub);
-      transform: rotate(15deg);
+      width: 100px;
+      height: 85px;
+      content: "";
+      background: var(--bg-chat);
+      transform: skew(-10deg);
       z-index: -1;
+
+      @include breakpoint-down(850px) {
+        width: 80px;
+        height: 65px;
+      }
     }
   }
 
-  .link-icon {
-    width: 25px;
-    height: auto;
-    object-fit: contain;
+  &__body {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 2rem;
+
+    @include breakpoint-down(850px) {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+
+    .title {
+      font-weight: 300;
+      font-size: 30px;
+      margin-bottom: 10px;
+
+      @include breakpoint-down(850px) {
+        font-size: 22px;
+      }
+    }
+    .txt {
+      font-style: normal;
+      font-size: 17px;
+      margin-right: 1rem;
+
+      @include breakpoint-down(850px) {
+        font-size: 16px;
+      }
+    }
+
+    .links {
+
+      .link {
+        font-size: 18px;
+        text-decoration: underline;
+        color: var(--cl-contact);
+
+        @include breakpoint-down(850px) {
+          font-size: 16px;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .icon {
+        font-size: 20px;
+        margin-right: 1rem;
+
+        @include breakpoint-down(850px) {
+          font-size: 18px;
+        }
+
+        &.fa-mobile-screen-button {
+          left: 2px;
+        }
+      }
+    }
+
+    .link-icon {
+      &__img {
+        width: 25px;
+        height: auto;
+        object-fit: contain;
+      }
+    }
   }
 }

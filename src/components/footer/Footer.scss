@@ -6,6 +6,13 @@
   background: var(--bg-body);
   @include transition-color-bg;
 
+  @include tablet {
+    padding-left: $header-main-width-tablet;
+  }
+  @include mobile {
+    padding-left: 0;
+  }
+
   &__inner {
     padding-top: 2rem;
     padding-bottom: 4rem;
@@ -24,12 +31,20 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         color: var(--cl-txt-white);
+
+        @include breakpoint-down(850px) {
+          letter-spacing: 1px;
+        }
       }
     }
 
     .txt {
       font-size: 16px;
       letter-spacing: 2px;
+
+      @include breakpoint-down(850px) {
+        letter-spacing: 1px;
+      }
     }
 
     .desc {
@@ -37,6 +52,13 @@
       line-height: 130%;
       letter-spacing: 2px;
       padding-right: 5rem;
+
+      @include breakpoint-down(850px) {
+        letter-spacing: 1px;
+      }
+      @include phone {
+        padding-right: 1rem;
+      }
     }
 
     .social {
@@ -66,6 +88,11 @@
     .copyright {
       font-size: 17px;
       letter-spacing: 1px;
+
+      @include breakpoint-down(850px) {
+        font-size: 16px;
+        letter-spacing: 0.5px;
+      }
     }
 
     .list {

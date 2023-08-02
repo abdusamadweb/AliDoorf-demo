@@ -11,7 +11,7 @@ import Home from "./pages/home/Home"
 import Footer from "./components/footer/Footer";
 import Alidoorf from "./pages/alidoorf-page/Alidoorf";
 import Catalog from "./pages/alidoorf-page/catalog/Catalog";
-import {ReactLenis, useLenis} from '@studio-freight/react-lenis'
+import {ReactLenis} from '@studio-freight/react-lenis'
 import About from "./pages/alidoorf-page/about/About";
 import NewsPage from "./pages/alidoorf-page/news/NewsPage";
 import Primeloft from "./pages/primeloft-page/Primeloft";
@@ -19,6 +19,10 @@ import PrimeCatalog from "./pages/primeloft-page/catalog/PrimeCatalog";
 import PrimeAbout from "./pages/primeloft-page/about/PrimeAbout";
 import PrimeNewsPage from "./pages/primeloft-page/news/PrimeNewsPage";
 import Contacts from "./pages/contacts/Contacts";
+import PageNotFound from "./components/page-not-found/PageNotFound";
+import RequireAuth from "./components/RequireAuth";
+import AdminHome from "./pages/admin/home/AdminHome";
+import Login from "./pages/admin/login/Login";
 
 const Wrapper = ({children}) => {
     const location = useLocation()
@@ -30,11 +34,10 @@ const Wrapper = ({children}) => {
 
 function App() {
 
-    const lenis = useLenis(({scroll}) => {
-        // called every scroll
-    })
-
     const [darkMode, setDarkMode] = useState(false)
+
+    const userLang = navigator.language || navigator.userLanguage
+    const [lang, setLang] = useState(userLang)
 
 
     return (
@@ -46,6 +49,8 @@ function App() {
                         <Header
                             darkMode={darkMode}
                             setDarkMode={setDarkMode}
+                            lang={lang}
+                            setLang={setLang}
                         />
 
                         <Routes>
@@ -65,6 +70,19 @@ function App() {
                             <Route path='/mebel' element={<Alidoorf/>}/>
 
                             <Route path='/contacts' element={<Contacts/>}/>
+
+                            // 404
+                            <Route path='*' element={<PageNotFound />} />
+
+
+                            // Protect-able routes
+                            <Route element={<RequireAuth />}>
+
+                                <Route path='/admin' element={<AdminHome />} />
+
+                            </Route>
+
+                            <Route path='/admin/login' element={<Login />} />
 
                         </Routes>
 

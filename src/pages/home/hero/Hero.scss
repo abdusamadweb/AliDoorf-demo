@@ -11,6 +11,13 @@
     padding-top: 30vh;
     padding-left: calc($header-main-width-tablet + 1rem);
   }
+  @include mobile {
+    padding-top: 35vh;
+    padding-left: 1rem;
+  }
+  @include breakpoint-down(400px) {
+    padding-left: 0;
+  }
 
   &__titles {
     position: relative;
@@ -23,6 +30,10 @@
       content: '';
       margin-right: 1rem;
       background: #ffffff50;
+
+      @include breakpoint-down(400px) {
+        font-size: 10px;
+      }
     }
 
     .subtitle {
@@ -35,6 +46,10 @@
         @include tablet {
           font-size: 14px;
         }
+        @include breakpoint-down(400px) {
+          font-size: 12px;
+          padding: 10px;
+        }
       }
     }
 
@@ -45,6 +60,9 @@
 
       @include tablet {
         font-size: 40px;
+      }
+      @include breakpoint-down(400px) {
+        font-size: 26px;
       }
 
       .txt {
@@ -60,6 +78,9 @@
 
       @include tablet {
         font-size: 18px;
+      }
+      @include breakpoint-down(400px) {
+        font-size: 14px;
       }
 
       .icon {
@@ -93,6 +114,9 @@
 
       @include tablet {
         font-size: 12px;
+      }
+      @include mobile {
+        display: none;
       }
 
       &.active {

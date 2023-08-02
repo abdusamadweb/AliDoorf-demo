@@ -29,6 +29,17 @@ const Tech = () => {
                         pagination={{
                             clickable: true,
                         }}
+                        breakpoints={{
+                            1: {
+                                slidesPerView: 1,
+                            },
+                            800: {
+                                slidesPerView: 2,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                            },
+                        }}
                         modules={[Pagination, Navigation]}
                         className="swiper"
                     >

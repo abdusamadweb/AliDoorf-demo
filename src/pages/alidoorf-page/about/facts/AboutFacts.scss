@@ -31,6 +31,13 @@
       grid-template-columns: 1fr 1fr 1fr;
       gap: 6px;
 
+      @include breakpoint-down(920px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include breakpoint-down(700px) {
+        grid-template-columns: 1fr;
+      }
+
       .item {
         text-align: center;
         padding: 2rem;

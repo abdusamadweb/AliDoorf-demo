@@ -24,11 +24,11 @@ const AboutTexts = () => {
                             </div>
                             <div className="row no-wrap align-center mb2">
                                 <i className="fa-solid fa-mobile-screen-button icon"/>
-                                <a className='link' href="tel: +998">+998 33 001 22 23</a>
+                                <a className='link' href="tel: +998902221212">+998 90 222 12 12</a>
                             </div>
                             <div className="row no-wrap align-center">
                                 <i className="fa-solid fa-envelope icon"/>
-                                <a className='link' href="mailto: nmadr@ma.co">nmadr@ma.co</a>
+                                <a className='link' href="mailto:hello@alidoorf.uz">hello@alidoorf.uz</a>
                             </div>
                         </div>
                     </div>

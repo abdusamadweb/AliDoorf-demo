@@ -51,11 +51,11 @@ const ChatUs = ({ chatUsBtn }) => {
                 <div className='contact__body'>
                     <div className='mb2'>
                         <h4 className="name">Email</h4>
-                        <a className='link' href="mailto: nmadr@mail.co">nmadr@mail.co</a>
+                        <a className='link' href="mailto: hello@alidoorf.uz">hello@alidoorf.uz</a>
                     </div>
                     <div>
                         <h4 className="name">Телефон</h4>
-                        <a className='link' href="tel: +998330012223">+998 33 001 22 23</a>
+                        <a className='link' href="tel: +998902221212">+998 90 222 12 12</a>
                     </div>
                 </div>
             </div>

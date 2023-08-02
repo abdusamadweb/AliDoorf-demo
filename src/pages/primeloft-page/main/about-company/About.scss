@@ -30,6 +30,10 @@
       background: var(--bg-body);
       @include transition-color-bg;
 
+      @include breakpoint-down(750px) {
+        padding-inline: 1.5rem;
+      }
+
       &:hover {
         &::before {
           top: 0;
@@ -56,6 +60,13 @@
     grid-template-columns: 65% 35%;
     margin-top: 4rem;
 
+    @include breakpoint-down(1320px) {
+      grid-template-columns: 1fr;
+    }
+    @include tablet {
+      margin-top: 2rem;
+    }
+
     &__content {
       .title {
         color: var(--cl-txt-white);
@@ -74,6 +85,8 @@
 
         &__list {
           .item {
+            display: flex;
+            flex-flow: nowrap;
             margin-bottom: 28px;
 
             .icon {
@@ -123,9 +136,21 @@
 
     &__numbers {
 
+      @include breakpoint-down(1320px) {
+        margin-top: 3rem;
+      }
+
       .wrapper {
-        padding-left: 3rem;
+        padding-left: 2rem;
         border-left: 1px solid #ccc;
+
+        @include breakpoint-down(1320px) {
+          border: none;
+
+          &:first-child {
+            margin-bottom: 2rem;
+          }
+        }
       }
 
       .number {
@@ -142,6 +167,10 @@
         background-image: url('../../../../assets/images/bg-clip-num1.jpg');
         transform: scale3d(1, 1.2, 1);
 
+        @include mobile {
+          font-size: 150px;
+        }
+
         &.number2 {
           background-image: url('../../../../assets/images/video-pre.jpg');
         }
@@ -152,6 +181,10 @@
         font-size: 30px;
         margin-bottom: 8px;
         color: var(--cl-txt-white);
+
+        @include mobile {
+          font-size: 24px;
+        }
       }
     }
   }

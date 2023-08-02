@@ -38,9 +38,9 @@ const Hero = () => {
                         <span className='txt'>23 года</span>
                         на рынке дверей
                     </h1>
-                    <a className='tel before fz20' href="tel:+998">
+                    <a className='tel before fz20' href="tel:+998902221212">
                         <i className="fa-solid fa-square-phone icon"/>
-                        <span className='txt'>+998 33 001 22 23</span>
+                        <span className='txt'>+998 90 222 12 12</span>
                     </a>
                 </div>
             </div>

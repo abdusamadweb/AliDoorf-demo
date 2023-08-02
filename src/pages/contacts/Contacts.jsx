@@ -6,31 +6,39 @@ import youtube from "../../assets/images/youtube.png";
 
 const Contacts = () => {
     return (
-        <div className='contacts page bg-cl'>
+        <div className='contacts page bg-cl py3'>
             <div className="container">
-                <h1 className="contacts__title">Контакты</h1>
-                <div className="contacts__body">
+                <h1 className="contacts__title pl3">Контакты</h1>
+                <div className="contacts__body grid">
                     <div>
-                        <h3 className="title">Адрес</h3>
-                        <address className='txt'>
-                            Чувашская Республика, Чебоксарский район Синьяльское сельское поселение, село Яндово, Геона, участок 1
-                        </address>
-                    </div>
-                    <div>
-                        <a className='link' href="tel: +998">+998 33 001 22 23</a>
-                        <a className='link' href="mailto: nmadr@ma.co">nmadr@ma.co</a>
+                        <div className='mb3'>
+                            <h3 className="title">Адрес</h3>
+                            <address className='txt'>
+                                Узбекистан, Андижанская область, город Андижан, ул. Тинчлик, 9
+                            </address>
+                        </div>
+                        <div className='links'>
+                            <div className="row no-wrap align-center mb2">
+                                <i className="fa-solid fa-mobile-screen-button icon"/>
+                                <a className='link' href="tel: +998902221212">+998 90 222 12 12</a>
+                            </div>
+                            <div className="row no-wrap align-center">
+                                <i className="fa-solid fa-envelope icon"/>
+                                <a className='link' href="mailto:hello@alidoorf.uz">hello@alidoorf.uz</a>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <h3 className="title">Подписывайтесь</h3>
                         <div className="row align-center" style={{gap: '10px'}}>
-                            <a className='link-icon' href="instagram.com/" target='_blank'>
-                                <img className='link__img' src={insta} alt="instagram"/>
+                            <a className='link-icon' href="https://instagram.com/alidoorf" target='_blank'>
+                                <img className='link-icon__img' src={insta} alt="instagram"/>
                             </a>
-                            <a className='link-icon' href="t.me/" target='_blank'>
-                                <img className='link__img' src={tg} alt="telegram"/>
+                            <a className='link-icon' href="https://t.me/alidoorfuz" target='_blank'>
+                                <img className='link-icon__img' src={tg} alt="telegram"/>
                             </a>
-                            <a className='link-icon' href="youtube.com/" target='_blank'>
-                                <img className='link__img' src={youtube} alt="youtube"/>
+                            <a className='link-icon' href="https://youtube.com/alidoorfuz" target='_blank'>
+                                <img className='link-icon__img' src={youtube} alt="youtube"/>
                             </a>
                         </div>
                     </div>

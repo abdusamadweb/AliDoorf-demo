@@ -43,37 +43,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script>
-    let ratio = 2; //change this to increase/descrease scroll speed/step
-    // let custom_scroll_short = document.getElementById('body');
-    // custom_scroll_short.addEventListener("wheel", (event) => {
-    //   // event.preventDefault();
-    //
-    //   let target = custom_scroll_short.scrollTop + event.deltaY * ratio;
-    //
-    //   custom_scroll_short.scrollTo({
-    //     top: target,
-    //     behavior: "smooth"
-    //   })
-    // })
-    let custom_scroll = document.getElementById('body')
-    let scroll_timeout = undefined;
-    custom_scroll.addEventListener("wheel", (event) => {
-         event.preventDefault();
-
-         clearTimeout(scroll_timeout);//if the previous scroll didn't finish, need to stop it to prevent infinite scroll.
-
-         let target = custom_scroll.scrollTop + event.deltaY * ratio;
-           let step = target > custom_scroll.scrollTop ? 1 : -1;
-
-    let frame = () => {
-    custom_scroll.scrollTop += step;
-    if((target < custom_scroll.scrollTop && step < 0) || (target > custom_scroll.scrollTop && step > 0)) {
-       scroll_timeout = setTimeout(frame, 5);
-     }
-    }
-     frame();
-    });
-  </script>
   </body>
 </html>

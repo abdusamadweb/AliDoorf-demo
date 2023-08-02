@@ -1,0 +1,21 @@
+@use '../../../../scss' as *;
+
+.insta {
+
+  .titles {
+
+    &::before, &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      content: '';
+      background: var(--cl-bor);
+    }
+    &::after {
+      width: 30%;
+      background: var(--cl-txt-white);
+    }
+  }
+}

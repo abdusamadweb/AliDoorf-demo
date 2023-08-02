@@ -8,12 +8,12 @@ const About = () => {
     return (
         <div className='about page bg-cl py3'>
             <div className="container">
-                <div className="head row between align-center">
+                <div className="head row no-wrap between align-center">
                     <div className="titles">
                         <span className='subtitle'>о компании</span>
                         <h2 className="title">Фабрика дверей ALIDOORF</h2>
                     </div>
-                    <Link className='head__btn fw500 fz14' to='/news'>Новости</Link>
+                    <Link className='head__btn fw500 fz14' to='news'>Новости</Link>
                 </div>
                 <div className="body grid">
                     <div className="body__content pr1">

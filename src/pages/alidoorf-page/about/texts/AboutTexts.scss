@@ -5,22 +5,44 @@
     padding-block: 8rem;
     border-top: 1px solid #301F1B;
 
+    @include breakpoint-down(900px) {
+      padding-block: 4rem;
+    }
+
     &__inner {
       grid-template-columns: 1fr 1fr;
       gap: 10px;
       color: var(--cl-txt-white);
       background: var(--bg-chat);
 
+      @include breakpoint-down(900px) {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+
       .diver {
 
         .img {
           position: relative;
-          top: -8%;
+          top: -6%;
           left: -2rem;
+
+          @include breakpoint-down(900px) {
+            top: 0;
+            left: 0;
+          }
         }
 
         .margin {
           margin-top: -2vw;
+
+          @include breakpoint-down(900px) {
+            margin-top: 1rem;
+            margin-inline: 2rem;
+          }
+          @include phone {
+            margin-inline: 1rem;
+          }
         }
 
         .desc {
@@ -46,6 +68,13 @@
       .wrapper {
         position: relative;
         z-index: 1;
+
+        @include breakpoint-down(900px) {
+          margin-inline: 2rem;
+        }
+        @include phone {
+          margin-inline: 1rem;
+        }
 
         .txt {
           text-transform: uppercase;
@@ -85,6 +114,12 @@
           color: #111;
           background: #fff;
           transition: transform 0.3s ease;
+
+          @include breakpoint-down(777px) {
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 12px 1.5rem;
+          }
 
           &:hover {
             &::before {

@@ -1,10 +1,17 @@
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+   margin: 0;
+   padding: 0;
+   -webkit-tap-highlight-color: transparent;
+}
+
 html {
    box-sizing: border-box;
 }
  
 body {
-   /*display: flex;*/
-   /*flex-direction: column;*/
    min-height: 100vh;
 }
 
@@ -18,15 +25,6 @@ body {
    .container {
       padding: 0 1rem;
    }
-}
- 
-*,
-*::before,
-*::after {
-   box-sizing: inherit;
-   margin: 0;
-   padding: 0;
-   -webkit-tap-highlight-color: transparent;
 }
  
 a {
@@ -72,6 +70,13 @@ i {
 .bg {
    position: absolute;
    background-repeat: no-repeat;
+}
+
+.d-block {
+   display: block;
+}
+.d-none {
+   display: none;
 }
 
 *::before,
@@ -172,6 +177,16 @@ i {
       /* -------- MARGIN -------- */
 
 
+.m1 {
+   margin: 1rem;
+}
+.m2 {
+   margin: 2rem;
+}
+.m3 {
+   margin: 3rem;
+}
+
 .my1 {
    margin-block: 1rem;
 }
@@ -236,6 +251,16 @@ i {
       /* -------- PADDING -------- */
 
 
+.p1 {
+   padding: 1rem;
+}
+.p2 {
+   padding: 2rem;
+}
+.p3 {
+   padding: 3rem;
+}
+
 .py1 {
    padding-block: 1rem;
 }
@@ -296,6 +321,39 @@ i {
    padding-right: 3rem;
 }
 
+
+/* -------- GAP -------- */
+
+
+.g1 {
+   gap: 1rem;
+}
+.g2 {
+   gap: 2rem;
+}
+.g3 {
+   gap: 3rem;
+}
+
+.gy1 {
+   row-gap: 1rem;
+}
+.gy2 {
+   row-gap: 2rem;
+}
+.gy3 {
+   row-gap: 3rem;
+}
+
+.gx1 {
+   column-gap: 1rem;
+}
+.gx2 {
+   column-gap: 2rem;
+}
+.gx3 {
+   column-gap: 3rem;
+}
 
 
 

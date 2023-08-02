@@ -28,6 +28,13 @@
       text-transform: capitalize;
       color: #fff;
       z-index: 2;
+
+      @include tablet {
+        font-size: 58px;
+      }
+      @include mobile {
+        font-size: 48px;
+      }
     }
   }
 }
