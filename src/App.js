@@ -23,6 +23,7 @@ import PageNotFound from "./components/page-not-found/PageNotFound";
 import RequireAuth from "./components/RequireAuth";
 import AdminHome from "./pages/admin/home/AdminHome";
 import Login from "./pages/admin/login/Login";
+import {Toaster} from "react-hot-toast";
 
 const Wrapper = ({children}) => {
     const location = useLocation()
@@ -87,6 +88,13 @@ function App() {
                         </Routes>
 
                         <Footer/>
+                        <>
+                            <Toaster
+                                containerClassName="toast"
+                                position="top-center"
+                                reverseOrder={false}
+                            />
+                        </>
 
                     </Wrapper>
                 </BrowserRouter>

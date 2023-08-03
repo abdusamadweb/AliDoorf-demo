@@ -5,51 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="fully completed">
-      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/instagram/Instagram.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/instagram/Instagram.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/login.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/fonts/Lato/Lato-Semibold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/videos/alidoorf-video.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/videos/alidoorf-video.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/HeaderNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/HeaderNav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/facts/AboutFacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/facts/AboutFacts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/hero/AboutMain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/hero/AboutMain.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/Catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/Catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/about-company/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/about-company/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/about-company/About.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/about-company/About.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/contact/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/contact/Contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/contact/Contact.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/news/News.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/news/News.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/technogies/Tech.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/technogies/Tech.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/news/hero/NewsHero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/hero/NewsHero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contacts/Contacts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contacts/Contacts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contacts/Contacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contacts/Contacts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/direction/Direction.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/direction/Direction.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/hero/ChatUs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/hero/ChatUs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/hero/Hero.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/hero/Hero.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/about/facts/AboutFacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/about/facts/AboutFacts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/about/hero/AboutMain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/about/hero/AboutMain.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/about/texts/AboutTexts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/about/texts/AboutTexts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/about/texts/AboutTexts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/about/texts/AboutTexts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/catalog/Catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/catalog/Catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/main/about-company/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/main/about-company/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/main/about-company/About.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/main/about-company/About.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/main/contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/main/contact/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/main/contact/Contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/main/contact/Contact.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/main/news/News.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/main/news/News.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/main/technogies/Tech.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/main/technogies/Tech.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/primeloft-page/news/hero/NewsHero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/primeloft-page/news/hero/NewsHero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_breakpoint.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_breakpoint.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/login/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/Login.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +126,8 @@
       <workItem from="1690866835187" duration="514000" />
       <workItem from="1690870011139" duration="19703000" />
       <workItem from="1690952247672" duration="16409000" />
+      <workItem from="1690971723266" duration="4779000" />
+      <workItem from="1691048018481" duration="1279000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -249,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690790972119</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fully completed">
+      <option name="closed" value="true" />
+      <created>1690971797242</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690971797242</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +260,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/footer/Footer.jsx</url>
           <line>36</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

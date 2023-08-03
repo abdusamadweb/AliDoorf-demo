@@ -395,7 +395,7 @@
     .open-nav-btn {
       position: relative;
       padding: 1rem;
-      transition: transform 0.3s ease;
+      transition: transform 0.5s ease-out;
 
       @include tablet {
         padding: 0;
@@ -423,7 +423,7 @@
         border-radius: 50%;
         border: 1px solid #eeeeee40;
         opacity: 0;
-        transition: transform 0.4s ease-out,
+        transition: transform 0.5s ease-out,
         opacity 0.3s ease-out;
 
         @include tablet {

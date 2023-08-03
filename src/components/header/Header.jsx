@@ -122,13 +122,13 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                                         onClick={() => setOpenNav(prev => !prev)}
                                         onMouseMoveCapture={(e) => handleMouseMove(e)}
                                         onMouseLeave={() => setMousePosition({left: 0, top: 0})}
-                                        style={{transform: `translate(${mousePosition.left * 4.125}px, ${mousePosition.top * 4.125}px)`}}
+                                        style={{transform: `translate(${mousePosition.left * 2.125}px, ${mousePosition.top * 2.125}px)`}}
                                     >
                                 <span
                                     className='circle'
                                     onMouseMoveCapture={(e) => handleMouseMove(e)}
                                     onMouseLeave={() => setMousePosition({left: 0, top: 0})}
-                                    style={{transform: `translate(${mousePosition.left * 5.125}px, ${mousePosition.top * 5.125}px)`}}
+                                    style={{transform: `translate(${mousePosition.left * 4.125}px, ${mousePosition.top * 4.125}px)`}}
                                 />
                                         <div className={`sticks ${openNav ? 'active' : ''}`}>
                                             <div className="row between">

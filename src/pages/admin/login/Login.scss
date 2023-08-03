@@ -1,5 +1,55 @@
 @use '../../../scss' as *;
 
 .login {
+  min-height: 100vh;
+  height: 100%;
+  background-image: url('../../../assets/images/login.jpg');
+  background-size: cover;
 
+  .form {
+    width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: #1a2244;
+    background: #fff;
+
+    @include breakpoint-down(700px) {
+      width: 95%;
+    }
+    @include phone {
+      width: 100%;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 28px;
+    }
+
+    &__label {
+      text-align: start;
+
+      .txt {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .inp {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+        background: #f1f1f1;
+      }
+    }
+
+    &__btn {
+      width: 50%;
+      font-weight: 500;
+      padding: 1rem 2rem;
+      margin: 0 auto;
+      border-radius: 30px;
+      color: #fff;
+      background: #171d38;
+    }
+  }
 }
