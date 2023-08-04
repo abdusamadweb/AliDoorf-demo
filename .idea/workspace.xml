@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="fully completed">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/login.jpg" afterDir="false" />
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="login">
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/header/AdminHeader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/header/AdminHeader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/Alidoorf.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfAbout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfCatalog.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfHome.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfNews.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RequireAuth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RequireAuth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/login/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/Login.scss" afterDir="false" />
     </list>
@@ -127,7 +133,9 @@
       <workItem from="1690870011139" duration="19703000" />
       <workItem from="1690952247672" duration="16409000" />
       <workItem from="1690971723266" duration="4779000" />
-      <workItem from="1691048018481" duration="1279000" />
+      <workItem from="1691048018481" duration="2343000" />
+      <workItem from="1691060736807" duration="2186000" />
+      <workItem from="1691152641444" duration="14170000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -225,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690971797242</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="login">
+      <option name="closed" value="true" />
+      <created>1691054563331</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1691054563331</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +268,8 @@
     <MESSAGE value="ohio" />
     <MESSAGE value="geona txt deleted for all" />
     <MESSAGE value="fully completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fully completed" />
+    <MESSAGE value="login" />
+    <option name="LAST_COMMIT_MESSAGE" value="login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

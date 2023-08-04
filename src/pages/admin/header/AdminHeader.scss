@@ -1,0 +1,94 @@
+@use '../../../scss' as *;
+
+.admin-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  padding: 1rem;
+  background: #f1f8fd;
+  overflow-y: auto;
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .nav {
+
+    &__list {
+      gap: 10px;
+
+      .item {
+        height: 42.5px;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 3px rgba(0,0,0,0.07);
+        transition: height 0.3s ease;
+        overflow-y: hidden;
+
+        &.clicked {
+          height: auto;
+        }
+
+        &__txt {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: 500;
+          text-transform: capitalize;
+          padding: 12px 1rem;
+          color: $txt-color;
+          transition: background-color 0.2s ease;
+          cursor: pointer;
+
+          &.active {
+            color: #0070de;
+          }
+
+          &:hover {
+            background: #def0ff;
+          }
+          &.hovered:hover {
+            .icon {
+              transform: rotate(90deg);
+            }
+          }
+
+          .icon {
+            transition: transform 0.4s ease;
+          }
+        }
+
+        &__inner {
+
+          .wrap {
+            position: relative;
+            transition: padding 0.3s ease;
+            overflow: hidden;
+
+            &.clicked {
+              padding-bottom: 135px;
+            }
+
+            &__link {
+              font-weight: 400;
+              font-size: 15px;
+              padding-block: 8px;
+              padding-left: 2rem;
+            }
+
+            &__list {
+              position: absolute;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

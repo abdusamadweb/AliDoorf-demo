@@ -1,0 +1,25 @@
+.admin {
+
+  &__title {
+    font-size: 34px;
+  }
+
+  .content {
+
+    &__form {
+
+      label {
+        margin-bottom: 1rem;
+      }
+      .txt {
+        display: block;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+.admin-page {
+  margin-left: calc(250px + 1rem);
+  margin-right: 1rem;
+}

@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import {toast} from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 import $api from "../../../api";
+import axios from "axios";
 
 const Login = () => {
 
@@ -15,13 +16,10 @@ const Login = () => {
     const logIn = (e) => {
         e.preventDefault()
 
-        const item = {
-            phoneNumber: phoneNumber,
-            password: password
-        }
+        const item = { phoneNumber, password }
 
         $api
-            .post('', item)
+            .post('/api/alidoorf/v1/auth/sign-in', item)
             .then(res => {
                 toast.success('Success !')
 

@@ -24,6 +24,12 @@ import RequireAuth from "./components/RequireAuth";
 import AdminHome from "./pages/admin/home/AdminHome";
 import Login from "./pages/admin/login/Login";
 import {Toaster} from "react-hot-toast";
+import AdminHeader from "./pages/admin/header/AdminHeader";
+import AdminMain from "./pages/admin/pages/main/AdminMain";
+import AlidoorfHome from "./pages/admin/pages/alidoorf/AlidoorfHome";
+import AlidoorfCatalog from "./pages/admin/pages/alidoorf/AlidoorfCatalog";
+import AlidoorfAbout from "./pages/admin/pages/alidoorf/AlidoorfAbout";
+import AlidoorfNews from "./pages/admin/pages/alidoorf/AlidoorfNews";
 
 const Wrapper = ({children}) => {
     const location = useLocation()
@@ -53,6 +59,7 @@ function App() {
                             lang={lang}
                             setLang={setLang}
                         />
+                        <AdminHeader />
 
                         <Routes>
 
@@ -81,6 +88,23 @@ function App() {
 
                                 <Route path='/admin' element={<AdminHome />} />
 
+                                <Route path='/admin/pages/main' element={<AdminMain />} />
+
+                                <Route path='/admin/pages/alidoorf/home' element={<AlidoorfHome />} />
+                                <Route path='/admin/pages/alidoorf/catalog' element={<AlidoorfCatalog />} />
+                                <Route path='/admin/pages/alidoorf/about' element={<AlidoorfAbout />} />
+                                <Route path='/admin/pages/alidoorf/news' element={<AlidoorfNews />} />
+
+                                <Route path='/admin/pages/primeloft/home' element={<AdminHome />} />
+                                <Route path='/admin/pages/primeloft/catalog' element={<AdminHome />} />
+                                <Route path='/admin/pages/primeloft/about' element={<AdminHome />} />
+                                <Route path='/admin/pages/primeloft/news' element={<AdminHome />} />
+
+                                <Route path='/admin/pages/mebel/home' element={<AdminHome />} />
+                                <Route path='/admin/pages/mebel/catalog' element={<AdminHome />} />
+                                <Route path='/admin/pages/mebel/about' element={<AdminHome />} />
+                                <Route path='/admin/pages/mebel/news' element={<AdminHome />} />
+
                             </Route>
 
                             <Route path='/admin/login' element={<Login />} />
@@ -88,13 +112,11 @@ function App() {
                         </Routes>
 
                         <Footer/>
-                        <>
-                            <Toaster
-                                containerClassName="toast"
-                                position="top-center"
-                                reverseOrder={false}
-                            />
-                        </>
+                        <Toaster
+                            containerClassName="toast"
+                            position="top-center"
+                            reverseOrder={false}
+                        />
 
                     </Wrapper>
                 </BrowserRouter>

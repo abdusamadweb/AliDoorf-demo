@@ -177,3 +177,23 @@ body {
   position: fixed;
   overflow: hidden;
 }
+
+
+// admin - page
+.admin-inp {
+  width: 50%;
+  padding: 12px 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+
+  @include breakpoint-down(1000px) {
+    width: 100%;
+  }
+}
+.admin-btn {
+  font-weight: 500;
+  padding: 12px 2rem;
+  border-radius: 12px;
+  color: #fff;
+  background: #50C878;
+}

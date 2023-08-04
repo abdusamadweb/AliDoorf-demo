@@ -1,5 +1,5 @@
 import React from 'react'
-import {Navigate, Outlet, useLocation} from "react-router-dom"
+import {Navigate, Outlet} from "react-router-dom"
 
 const RequireAuth = () => {
 
@@ -8,7 +8,7 @@ const RequireAuth = () => {
     return (
          values.includes('token') ?
             <Outlet />
-            : <Navigate to='/admin/sign-in'/>
+            : <Navigate to='/admin/login'/>
     )
 }
 
