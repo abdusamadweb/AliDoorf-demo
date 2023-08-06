@@ -16,7 +16,7 @@ const AdminHeader = () => {
     return (
         <div
             className={`admin-header ${location.pathname.includes('admin') ? 'd-block' : 'd-none'}`}
-            style={{display: location.pathname.includes('login') ? 'none' : 'block'}}
+            style={{display: location.pathname.includes('login') ? 'none' : ''}}
         >
             <div className='admin-header__title'>ADMiN</div>
             <nav className='nav'>

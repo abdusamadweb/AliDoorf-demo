@@ -4,24 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="login">
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/header/AdminHeader.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/header/AdminHeader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/Alidoorf.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfAbout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfCatalog.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfHome.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfNews.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.scss" afterDir="false" />
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="admin header and some styles completed">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/admin/alidoorf-about1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/admin/alidoorf-about2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/admin/alidoorf-about3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/admin/alidoorf-about4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-home/AlidoorfHome.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-home/AlidoorfHomeSlider.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-news/AlidoorfNews.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-news/NewsItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RequireAuth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RequireAuth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/login.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/admin/login.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/header/AdminHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/header/AdminHeader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/login/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/Login.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/Alidoorf.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/Alidoorf.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfAbout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfAbout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfHome.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfNews.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,11 +80,11 @@
       <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\primeloft-page" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\alidoorf\alidoorf-news" />
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\assets\images\admin" />
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\alidoorf\alidoorf-home" />
       <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\alidoorf-page\about" />
       <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\alidoorf-page\news" />
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\alidoorf-page" />
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\alidoorf-page\main" />
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\about-company" />
     </key>
   </component>
   <component name="RunManager">
@@ -135,7 +140,10 @@
       <workItem from="1690971723266" duration="4779000" />
       <workItem from="1691048018481" duration="2343000" />
       <workItem from="1691060736807" duration="2186000" />
-      <workItem from="1691152641444" duration="14170000" />
+      <workItem from="1691152641444" duration="14380000" />
+      <workItem from="1691210508782" duration="15128000" />
+      <workItem from="1691313829925" duration="4107000" />
+      <workItem from="1691331305810" duration="5802000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -241,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691054563331</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="admin header and some styles completed">
+      <option name="closed" value="true" />
+      <created>1691174008000</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1691174008000</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +285,8 @@
     <MESSAGE value="geona txt deleted for all" />
     <MESSAGE value="fully completed" />
     <MESSAGE value="login" />
-    <option name="LAST_COMMIT_MESSAGE" value="login" />
+    <MESSAGE value="admin header and some styles completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin header and some styles completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

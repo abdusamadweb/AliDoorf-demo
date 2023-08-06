@@ -186,7 +186,7 @@ body {
   border-radius: 12px;
   border: 1px solid #ccc;
 
-  @include breakpoint-down(1000px) {
+  @include tablet {
     width: 100%;
   }
 }

@@ -26,10 +26,10 @@ import Login from "./pages/admin/login/Login";
 import {Toaster} from "react-hot-toast";
 import AdminHeader from "./pages/admin/header/AdminHeader";
 import AdminMain from "./pages/admin/pages/main/AdminMain";
-import AlidoorfHome from "./pages/admin/pages/alidoorf/AlidoorfHome";
+import AlidoorfHome from "./pages/admin/pages/alidoorf/alidoorf-home/AlidoorfHome";
 import AlidoorfCatalog from "./pages/admin/pages/alidoorf/AlidoorfCatalog";
 import AlidoorfAbout from "./pages/admin/pages/alidoorf/AlidoorfAbout";
-import AlidoorfNews from "./pages/admin/pages/alidoorf/AlidoorfNews";
+import AlidoorfNews from "./pages/admin/pages/alidoorf/alidoorf-news/AlidoorfNews";
 
 const Wrapper = ({children}) => {
     const location = useLocation()

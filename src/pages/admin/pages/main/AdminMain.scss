@@ -1,0 +1,17 @@
+@use '../../../../scss' as *;
+
+.admin-main {
+
+  .form {
+    margin-bottom: 2rem;
+
+    .txt {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .admin-inp {
+      margin-bottom: 1rem;
+    }
+  }
+}
