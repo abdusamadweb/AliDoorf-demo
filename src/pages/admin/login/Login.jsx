@@ -2,7 +2,7 @@ import './Login.scss'
 import React, {useState} from 'react'
 import {toast} from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
-import $api from "../../../api";
+import $api from "../../../api/apiConfig";
 
 const Login = () => {
 
@@ -26,8 +26,9 @@ const Login = () => {
                 navigate('/admin')
             })
             .catch(err => {
-                console.log(err)
-                toast.error('Error !')
+                err?.response.data.errors.map(i => {
+                    toast.error(i.errorMsg)
+                })
             })
     }
 

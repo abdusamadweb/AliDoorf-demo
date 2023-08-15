@@ -41,7 +41,7 @@ const AdminHeader = () => {
                             <li className={`wrap ${alidoorf ? 'clicked' : ''}`}>
                                 <div className='item__txt hovered' onClick={() => setAlidoorf(!alidoorf)}>
                                     <span>alidoorf</span>
-                                    <i className="fa-solid fa-chevron-right icon"/>
+                                    <i className={`fa-solid fa-chevron-right icon ${location.pathname.includes('alidoorf') ? 'active' : ''}`}/>
                                 </div>
                                 <ul className='wrap__list'>
                                     <li className='li'>
@@ -69,7 +69,7 @@ const AdminHeader = () => {
                             <li className={`wrap ${primeloft ? 'clicked' : ''}`}>
                                 <div className='item__txt hovered' onClick={() => setPrimeloft(!primeloft)}>
                                     <span>primeloft</span>
-                                    <i className="fa-solid fa-chevron-right icon"/>
+                                    <i className={`fa-solid fa-chevron-right icon ${location.pathname.includes('primeloft') ? 'active' : ''}`}/>
                                 </div>
                                 <ul className='wrap__list'>
                                     <li className='li'>
@@ -97,7 +97,7 @@ const AdminHeader = () => {
                             <li className={`wrap ${mebel ? 'clicked' : ''}`}>
                                 <div className='item__txt hovered' onClick={() => setMebel(!mebel)}>
                                     <span>mebel</span>
-                                    <i className="fa-solid fa-chevron-right icon"/>
+                                    <i className={`fa-solid fa-chevron-right icon ${location.pathname.includes('mebel') ? 'active' : ''}`}/>
                                 </div>
                                 <ul className='wrap__list'>
                                     <li className='li'>
@@ -123,6 +123,30 @@ const AdminHeader = () => {
                                 </ul>
                             </li>
                         </ul>
+                    </li>
+                    <li className="item">
+                        <NavLink className={`item__txt row`} to='/admin/menu'>
+                            Menu
+                            <i className="fa-solid fa-chevron-right icon"/>
+                        </NavLink>
+                    </li>
+                    <li className="item">
+                        <NavLink className={`item__txt row`} to='/admin/colors'>
+                            Colors
+                            <i className="fa-solid fa-chevron-right icon"/>
+                        </NavLink>
+                    </li>
+                    <li className="item">
+                        <NavLink className={`item__txt row`} to='/admin/forms'>
+                            Forms
+                            <i className="fa-solid fa-chevron-right icon"/>
+                        </NavLink>
+                    </li>
+                    <li className="item">
+                        <NavLink className={`item__txt row`} to='/admin/footer'>
+                            Footer
+                            <i className="fa-solid fa-chevron-right icon"/>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

@@ -5,7 +5,7 @@ import './assets/styles/normalize.css'
 import './assets/styles/global.css'
 
 import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom"
-import {useLayoutEffect, useState} from "react"
+import {useEffect, useLayoutEffect, useState} from "react"
 import Header from "./components/header/Header"
 import Home from "./pages/home/Home"
 import Footer from "./components/footer/Footer";
@@ -26,10 +26,15 @@ import Login from "./pages/admin/login/Login";
 import {Toaster} from "react-hot-toast";
 import AdminHeader from "./pages/admin/header/AdminHeader";
 import AdminMain from "./pages/admin/pages/main/AdminMain";
-import AlidoorfHome from "./pages/admin/pages/alidoorf/alidoorf-home/AlidoorfHome";
-import AlidoorfCatalog from "./pages/admin/pages/alidoorf/AlidoorfCatalog";
-import AlidoorfAbout from "./pages/admin/pages/alidoorf/AlidoorfAbout";
-import AlidoorfNews from "./pages/admin/pages/alidoorf/alidoorf-news/AlidoorfNews";
+import AlidoorfHome from "./pages/admin/pages/alidoorf/home/AlidoorfHome";
+import AlidoorfCatalog from "./pages/admin/pages/alidoorf/catalog/AlidoorfCatalog";
+import AlidoorfAbout from "./pages/admin/pages/alidoorf/about/AlidoorfAbout";
+import AlidoorfNews from "./pages/admin/pages/alidoorf/news/AlidoorfNews";
+import Colors from "./pages/admin/colors/Colors";
+import AdminMenu from "./pages/admin/menu/AdminMenu";
+import Forms from "./pages/admin/forms/Forms";
+import AdminFooter from "./pages/admin/footer/AdminFooter";
+import {getData, getPostData, userLang} from "./api/apiResp";
 
 const Wrapper = ({children}) => {
     const location = useLocation()
@@ -43,7 +48,6 @@ function App() {
 
     const [darkMode, setDarkMode] = useState(false)
 
-    const userLang = navigator.language || navigator.userLanguage
     const [lang, setLang] = useState(userLang)
 
 
@@ -87,6 +91,15 @@ function App() {
                             <Route element={<RequireAuth />}>
 
                                 <Route path='/admin' element={<AdminHome />} />
+
+                                <Route path='/admin/colors' element={<Colors />} />
+
+                                <Route path='/admin/menu' element={<AdminMenu />} />
+
+                                <Route path='/admin/forms' element={<Forms />} />
+
+                                <Route path='/admin/footer' element={<AdminFooter />} />
+
 
                                 <Route path='/admin/pages/main' element={<AdminMain />} />
 

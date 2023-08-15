@@ -1,8 +1,8 @@
 @use "./scss" as *;
 
 :root {
-  --cl-main: #eee;
-  --bg-body: #fff;
+  --cl-main: #f4f1de;
+  --bg-body: #f4f1de;
   --bg-header-inner: #eeeeee30;
   --bor-header-inner: #ccc;
   --cl-txt-white: #111;
@@ -38,7 +38,7 @@
 }
 
 .dark-theme {
-  --bg-body: #23110D;
+  --bg-body: #3d405b;
   --bg-header-inner: transparent;
   --bor-header-inner: #eeeeee20;
   --cl-txt-white: #fff;

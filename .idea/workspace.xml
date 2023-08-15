@@ -4,29 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="admin header and some styles completed">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/admin/alidoorf-about1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/admin/alidoorf-about2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/admin/alidoorf-about3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/admin/alidoorf-about4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-home/AlidoorfHome.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-home/AlidoorfHomeSlider.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-news/AlidoorfNews.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-news/NewsItem.jsx" afterDir="false" />
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="admin">
+      <change afterPath="$PROJECT_DIR$/src/api/apiResp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/colors/Colors.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/colors/Colors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/colors/other/SecondaryColors.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/footer/AdminFooter.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/footer/AdminFooter.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/forms/Forms.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/forms/Forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/forms/FormsEmail.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/menu/AdminMenu.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/menu/AdminMenu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/about/AboutItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/about/access-page/AccessPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/about/parallax/Parallax.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/AlidoorfCatalog.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/CatalogItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/access-page/AccessPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/parallax/Parallax.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/home/access-page/AccessPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/home/parallax/Parallax.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/news/AlidoorfNews.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/news/access-page/AccessPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/news/parallax/Parallax.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/pages/main/parallax/Parallax.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/login.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/admin/login.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/apiConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/header/AdminHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/header/AdminHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/header/AdminHeader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/header/AdminHeader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/home/AdminHome.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/login/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/Login.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/Alidoorf.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/Alidoorf.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfAbout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfAbout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfHome.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfNews.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfAbout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/about/AlidoorfAbout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/AlidoorfCatalog.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-home/AlidoorfHome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/home/AlidoorfHome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-home/AlidoorfHomeSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/home/AlidoorfHomeSlider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-news/AlidoorfNews.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/alidoorf-news/NewsItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/news/NewsItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/main/AdminMain.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/contact/Contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/contact/Contact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +80,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/Documents/Front-End/React/alidoorf/my-app/src/components&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;VAR&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/Documents/Front-End/React/alidoorf/my-app/src/pages/admin/pages/alidoorf/news&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -66,25 +89,25 @@
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\components" />
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\primeloft-page\main\news" />
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\primeloft-page\main\technogies" />
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\primeloft-page\main\about-company" />
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\primeloft-page" />
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\alidoorf\news" />
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\alidoorf\home" />
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\alidoorf\catalog" />
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\main" />
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\alidoorf\about" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\main\direction" />
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\alidoorf\about" />
+      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\alidoorf\alidoorf-catalog" />
       <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\alidoorf\alidoorf-news" />
       <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\assets\images\admin" />
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\admin\pages\alidoorf\alidoorf-home" />
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\alidoorf-page\about" />
-      <recent name="C:\Users\Acer\Documents\Front-End\React\alidoorf\my-app\src\pages\alidoorf-page\news" />
     </key>
   </component>
   <component name="RunManager">
@@ -143,7 +166,12 @@
       <workItem from="1691152641444" duration="14380000" />
       <workItem from="1691210508782" duration="15128000" />
       <workItem from="1691313829925" duration="4107000" />
-      <workItem from="1691331305810" duration="5802000" />
+      <workItem from="1691331305810" duration="5969000" />
+      <workItem from="1691399927244" duration="12740000" />
+      <workItem from="1691746867485" duration="3224000" />
+      <workItem from="1692001369532" duration="22402000" />
+      <workItem from="1692080912191" duration="19550000" />
+      <workItem from="1692116555980" duration="9252000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -257,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691174008000</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="admin">
+      <option name="closed" value="true" />
+      <created>1691343282198</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1691343282199</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +322,8 @@
     <MESSAGE value="fully completed" />
     <MESSAGE value="login" />
     <MESSAGE value="admin header and some styles completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin header and some styles completed" />
+    <MESSAGE value="admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -295,6 +332,11 @@
           <url>file://$PROJECT_DIR$/src/components/footer/Footer.jsx</url>
           <line>36</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/home/hero/ChatUs.jsx</url>
+          <line>5</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

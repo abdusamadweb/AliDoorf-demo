@@ -2,6 +2,28 @@
 
 .ali {
 
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    .item {
+      position: relative;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+
+      &__img {
+        width: 200px;
+        height: 150px;
+        margin-bottom: 1rem;
+        object-fit: cover;
+      }
+      &__txt {
+        display: block;
+      }
+    }
+  }
 }
 
 .ali-news {
@@ -48,48 +70,59 @@
         font-size: 12px;
       }
 
-      .btns {
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 99%;
-        display: flex;
-        justify-content: space-between;
-
-        .btn {
-          font-weight: 500;
-          font-size: 13px;
-          padding: 4px 10px;
-          border-radius: 12px;
-          color: #0166c9;
-          background: #fff;
-
-          &.del {
-            color: #ff0000;
-          }
-        }
-      }
     }
+  }
+}
 
-    .plus {
-      display: grid;
-      place-items: center;
-      
-      &__btn {
-        display: grid;
-        place-items: center;
-        padding: 40px;
-        border-radius: 50%;
-        color: #000;
-        background: rgba(101, 221, 222, 0.2);
+.ali-catalog {
 
-        i {
-          font-size: 28px;
+  .catalog__list {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .item {
+      position: relative;
+
+      &__link {
+        background: #f1f1f1;
+
+        .txt {
+          padding: 0;
         }
       }
     }
   }
 }
+
+.ali-about {
+
+  &__list {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    .item {
+      position: relative;
+      text-align: center;
+      padding: 1rem;
+      background: #f1f1f1;
+
+      &__img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+        object-fit: cover;
+      }
+      &__txt {
+        font-weight: 400;
+        font-size: 16px;
+      }
+
+      .form {
+        text-align: start;
+      }
+    }
+  }
+}
+
 
 .admin-modal {
   position: fixed;
@@ -105,12 +138,16 @@
   
   .form {
     position: relative;
-    width: 600px;
+    width: 700px;
     padding: 2rem;
     margin: auto;
     border-radius: 10px;
     background: #fff;
     z-index: 12;
+
+    .admin-inp {
+      width: 100%;
+    }
   }
   
   .bg {
@@ -122,3 +159,41 @@
 }
 
 
+.plus {
+  display: grid;
+  place-items: center;
+
+  &__btn {
+    display: grid;
+    place-items: center;
+    padding: 40px;
+    border-radius: 50%;
+    color: #000;
+    background: rgba(101, 221, 222, 0.2);
+
+    i {
+      font-size: 28px;
+    }
+  }
+}
+.btns {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+
+  .btn {
+    font-weight: 500;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #0166c9;
+    background: #fff;
+
+    &.del {
+      color: #ff0000;
+    }
+  }
+}
