@@ -4,47 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="fixed language">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/about-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/about-facts1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/about-facts2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/about-txts.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/catalog-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/catalog1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/catalog2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/catalog3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/catalog4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/direction1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/direction2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/direction3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/door1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/door2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/door3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/door4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/new2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/news-page.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/news1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/news3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/scroll_top.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/slider1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/slider2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/slider3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/slider4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/news/news/news-list/NewsListItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/news/news/news-list/NewsListItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/facts/AboutFacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/facts/AboutFacts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/hero/AboutMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/hero/AboutMain.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/Catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/Catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogItemId.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogItemId.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/news/hero/NewsHero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/hero/NewsHero.scss" afterDir="false" />
-    </list>
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="responsive" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,6 +136,7 @@
       <workItem from="1692512998719" duration="12016000" />
       <workItem from="1692540151871" duration="16518000" />
       <workItem from="1692599588748" duration="18685000" />
+      <workItem from="1692633364975" duration="1222000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -329,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692617592165</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="responsive">
+      <option name="closed" value="true" />
+      <created>1692634530118</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1692634530118</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,6 +331,7 @@
     <MESSAGE value="ftflyonta file added" />
     <MESSAGE value="done" />
     <MESSAGE value="fixed language" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed language" />
+    <MESSAGE value="responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="responsive" />
   </component>
 </project>
