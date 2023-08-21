@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import {getData, getPostDataUser} from "../../../api/apiResp"
+import {getData} from "../../../api/apiResp"
 import {API_TEST} from "../../../api/apiConfig"
-import door1 from '../../../assets/images/door1.png'
 import {Link, useNavigate, useParams} from "react-router-dom"
 
 const CatalogItemId = ({ lang }) => {

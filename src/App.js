@@ -68,13 +68,13 @@ function App() {
 
 
     useEffect(() => {
-        const primary = !darkMode ? result.data?.color_primary_light : result.data?.color_primary_dark
+        const primary = !darkMode ? (result.data?.color_primary_light || '#eee') : result.data?.color_primary_dark
         document.documentElement.style.setProperty('--bg-body', primary)
 
-        const secondary1 = !darkMode ? result.data?.color_secondary1_light : result.data?.color_secondary1_dark
+        const secondary1 = !darkMode ? (result.data?.color_secondary1_light || '#eee') : result.data?.color_secondary1_dark
         document.documentElement.style.setProperty('--bg-chat', secondary1)
 
-        const secondary2 = !darkMode ? result.data?.color_secondary2_light : result.data?.color_secondary2_dark
+        const secondary2 = !darkMode ? (result.data?.color_secondary2_light || '#eee') : result.data?.color_secondary2_dark
         document.documentElement.style.setProperty('--bg-chat-contact', secondary2)
     }, [darkMode, result])
 

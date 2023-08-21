@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import news1 from "../../../../../../../assets/images/news1.jpg";
 import {API_TEST} from "../../../../../../../api/apiConfig";
 import {deleteData} from "../../../../../../../api/apiResp";
 import {toast} from "react-hot-toast";

@@ -98,9 +98,9 @@ const AboutMain = ({ lang }) => {
 
             <div className={`modal grid grid-center ${popupModal ? 'active' : ''}`}>
                 <form className={`form ${popupModal ? 'active' : ''}`} onSubmit={postForm}>
-                    <button className='form__close' onClick={() => setPopupModal(false)}>
+                    <span className='form__close no-copy' onClick={() => setPopupModal(false)}>
                         <i className="fa-solid fa-x icon"/>
-                    </button>
+                    </span>
                     <span className='form__title'>{ result.data?.ali_about_hero_btn || '...' }</span>
                     {
                         result.data?.form_access_name === 'true' &&

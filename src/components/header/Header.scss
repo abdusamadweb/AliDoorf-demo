@@ -33,17 +33,6 @@
     @include mobile {
       display: none;
     }
-
-    &.catalog-bg {
-      background-image: url('../../assets/images/catalog-bg.jpg');
-    }
-    &.news-bg {
-      background-image: url('../../assets/images/news-page.jpg');
-    }
-    &.about-bg {
-      background-image: url('../../assets/images/about-bg.jpg');
-      background-position: -200px center;
-    }
     
     .bg-shadow {
       position: absolute;
@@ -283,25 +272,11 @@
     position: relative;
     flex: 1;
     padding-inline: 8px;
+    border-inline: 1px solid var(--bor-header-inner);
 
     @include tablet {
       padding-inline: 2px;
       padding-bottom: 2rem;
-    }
-
-    &::before, &::after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 1px;
-      height: 100%;
-      content: '';
-      background: var(--bor-header-inner);
-      mix-blend-mode: exclusion;
-    }
-    &::after {
-      left: unset;
-      right: 0;
     }
 
     .horizontal-title {
@@ -362,22 +337,12 @@
     position: relative;
     flex: 1;
     width: $header-slider-width;
+    border-right: 1px solid var(--bor-header-inner);
     overflow: hidden;
 
     @include tablet {
       width: $header-slider-width-tablet;
       display: none;
-    }
-
-    &::before {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 1px;
-      height: 100%;
-      content: '';
-      background: var(--bor-header-inner);
-      mix-blend-mode: exclusion;
     }
 
     .txts {
@@ -568,6 +533,7 @@
 
         @include mobile {
           top: 54%;
+          z-index: 1;
         }
 
         &__btn {

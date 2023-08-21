@@ -36,6 +36,7 @@
       }
       @include breakpoint-down(700px) {
         grid-template-columns: 1fr;
+        gap: 1rem;
       }
 
       .item {

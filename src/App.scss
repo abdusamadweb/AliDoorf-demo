@@ -146,6 +146,7 @@ body {
   .title {
     font-weight: 400;
     font-size: 35px;
+    margin-right: 10px;
     color: var(--cl-txt-white);
 
     @include breakpoint-down(750px) {
