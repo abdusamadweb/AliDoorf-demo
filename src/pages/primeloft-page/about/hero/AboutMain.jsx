@@ -1,4 +1,3 @@
-import './AboutMain.scss'
 import React, {useState} from 'react'
 
 const AboutMain = () => {

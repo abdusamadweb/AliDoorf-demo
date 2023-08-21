@@ -77,3 +77,101 @@ export const getData = (url) => {
             return err
         })
 }
+
+export const deleteData = (url) => {
+    return $resp
+        .delete(url)
+        .then(res => {
+            return res.data
+        })
+        .catch(err => {
+            if (!err?.response) {
+                toast.error('No Server Response')
+            } else if (err?.response.status === 403) {
+                localStorage.removeItem('token')
+                document.location.replace('/admin/login')
+            } else {
+                err.response.data.errors.map(i => (
+                    toast.error(i.errorMsg)
+                ))
+            }
+            return err
+        })
+}
+
+// img
+export const postAttachment = (url, files) => {
+    const toastId = toast.loading('Uploading . . .')
+
+    const file = files[0]
+    const formData = new FormData()
+    formData.append('file', file)
+
+    return $resp
+        .post(url, formData, {
+            headers: {
+                "Content-type": "multipart/form-data",
+            }
+        })
+        .then(res => {
+            toast.success('Uploaded !', {
+                id: toastId
+            })
+            setTimeout(() => toast.dismiss(toastId), 2000)
+
+            return res.data
+        })
+        .catch(err => {
+            if (!err?.response) {
+                toast.error('No Server Response')
+            } else if (err?.response.status === 403) {
+                localStorage.removeItem('token')
+                document.location.replace('/admin/login')
+            } else {
+                err.response.data.errors.map(i => (
+                    toast.error(i.errorMsg)
+                ))
+            }
+            toast.error('File didnt upload !', {
+                id: toastId
+            })
+            setTimeout(() => toast.dismiss(toastId), 2000)
+
+            return err
+        })
+}
+
+
+export const header = (lang) => {
+    return {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem('token'),
+        Lang: lang
+    }
+}
+export const $respUser = axios.create({
+    baseURL: API_TEST
+})
+
+export const getPostDataUser = (url, data, lang) => {
+    return $respUser
+        .post(url, data, {
+            headers: header(lang)
+        })
+        .then(res => {
+            return res.data
+        })
+        .catch(err => {
+            if (!err?.response) {
+                toast.error('No Server Response')
+            } else if (err?.response.status === 403) {
+                localStorage.removeItem('token')
+                document.location.replace('/admin/login')
+            } else {
+                err.response.data.errors.map(i => (
+                    toast.error(i.errorMsg)
+                ))
+            }
+            return err
+        })
+}

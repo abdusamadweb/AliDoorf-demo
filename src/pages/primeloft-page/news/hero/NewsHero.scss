@@ -9,6 +9,11 @@
     background-position: -200px center;
     background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    @include mobile {
+      background-position: center;
+    }
 
     &.page {
       padding-top: calc(35vh + 1rem);

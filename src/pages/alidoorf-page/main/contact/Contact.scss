@@ -18,6 +18,10 @@
       width: 30%;
       background: var(--cl-txt-white);
     }
+
+    .title {
+      text-transform: capitalize;
+    }
   }
 
   &__body {
@@ -35,7 +39,10 @@
         margin-bottom: 2rem;
 
         .icon {
+          width: 18px;
+          height: 18px;
           font-size: 18px;
+          padding-right: 1rem;
           margin-right: 1rem;
           color: var(--cl-txt-white);
         }

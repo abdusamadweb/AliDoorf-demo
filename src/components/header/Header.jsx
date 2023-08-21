@@ -3,8 +3,11 @@ import React, {useEffect, useState} from 'react';
 import ScrollTop from "../../assets/icons/ScrollTop";
 import {Link, useLocation} from "react-router-dom";
 import HeaderNav from "./HeaderNav";
+import {getPostData} from "../../api/apiResp";
+import {API_TEST} from "../../api/apiConfig";
 
 const Header = ({darkMode, setDarkMode, lang, setLang}) => {
+
 
     const location = useLocation()
 
@@ -64,116 +67,82 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
     }, [lastScrollY])
 
 
+    // data
+    const [result, setResult] = useState([])
+    const arr = [
+        'logo',
+
+        'header_menu',
+        'header_catalog',
+        'header_route_home',
+        'header_route_catalog',
+        'header_route_news',
+        'header_route_about',
+        'header_route_contact',
+
+        'menu_contact',
+        'menu_address',
+        'menu_bg_txt',
+        'footer_flw_txt',
+
+        'global_phone',
+        'global_email',
+        'global_address',
+
+        'main_page_parallax',
+        'ali_home_parallax',
+        'ali_about_parallax',
+        'ali_news_parallax',
+        'ali_catalog_parallax',
+        'contact_page_parallax',
+
+        'color_primary_light',
+        'color_primary_dark',
+
+        'ali_catalog_hero_img'
+    ]
+    useEffect(() => {
+        const get = async () => {
+            const res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
+            setResult(res)
+        }
+        get()
+    }, [])
+
+
+    // get img
+    const logoImg = API_TEST + 'api/alidoorf/v1/attachment/get/' + result.data?.logo || null
+
+
+    const catalogImg = API_TEST + 'api/alidoorf/v1/attachment/get/' + result?.data?.ali_catalog_hero_img
+
+
     return (
-        <>
-            {
-                !location.pathname.includes('/admin') &&
-                <div className='header'>
-                    <div className={`header__inner ${location.pathname.includes('/catalog') ? 'catalog-bg' : ''}`}>
-                        {
-                            location.pathname === '/catalog' &&
-                            <div className='bg-shadow'/>
-                        }
-                        <div className='row'>
-                            <div className='header__main row flex-column between align-center px2 pt1 pb3'>
-                                <Link className='logo' to='/'>
-                                    <h1 className='txt fz16'>AliDoorf</h1>
-                                </Link>
-                                <div className='dark-light'>
-                                    {
-                                        !darkMode ?
-                                            <button className='btn dark-btn' onClick={() => setDarkMode(true)}>
-                                                <i className="fa-regular fa-moon icon"/>
-                                            </button>
-                                            :
-                                            <button className='btn light-btn' onClick={() => setDarkMode(false)}>
-                                                <i className="fa-regular fa-sun icon"/>
-                                            </button>
-                                    }
-                                </div>
-                                <ul className='socical row flex-column align-center'>
-                                    <li className='item'>
-                                        <a className='item__link' href="https://instagram.com/alidoorf" target='_blank'>
-                                            <i className="fa-brands fa-instagram icon"/>
-                                            <span className='name'>instagram</span>
-                                        </a>
-                                    </li>
-                                    <li className='item'>
-                                        <a className='item__link' href="https://t.me/alidoorfuz" target='_blank'>
-                                            <i className="fa-brands fa-telegram icon"/>
-                                            <span className='name'>telegram</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="header__sc row flex-column between align-center pt1 pb3">
-                                <h2 className='horizontal-title fw300 fz14'>
-                                    {
-                                        location.pathname.includes('/about') ? 'О компании'
-                                            : location.pathname.includes('/news') ? 'Новости'
-                                                : location.pathname.includes('/catalog') ? 'Каталог'
-                                                    : location.pathname.includes('/contacts') ? 'Контакты'
-                                                        : 'Главная'
-                                    }
-                                </h2>
-                                <div className='navs'>
-                                    <button
-                                        className='open-nav-btn'
-                                        onClick={() => setOpenNav(prev => !prev)}
-                                        onMouseMoveCapture={(e) => handleMouseMove(e)}
-                                        onMouseLeave={() => setMousePosition({left: 0, top: 0})}
-                                        style={{transform: `translate(${mousePosition.left * 2.125}px, ${mousePosition.top * 2.125}px)`}}
-                                    >
-                                <span
-                                    className='circle'
-                                    onMouseMoveCapture={(e) => handleMouseMove(e)}
-                                    onMouseLeave={() => setMousePosition({left: 0, top: 0})}
-                                    style={{transform: `translate(${mousePosition.left * 4.125}px, ${mousePosition.top * 4.125}px)`}}
+        !location.pathname.includes('/admin') &&
+        <div className='header'>
+            <div className='header__inner' style={{backgroundImage: location.pathname.includes('/catalog') && `url(${catalogImg})`}}>
+                {
+                    location.pathname === '/catalog' &&
+                    <div className='bg-shadow'/>
+                }
+                <div className='row'>
+                    <div className='header__main pt1 pb3'>
+                        <Link className='logo' to='/'>
+                            {
+                                logoImg !== null ?
+                                <img
+                                    className='img'
+                                    style={{filter: darkMode ? 'invert(1)' : 'none'}}
+                                    src={logoImg}
+                                    alt="site-logo"
                                 />
-                                        <div className={`sticks ${openNav ? 'active' : ''}`}>
-                                            <div className="row between">
-                                                <span className='stick stick1'/>
-                                                <span className='stick stick2'/>
-                                            </div>
-                                            <span className='stick stick3'/>
-                                        </div>
-                                        <span className='txt fw500 fz14'>Меню</span>
-                                    </button>
-                                    <HeaderNav
-                                        openNav={openNav}
-                                        setOpenNav={setOpenNav}
-                                        lang={lang}
-                                        setLang={setLang}
-                                    />
-                                </div>
-                                <div className='scrolls'>
-                                    <Link className='scrolls__link fz14 mb2' to='/alidoorf/catalog'>каталог</Link>
-                                    <div className='scroll'>
-                                        <ScrollTop/>
-                                        <span className='scroll__count'>{scrollCount}%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='header__slider'>
-                            <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
-                                <span className='txt'>alidoorf</span>
-                                <span className='txt txt-stroke'>primeloft</span>
-                                <span className='txt'>alidoorf</span>
-                                <span className='txt txt-stroke'>primeloft</span>
-                                <span className='txt'>alidoorf</span>
-                                <span className='txt txt-stroke'>primeloft</span>
-                                <span className='txt'>alidoorf</span>
-                                <span className='txt txt-stroke'>primeloft</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`header__wrapper ${show && !openNav ? 'hide' : ''} between align-center px2 py1`}>
-                        <div className='row align-center'>
-                            <Link className='logo mr2' to='/'>
-                                <h1 className='txt'>Alidoorf</h1>
-                            </Link>
-                            <div className="dark-light">
+                                :
+                                <h1 className='txt fz16'>AliDoorf</h1>
+                            }
+                        </Link>
+                        <div className='for-padd row flex-column between align-center px3 pb1'>
+                            <span/>
+                            <div className='dark-light'>
                                 {
                                     !darkMode ?
                                         <button className='btn dark-btn' onClick={() => setDarkMode(true)}>
@@ -185,38 +154,177 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                                         </button>
                                 }
                             </div>
+                            <ul className='socical row flex-column align-center'>
+                                <li className='item'>
+                                    <a className='item__link' href="https://instagram.com/alidoorf" target='_blank'>
+                                        <i className="fa-brands fa-instagram icon"/>
+                                        <span className='name'>instagram</span>
+                                    </a>
+                                </li>
+                                <li className='item'>
+                                    <a className='item__link' href="https://t.me/alidoorfuz" target='_blank'>
+                                        <i className="fa-brands fa-telegram icon"/>
+                                        <span className='name'>telegram</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                        <div className="row align-center">
-                            <Link className='link mr2' to='/alidoorf/catalog'>каталог</Link>
-                            <div className='navs'>
-                                <button
-                                    className='open-nav-btn'
-                                    onClick={() => setOpenNav(prev => !prev)}
+                    </div>
+                    <div className="header__sc row flex-column between align-center pt1 pb3">
+                        <h2 className='horizontal-title fw300 fz14'>
+                            {
+                                location.pathname.includes('/about') ? result.data?.header_route_about || 'About'
+                                    : location.pathname.includes('/news') ? result.data?.header_route_news || 'News'
+                                        : location.pathname.includes('/catalog') ? result.data?.header_route_catalog || 'Catalog'
+                                            : location.pathname.includes('/contacts') ? result.data?.header_route_contact || 'Contacts'
+                                                : result.data?.header_route_home || 'Home'
+                            }
+                        </h2>
+                        <div className='navs'>
+                            <button
+                                className='open-nav-btn'
+                                onClick={() => setOpenNav(prev => !prev)}
+                                onMouseMoveCapture={(e) => handleMouseMove(e)}
+                                onMouseLeave={() => setMousePosition({left: 0, top: 0})}
+                                style={{transform: `translate(${mousePosition.left * 2.125}px, ${mousePosition.top * 2.125}px)`}}
+                            >
+                                <span
+                                    className='circle'
                                     onMouseMoveCapture={(e) => handleMouseMove(e)}
                                     onMouseLeave={() => setMousePosition({left: 0, top: 0})}
                                     style={{transform: `translate(${mousePosition.left * 4.125}px, ${mousePosition.top * 4.125}px)`}}
-                                >
-                                    <div className={`sticks ${openNav ? 'active' : ''}`}>
-                                        <div className="row between">
-                                            <span className='stick stick1'/>
-                                            <span className='stick stick2'/>
-                                        </div>
-                                        <span className='stick stick3'/>
-                                    </div>
-                                    <span className='txt fw500 fz14'>Меню</span>
-                                </button>
-                                <HeaderNav
-                                    openNav={openNav}
-                                    setOpenNav={setOpenNav}
-                                    lang={lang}
-                                    setLang={setLang}
                                 />
+                                <div className={`sticks ${openNav ? 'active' : ''}`}>
+                                    <div className="row between">
+                                        <span className='stick stick1'/>
+                                        <span className='stick stick2'/>
+                                    </div>
+                                    <span className='stick stick3'/>
+                                </div>
+                                <span className='txt fw500 fz14'>{result.data?.header_menu || 'Menu'}</span>
+                            </button>
+                            <HeaderNav
+                                openNav={openNav}
+                                setOpenNav={setOpenNav}
+                                lang={lang}
+                                setLang={setLang}
+                                result={result}
+                            />
+                        </div>
+                        <div className='scrolls'>
+                            <Link className='scrolls__link fz14 mb2'
+                                  to='/alidoorf/catalog'>{result.data?.header_catalog || 'catalog'}</Link>
+                            <div className='scroll'>
+                                <ScrollTop/>
+                                <span className='scroll__count'>{scrollCount}%</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            }
-        </>
+                <div className='header__slider'>
+                    {
+                        location.pathname.includes('/about') ?
+                            <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
+                                {[...Array(8)].map((_, index) => (
+                                    <React.Fragment key={index}>
+                                        <span className='txt'>{result.data?.ali_about_parallax || 'About company'}</span>
+                                        <span className='txt txt-stroke'>{result.data?.ali_about_parallax || 'About company'}</span>
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                            : location.pathname.includes('/news') ?
+                                <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
+                                    {[...Array(8)].map((_, index) => (
+                                        <React.Fragment key={index}>
+                                            <span className='txt'>{ result.data?.ali_news_parallax || 'News' }</span>
+                                            <span className='txt txt-stroke'>{ result.data?.ali_news_parallax || 'News' }</span>
+                                        </React.Fragment>
+                                    ))}
+                                </div>
+                                : location.pathname.includes('/catalog') ?
+                                    <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
+                                        {[...Array(8)].map((_, index) => (
+                                            <React.Fragment key={index}>
+                                                <span className='txt'>{ result.data?.ali_catalog_parallax || 'Catalog' }</span>
+                                                <span className='txt txt-stroke'>{ result.data?.ali_catalog_parallax || 'Catalog' }</span>
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                    : location.pathname.includes('/contacts') ?
+                                        <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
+                                            {[...Array(8)].map((_, index) => (
+                                                <React.Fragment key={index}>
+                                                    <span className='txt'>{ result.data?.contact_page_parallax || 'Contacts' }</span>
+                                                    <span className='txt txt-stroke'>{ result.data?.contact_page_parallax || 'Contacts' }</span>
+                                                </React.Fragment>
+                                            ))}
+                                        </div>
+                                        :
+                                        <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
+                                            {[...Array(8)].map((_, index) => (
+                                                <React.Fragment key={index}>
+                                                    <span className='txt'>{ result.data?.main_page_parallax || 'Alidoorf' }</span>
+                                                    <span className='txt txt-stroke'>{ result.data?.main_page_parallax || 'Primeloft' }</span>
+                                                </React.Fragment>
+                                            ))}
+                                        </div>
+                    }
+                </div>
+            </div>
+            <div className={`header__wrapper ${show && !openNav ? 'hide' : ''} between align-center px2 py1`}>
+                <div className='row align-center' style={{flex: 1}}>
+                    <Link className='logo mr2' to='/'>
+                        {
+                            logoImg !== null ?
+                                <img className='img' src={logoImg} alt="site-logo"/>
+                                :
+                                <h1 className='txt fz16'>AliDoorf</h1>
+                        }
+                    </Link>
+                    <div className="dark-light">
+                        {
+                            !darkMode ?
+                                <button className='btn dark-btn' onClick={() => setDarkMode(true)}>
+                                    <i className="fa-regular fa-moon icon"/>
+                                </button>
+                                :
+                                <button className='btn light-btn' onClick={() => setDarkMode(false)}>
+                                    <i className="fa-regular fa-sun icon"/>
+                                </button>
+                        }
+                    </div>
+                </div>
+                <div className="row align-center">
+                    <Link className='link mr2'
+                          to='/alidoorf/catalog'>{result.data?.header_catalog || 'catalog'}</Link>
+                    <div className='navs'>
+                        <button
+                            className='open-nav-btn'
+                            onClick={() => setOpenNav(prev => !prev)}
+                            onMouseMoveCapture={(e) => handleMouseMove(e)}
+                            onMouseLeave={() => setMousePosition({left: 0, top: 0})}
+                            style={{transform: `translate(${mousePosition.left * 4.125}px, ${mousePosition.top * 4.125}px)`}}
+                        >
+                            <div className={`sticks ${openNav ? 'active' : ''}`}>
+                                <div className="row between">
+                                    <span className='stick stick1'/>
+                                    <span className='stick stick2'/>
+                                </div>
+                                <span className='stick stick3'/>
+                            </div>
+                            <span className='txt fw500 fz14'>{result.data?.header_menu || 'Menu'}</span>
+                        </button>
+                        <HeaderNav
+                            openNav={openNav}
+                            setOpenNav={setOpenNav}
+                            lang={lang}
+                            setLang={setLang}
+                            result={result}
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 

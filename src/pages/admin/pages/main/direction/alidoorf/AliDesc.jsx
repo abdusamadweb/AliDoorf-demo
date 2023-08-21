@@ -9,8 +9,7 @@ const AliDesc = () => {
     const arr = 'main_direction_ali_desc'
     useEffect(() => {
         const get = async () => {
-            let res = null
-            res = await getPostData('/api/alidoorf/v1/content/data-graph', [arr])
+            const res = await getPostData('/api/alidoorf/v1/content/data-graph', [arr])
             setResult(res)
         }
         get()

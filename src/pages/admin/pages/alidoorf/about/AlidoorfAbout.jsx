@@ -1,6 +1,6 @@
 import '../Alidoorf.scss'
 import React, {useState} from 'react'
-import AboutItem from "./AboutItem";
+import FactsItem from "./facts/FactsItem";
 import AboutHero from "./hero/AboutHero";
 import AboutHeroStaticText from "./hero/AboutHeroStaticText";
 import AboutHeroBtn from "./hero/AboutHeroBtn";
@@ -8,10 +8,13 @@ import DoorsTitles from "./doors/DoorsTitles";
 import DoorsImgTexts from "./doors/DoorsImgTexts";
 import Parallax from "./parallax/Parallax";
 import AccessPage from "./access-page/AccessPage";
+import AboutFacts from "./facts/AboutFacts";
+import AboutHeroImg from "./hero/AboutHeroImg";
+import DoorsImg from "./doors/DoorsImg";
+import FactsList from "./facts/FactsList";
+import AboutHeroAnimationText from "./hero/AboutHeroAnimationText";
 
 const AlidoorfAbout = () => {
-
-    const [modal, setModal] = useState(false)
 
     return (
         <div className='ali-about admin-main admin-page'>
@@ -25,33 +28,11 @@ const AlidoorfAbout = () => {
                 <div className='admin-main__subtitle fw500 fz20 mb2'>Hero section texts:</div>
                 <AboutHero />
 
+                <AboutHeroImg />
+
                 <div>
                     <AboutHeroStaticText />
-                    <form className='form'>
-                        <span className='title fw500 fz18 mb1'>Animation texts (with ','):</span>
-                        <label>
-                            <span className='txt'>Ru</span>
-                            <textarea
-                                className='admin-inp'
-                                placeholder='Texts ru . . .'
-                            />
-                        </label>
-                        <label>
-                            <span className='txt'>En</span>
-                            <textarea
-                                className='admin-inp'
-                                placeholder='Texts en . . .'
-                            />
-                        </label>
-                        <label>
-                            <span className='txt'>Uz</span>
-                            <textarea
-                                className='admin-inp'
-                                placeholder='Texts uz . . .'
-                            />
-                        </label>
-                        <button className='admin-btn'>Submit</button>
-                    </form>
+                    <AboutHeroAnimationText />
                 </div>
 
                 <AboutHeroBtn />
@@ -61,16 +42,7 @@ const AlidoorfAbout = () => {
                 <div className='admin-main__subtitle fw500 fz20 mb2'>Doors section texts:</div>
                 <div>
                     <DoorsTitles />
-                    <form className='form'>
-                        <span className='title fw500 fz18 mb1'>Image:</span>
-                        <label>
-                            <input
-                                className='admin-inp'
-                                type="file"
-                            />
-                        </label>
-                        <button className='admin-btn'>Submit</button>
-                    </form>
+                    <DoorsImg />
                 </div>
 
                 <DoorsImgTexts />
@@ -78,63 +50,10 @@ const AlidoorfAbout = () => {
 
             <div>
                 <div className='admin-main__subtitle fw500 fz20 mb2'>Facts section texts:</div>
-                <ul className='ali-about__list grid'>
-                    <li className="item item__link plus grid grid-center">
-                        <button className='plus__btn' onClick={() => setModal(true)}>
-                            <i className="fa-solid fa-plus"/>
-                        </button>
-                    </li>
-                    <AboutItem />
-                    <AboutItem />
-                </ul>
-            </div>
+                <AboutFacts />
 
-            <>
-                {
-                    modal &&
-                    <div className='admin-modal'>
-                        <form className="form">
-                            <span className='title d-block center fw500 fz22 mb2'>Add</span>
-                            <label>
-                                <span className='title d-block fw500 fz18 mb1'>Image:</span>
-                                <input
-                                    className='admin-inp'
-                                    type="file"
-                                />
-                            </label>
-                            <div>
-                                <span className='title fw500 fz18 mb1'>Title:</span>
-                                <label>
-                                    <span className='txt'>Ru:</span>
-                                    <input
-                                        className='admin-inp'
-                                        type="text"
-                                        placeholder='Title . . .'
-                                    />
-                                </label>
-                                <label>
-                                    <span className='txt'>En:</span>
-                                    <input
-                                        className='admin-inp'
-                                        type="text"
-                                        placeholder='Title . . .'
-                                    />
-                                </label>
-                                <label>
-                                    <span className='txt'>Uz:</span>
-                                    <input
-                                        className='admin-inp'
-                                        type="text"
-                                        placeholder='Title . . .'
-                                    />
-                                </label>
-                            </div>
-                            <button className='admin-btn'>Submit</button>
-                        </form>
-                        <div className="bg" onClick={() => setModal(false)}/>
-                    </div>
-                }
-            </>
+                <FactsList />
+            </div>
         </div>
     )
 }

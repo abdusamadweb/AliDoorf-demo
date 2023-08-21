@@ -74,6 +74,7 @@ const AdminFooter = () => {
                 setValueUz={setDescUz}
                 formTitle={'Description'}
                 setEffect={setEffect}
+                textarea={true}
                 one={false}
             />
 

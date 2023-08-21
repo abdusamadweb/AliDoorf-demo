@@ -1,23 +1,47 @@
 import './Tech.scss'
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import slider1 from '../../../../assets/images/slider1.jpg'
-import slider2 from '../../../../assets/images/slider2.jpg'
-import slider3 from '../../../../assets/images/slider3.jpg'
-import slider4 from '../../../../assets/images/slider4.jpg'
+import React, {useEffect, useState} from 'react'
+import {Swiper, SwiperSlide} from 'swiper/react'
 
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/pagination'
 import {Navigation, Pagination} from "swiper/modules";
+import {getData, getPostDataUser} from "../../../../api/apiResp";
+import {API_TEST} from "../../../../api/apiConfig";
 
-const Tech = () => {
+const Tech = ({ lang }) => {
+
+    const [result, setResult] = useState([])
+    const arr = [
+        'ali_tech_sub',
+        'ali_tech_tit',
+    ]
+    useEffect(() => {
+        const get = async () => {
+            const res = await getPostDataUser('/api/alidoorf/v1/content/data-graph', arr, lang)
+            setResult(res)
+        }
+        get()
+    }, [lang])
+
+
+    // get data
+    const [list, setList] = useState([])
+    useEffect(() => {
+        const get = async () => {
+            const res = await getData(`/api/alidoorf/v1/technology?page=0&size=20`)
+            setList(res)
+        }
+        get()
+    }, [])
+
+
     return (
         <div className='tech page bg-cl pt2'>
             <div className="container">
                 <div className="titles">
-                    <span className='subtitle'>ТЕХНОЛОГИИ</span>
-                    <h2 className="title">Системы открывания</h2>
+                    <span className='subtitle'>{ result.data?.ali_tech_sub || '...' }</span>
+                    <h2 className="title">{ result.data?.ali_tech_tit || '...' }</h2>
                 </div>
                 <div className="slider no-copy">
                     <Swiper
@@ -43,38 +67,16 @@ const Tech = () => {
                         modules={[Pagination, Navigation]}
                         className="swiper"
                     >
-                        <SwiperSlide>
-                            <img className='slider__img' src={slider1} alt="img"/>
-                            <h4 className='slider__txt'>Секрет</h4>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img className='slider__img' src={slider2} alt="img"/>
-                            <h4 className='slider__txt'>Компланарный Моноблок</h4>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img className='slider__img' src={slider3} alt="img"/>
-                            <h4 className='slider__txt'>Рото</h4>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img className='slider__img' src={slider4} alt="img"/>
-                            <h4 className='slider__txt'>Барня</h4>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img className='slider__img' src={slider1} alt="img"/>
-                            <h4 className='slider__txt'>Секрет</h4>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img className='slider__img' src={slider2} alt="img"/>
-                            <h4 className='slider__txt'>Компланарный Моноблок</h4>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img className='slider__img' src={slider3} alt="img"/>
-                            <h4 className='slider__txt'>Рото</h4>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img className='slider__img' src={slider4} alt="img"/>
-                            <h4 className='slider__txt'>Барня</h4>
-                        </SwiperSlide>
+                        {
+                            list?.data?.map(i => (
+                                <div>
+                                    <SwiperSlide key={i.attachmentId}>
+                                        <img className='slider__img' src={API_TEST + 'api/alidoorf/v1/attachment/get/' + i.attachmentId || null} alt="img"/>
+                                        <h4 className='slider__txt'>{ i.title }</h4>
+                                    </SwiperSlide>
+                                </div>
+                            ))
+                        }
                     </Swiper>
                 </div>
             </div>

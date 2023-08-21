@@ -1,4 +1,4 @@
-import './AboutFacts.scss'
+
 import React from 'react'
 import factsImg1 from '../../../../assets/images/about-facts1.png'
 import factsImg2 from '../../../../assets/images/about-facts2.png'

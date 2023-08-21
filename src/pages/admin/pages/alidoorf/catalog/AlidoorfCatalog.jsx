@@ -1,13 +1,12 @@
 import '../Alidoorf.scss'
-import React, {useState} from 'react'
-import CatalogItem from "./CatalogItem";
+import React from 'react'
 import CatalogTitle from "./home/CatalogTitle";
 import Parallax from "./parallax/Parallax";
 import AccessPage from "./access-page/AccessPage";
+import CatalogImg from "./home/CatalogImg";
+import CatalogList from "./list/CatalogList";
 
 const AlidoorfCatalog = () => {
-
-    const [modal, setModal] = useState(false)
 
     return (
         <div className='ali-catalog catalog admin-main admin-page'>
@@ -17,63 +16,14 @@ const AlidoorfCatalog = () => {
             </div>
             <Parallax />
 
-            <CatalogTitle />
+            <div>
+                <CatalogTitle />
+                <CatalogImg />
+            </div>
 
-            <ul className='catalog__list grid'>
-                <li className="item item__link plus grid grid-center">
-                    <button className='plus__btn' onClick={() => setModal(true)}>
-                        <i className="fa-solid fa-plus"/>
-                    </button>
-                </li>
-                <CatalogItem />
-            </ul>
-
-            <>
-                {
-                    modal &&
-                    <div className='admin-modal'>
-                        <form className="form">
-                            <span className='title d-block center fw500 fz22 mb2'>Add</span>
-                            <label>
-                                <span className='title d-block fw500 fz18 mb1'>Image:</span>
-                                <input
-                                    className='admin-inp'
-                                    type="file"
-                                />
-                            </label>
-                            <div>
-                                <span className='title fw500 fz18 mb1'>Title:</span>
-                                <label>
-                                    <span className='txt'>Ru:</span>
-                                    <input
-                                        className='admin-inp'
-                                        type="text"
-                                        placeholder='Title . . .'
-                                    />
-                                </label>
-                                <label>
-                                    <span className='txt'>En:</span>
-                                    <input
-                                        className='admin-inp'
-                                        type="text"
-                                        placeholder='Title . . .'
-                                    />
-                                </label>
-                                <label>
-                                    <span className='txt'>Uz:</span>
-                                    <input
-                                        className='admin-inp'
-                                        type="text"
-                                        placeholder='Title . . .'
-                                    />
-                                </label>
-                            </div>
-                            <button className='admin-btn'>Submit</button>
-                        </form>
-                        <div className="bg" onClick={() => setModal(false)}/>
-                    </div>
-                }
-            </>
+            <div>
+                <CatalogList />
+            </div>
         </div>
     )
 }

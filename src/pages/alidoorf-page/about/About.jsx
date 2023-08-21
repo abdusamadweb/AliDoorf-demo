@@ -5,14 +5,14 @@ import AboutFacts from "./facts/AboutFacts";
 import Contact from "../main/contact/Contact";
 import Instagram from "./instagram/Instagram";
 
-const About = () => {
+const About = ({ lang }) => {
     return (
         <div className='about-page'>
-            <AboutMain />
-            <AboutTexts />
-            <AboutFacts />
-            <Instagram />
-            <Contact />
+            <AboutMain lang={lang} />
+            <AboutTexts lang={lang} />
+            <AboutFacts lang={lang} />
+            <Instagram lang={lang} />
+            <Contact lang={lang} />
         </div>
     )
 }

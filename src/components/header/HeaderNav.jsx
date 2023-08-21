@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link, NavLink} from "react-router-dom"
 import insta from '../../assets/images/intagram.png'
 import tg from '../../assets/images/telegram.png'
@@ -6,47 +6,11 @@ import youtube from '../../assets/images/youtube.png'
 import ru from '../../assets/images/lang-ru.png'
 import en from '../../assets/images/lang-en.jpg'
 import uz from '../../assets/images/lang-uz.jpg'
+import {formatPhone} from "../../assets/scripts/global";
+import {getData} from "../../api/apiResp";
 
-const HeaderNav = ({openNav, setOpenNav, lang, setLang}) => {
+const HeaderNav = ({ openNav, setOpenNav, lang, setLang, result }) => {
 
-    const nav = {
-        alidoorf: [
-            {
-                title: 'Каталог',
-                link: '/alidoorf/catalog'
-            },
-            {
-                title: 'О компании',
-                link: '/alidoorf/about'
-            },
-            {
-                title: 'Новости',
-                link: '/alidoorf/news'
-            },
-            {
-                title: 'Полезное',
-                link: '/contacts'
-            },
-        ],
-        primeloft: [
-            {
-                title: 'Каталог',
-                link: '/primeloft/catalog'
-            },
-            {
-                title: 'О компании',
-                link: '/primeloft/about'
-            },
-            {
-                title: 'Новости',
-                link: '/primeloft/news'
-            },
-            {
-                title: 'Полезное',
-                link: '/contacts'
-            },
-        ]
-    }
 
     const langs = [
         {
@@ -63,17 +27,38 @@ const HeaderNav = ({openNav, setOpenNav, lang, setLang}) => {
         }
     ]
 
+
+    // get data
+    const [result1, setResult1] = useState([])
+    useEffect(() => {
+        const get = async () => {
+            const res = await getData(`/api/alidoorf/v1/menu?type=alidoorf`)
+            setResult1(res)
+        }
+        get()
+    }, [])
+
+    const [result2, setResult2] = useState([])
+    useEffect(() => {
+        const get = async () => {
+            const res = await getData(`/api/alidoorf/v1/menu?type=primeloft`)
+            setResult2(res)
+        }
+        get()
+    }, [])
+
+
     return (
         <div className={`navs__modal grid grid-center ${openNav ? 'active' : ''}`}>
             <div className='content grid grid-center'>
                 <div className='lang center-absolute'>
                     {
-                        langs.map(i => (
+                        langs.map((i, index) => (
                             i.txt !== lang &&
                             <button
                                 className='lang__btn'
                                 onClick={() => setLang(i.txt)}
-                                key={i.txt}
+                                key={index}
                             >
                                 <img className='img' src={i.img} alt={i.txt}/>
                                 <span className='txt'>{ i.txt }</span>
@@ -81,14 +66,19 @@ const HeaderNav = ({openNav, setOpenNav, lang, setLang}) => {
                         ))
                     }
                 </div>
+
                 <nav className='nav grid'>
                     <div className='nav__titles'>
                         <h2 className='title'>Alidoorf</h2>
                         <ul className='list row flex-column'>
                             {
-                                nav.alidoorf.map(i => (
-                                    <li className='item' key={i.title} onClick={() => setOpenNav(false)}>
-                                        <NavLink className='item__link' to={i.link}>{i.title}</NavLink>
+                                result1?.data?.map((i, index) => (
+                                    <li
+                                        className='item'
+                                        key={index}
+                                        onClick={() => setOpenNav(false)}
+                                    >
+                                        <NavLink className='item__link' to={i.link}>{i.name}</NavLink>
                                     </li>
                                 ))
                             }
@@ -101,31 +91,38 @@ const HeaderNav = ({openNav, setOpenNav, lang, setLang}) => {
                         <h2 className='title title2'>Primeloft</h2>
                         <ul className='list row flex-column'>
                             {
-                                nav.primeloft.map(i => (
-                                    <li className='item' key={i.title} onClick={() => setOpenNav(false)}>
-                                        <NavLink className='item__link' to={i.link}>{i.title}</NavLink>
+                                result2?.data?.map((i, index) => (
+                                    <li
+                                        className='item'
+                                        key={index}
+                                        onClick={() => setOpenNav(false)}
+                                    >
+                                        <NavLink className='item__link' to={i.link}>{i.name}</NavLink>
                                     </li>
                                 ))
                             }
                         </ul>
                     </div>
                 </nav>
+
                 <div className='contact'>
                     <div className='contact__titles'>
-                        <span className='title'>Контакты:</span>
+                        <span className='title'>{ result.data?.menu_contact || '...' }:</span>
                         <div className="row align-center">
-                            <a className='mail tel' href='tel:+998902221212'>+998 90 222 12 12</a>
-                            <a className='mail' href='mailto:hello@alidoorf.uz'>hello@alidoorf.uz</a>
+                            <a className='mail tel' href={`tel: ${result.data?.global_phone || '+998'}`}>
+                                { formatPhone(result.data?.global_phone || '+998') }
+                            </a>
+                            <a className='mail' href={`mailto: ${result.data?.global_address || '...'}`}>
+                                { result.data?.global_email || '...' }
+                            </a>
                         </div>
                     </div>
                     <div className="contact__titles">
-                        <span className='title'>Адрес:</span>
-                        <address className='address'>
-                            Узбекистан, Андижанская область, город Андижан, ул. Тинчлик, 9
-                        </address>
+                        <span className='title'>Address:</span>
+                        <address className='address'>{ result.data?.global_address || '...' }</address>
                     </div>
                     <div className="contact__titles links" style={{marginBottom: '0'}}>
-                        <span className='title'>Подписывайтесь:</span>
+                        <span className='title'>{ result.data?.footer_flw_txt || 'Follow' }:</span>
                         <div className="row align-center" style={{gap: '10px'}}>
                             <a className='link' href="https://instagram.com/alidoorf" target='_blank'>
                                 <img className='link__img' src={insta} alt="instagram"/>
@@ -139,7 +136,8 @@ const HeaderNav = ({openNav, setOpenNav, lang, setLang}) => {
                         </div>
                     </div>
                 </div>
-                <span className='txt-bg fw600'>Меню</span>
+
+                <span className='txt-bg fw600'>{ result.data?.menu_bg_txt || 'Menu' }</span>
             </div>
         </div>
     )

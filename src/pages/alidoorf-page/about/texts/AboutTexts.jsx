@@ -1,9 +1,36 @@
 import './AboutTexts.scss'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 import txtsImg from '../../../../assets/images/about-txts.jpg'
+import {getPostDataUser} from "../../../../api/apiResp";
+import {formatPhone} from "../../../../assets/scripts/global";
 
-const AboutTexts = () => {
+const AboutTexts = ({ lang }) => {
+
+
+    const [result, setResult] = useState([])
+    const arr = [
+        'ali_about_doors_sub',
+        'ali_about_doors_tit',
+        'ali_about_doors_txt1',
+        'ali_about_doors_txt2',
+        'ali_about_doors_txt3',
+        'ali_about_doors_txt4',
+        'ali_about_doors_btn',
+        'ali_about_doors_first_fabric',
+        'global_address',
+        'global_phone',
+        'global_email',
+    ]
+    useEffect(() => {
+        const get = async () => {
+            const res = await getPostDataUser('/api/alidoorf/v1/content/data-graph', arr, lang)
+            setResult(res)
+        }
+        get()
+    }, [lang])
+
+
     return (
         <div className='texts page bg-cl'>
             <div className="container">
@@ -11,37 +38,36 @@ const AboutTexts = () => {
                     <div className="diver">
                         <img className='img' src={txtsImg} alt="img"/>
                         <div className='margin'>
-                            <p className='desc mb3'>
-                                Если Вам нужно купить двери оптом и в розницу по всей России – обратитесь к нам! И пусть каждая купленная у нас дверь принесёт в Ваш мир уют и благополучие!
-                            </p>
+                            <p className='desc mb3'>{ result.data?.ali_about_doors_txt2 || '...' }</p>
                             <div className='row no-wrap align-center mb3'>
                                 <i className="fa-solid fa-location-dot icon"/>
                                 <div className='desc'>
-                                    ПЕРВАЯ ФАБРИКА
+                                    { result.data?.ali_about_doors_first_fabric || '...' }
                                     <br/>
-                                    Узбекистан, Адрес: Андижанская область, город Андижан, ул. Тинчлик, 9
+                                    { result.data?.global_address || '...' }
                                 </div>
                             </div>
                             <div className="row no-wrap align-center mb2">
                                 <i className="fa-solid fa-mobile-screen-button icon"/>
-                                <a className='link' href="tel: +998902221212">+998 90 222 12 12</a>
+                                <a className='link' href={`tel: ${ result.data?.global_phone || '...' }`}>
+                                    { formatPhone(result.data?.global_phone || '+998') }
+                                </a>
                             </div>
                             <div className="row no-wrap align-center">
                                 <i className="fa-solid fa-envelope icon"/>
-                                <a className='link' href="mailto:hello@alidoorf.uz">hello@alidoorf.uz</a>
+                                <a className='link' href={`mailto: ${ result.data?.global_email || '...' }`}>{ result.data?.global_email || '...' }</a>
                             </div>
                         </div>
                     </div>
+
                     <div className='wrapper py3'>
                         <div className="titles">
-                            <div className='txt'>
-                                ВЕДУЩИЙ ПРОИЗВОДИТЕЛЬ ДВЕРЕЙ Нa РЫНКe РОССИИ И В СТРАНАХ БЛИЖНЕГО ЗАРУБЕЖЬЯ.
-                            </div>
-                            <h1 className="title fw300 pb2">Двери оптом</h1>
+                            <div className='txt'>{ result.data?.ali_about_doors_sub || '...' }</div>
+                            <h1 className="title fw300 pb2">{ result.data?.ali_about_doors_tit || '...' }</h1>
                         </div>
-                        <h3 className="desc fw500 mb2">Фабрика основана в 2000 году. Сегодня суммарная площадь предприятия
-                            составляет более 42 000 кв.м.</h3>
-                        <p className='desc'>
+                        <h3 className="desc fw500 mb2">{ result.data?.ali_about_doors_txt1 || '...' }</h3>
+                        <p className='desc'>{ result.data?.ali_about_doors_txt3 || '...' }</p>
+                        <p className='desc mb2'>
                             Фабрика Alidoorf – крупный и надежный производитель корпусной мебели и дверей. У компании три
                             фабрики в Чувашской республике – две в пригороде г. Чебоксары и одна в г. Новочебоксарск.
                             Мощности фабрики, современное оборудование, собственный оптовый склад и контроль каждого
@@ -53,13 +79,9 @@ const AboutTexts = () => {
                             производитель уделяет качеству и эстетике полотна – дверь фабрики впишется в любой проект и
                             станет его украшением. Все вместе это позволяет заказчикам с любыми запросами купить
                             недорогой и подходящий по всем параметрам товар.
-                            <br/><br/>
-                            При необходимости купить крупную партию опта можно обратиться к менеджеру, который
-                            сориентирует по текущему наличию и рассчитает стоимость по заданным условиям.
                         </p>
-                        <Link className='btn mt2' to='/catalog'>
-                            посмотреть каталог
-                        </Link>
+                        <p className="desc">{ result.data?.ali_about_doors_txt4 || '...' }</p>
+                        <Link className='btn mt2' to='/catalog'>{ result.data?.ali_about_doors_btn || '...' }</Link>
                     </div>
                 </div>
             </div>

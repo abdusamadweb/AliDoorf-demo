@@ -1,34 +1,53 @@
 import './AboutFacts.scss'
-import React from 'react'
-import factsImg1 from '../../../../assets/images/about-facts1.png'
-import factsImg2 from '../../../../assets/images/about-facts2.png'
+import React, {useEffect, useState} from 'react'
+import {getData, getPostDataUser} from "../../../../api/apiResp";
+import {API_TEST} from "../../../../api/apiConfig";
 
-const AboutFacts = () => {
+const AboutFacts = ({ lang }) => {
+
+
+    const [result, setResult] = useState([])
+    const arr = [
+        'ali_about_facts_sub',
+        'ali_about_facts_tit',
+    ]
+    useEffect(() => {
+        const get = async () => {
+            const res = await getPostDataUser('/api/alidoorf/v1/content/data-graph', arr, lang)
+            setResult(res)
+        }
+        get()
+    }, [lang])
+
+
+    // get data
+    const [list, setList] = useState([])
+    useEffect(() => {
+        const get = async () => {
+            const res = await getData(`/api/alidoorf/v1/about`)
+            setList(res)
+        }
+        get()
+    }, [])
+
+
     return (
         <div className='facts page bg-cl'>
             <div className="container">
                 <div className="facts__inner">
                     <div className="titles">
-                        <span className="subtitle">Преимущества</span>
-                        <h2 className="title">
-                            Конкурентные преимущества
-                            Фабрики дверей Alidoorf
-                        </h2>
+                        <span className="subtitle">{ result.data?.ali_about_facts_sub || '...' }</span>
+                        <h2 className="title">{ result.data?.ali_about_facts_tit || '...' }</h2>
                     </div>
                     <ul className="facts__body grid">
-                        <li className='item'>
-                            <img className='item__img' src={factsImg1} alt="img"/>
-                            <h3 className="item__txt">КРУПНОЕ ПРЕДПРИЯТИЕ 42 000 кв.м</h3>
-                        </li>
-                        <li className='item'>
-                            <img className='item__img' src={factsImg2} alt="img"/>
-                            <h3 className="item__txt">НАГРАДЫ И СЕРТИФИКАТЫ
-                                18</h3>
-                        </li>
-                        <li className='item'>
-                            <img className='item__img' src={factsImg1} alt="img"/>
-                            <h3 className="item__txt">СТАБИЛЬНОСТЬ - ДОВЕРИЕ 23 года производим двери</h3>
-                        </li>
+                        {
+                            list?.data?.map(i => (
+                                <li className='item' key={i.id}>
+                                    <img className='item__img' src={API_TEST + 'api/alidoorf/v1/attachment/get/' + i.attachmentId || null} alt="img"/>
+                                    <h3 className="item__txt">{ i.name }</h3>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
             </div>

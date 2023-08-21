@@ -71,8 +71,22 @@
     }
 
     .logo {
-      @include breakpoint-down(400px) {
+      max-width: 150px;
+      width: 100%;
+
+      @include breakpoint-down(500px) {
+        max-width: 100px;
         margin-right: 1rem;
+      }
+      @include breakpoint-down(400px) {
+        max-width: 100px;
+        margin-right: 10px;
+      }
+
+      .img {
+        height: 50px;
+        width: 100%;
+        object-fit: cover;
       }
 
       .txt {
@@ -130,16 +144,45 @@
   &__main {
     @include tablet {
       padding-inline: 4px;
-      padding-bottom: 2rem;
+      padding-bottom: 3rem;
     }
 
-    .logo .txt {
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--cl-txt-white);
+    .for-padd {
+      height: 100%;
+      padding-bottom: 4rem;
 
       @include tablet {
-        font-size: 12px;
+        padding-inline: 0;
+        padding-bottom: 2rem;
+      }
+    }
+
+    .logo {
+      padding-inline: 10px;
+
+      @include tablet {
+        padding: 0;
+      }
+
+      .img {
+        width: 130px;
+        height: 65px;
+
+        @include tablet {
+          width: 80px;
+          min-height: 40px;
+          height: auto;
+        }
+      }
+
+      .txt {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--cl-txt-white);
+
+        @include tablet {
+          font-size: 12px;
+        }
       }
     }
     .txt2 {
@@ -502,7 +545,7 @@
       width: calc(100% - $header-main-width);
       height: 100%;
       padding-left: 2rem;
-      background: var(--bg-chat-contact);
+      background: var(--bg-chat);
       opacity: 0;
       @include transition-color-bg;
       transition: opacity 0.6s ease-in-out,

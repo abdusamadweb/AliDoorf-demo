@@ -18,6 +18,10 @@
       width: 30%;
       background: var(--cl-txt-white);
     }
+
+    .title {
+      text-transform: capitalize;
+    }
   }
 
   &__body {

@@ -1,8 +1,6 @@
 @use "./scss" as *;
 
 :root {
-  --cl-main: #f4f1de;
-  --bg-body: #f4f1de;
   --bg-header-inner: #eeeeee30;
   --bor-header-inner: #ccc;
   --cl-txt-white: #111;
@@ -10,7 +8,7 @@
   --cl-menu-burger: #5c2610;
   --cl-menu-burger-txt: #5c2610;
   --cl-menu-txt-bg: #0D0D0D;
-  --bg-chat: #F1F1F1;
+  //--bg-chat: #F1F1F1;
   --bg-chat-contact: #fff;
   --bor-chat-inp: #ccc;
   --bg-global-sub: #f1f1f1;
@@ -38,7 +36,6 @@
 }
 
 .dark-theme {
-  --bg-body: #3d405b;
   --bg-header-inner: transparent;
   --bor-header-inner: #eeeeee20;
   --cl-txt-white: #fff;
@@ -46,7 +43,7 @@
   --cl-menu-burger: #ffc47e;
   --cl-menu-burger-txt: #fff;
   --cl-menu-txt-bg: #eaeaea;
-  --bg-chat: #33190F;
+  //--bg-chat: #33190F;
   --bg-chat-contact: #23110D;
   --bor-chat-inp: #ffffff14;
   --bg-global-sub: #33190f;
@@ -136,7 +133,7 @@ body {
     padding: 10px 1rem;
     margin-bottom: 1rem;
     color: var(--cl-txt-white);
-    background: var(--bg-global-sub);
+    background: var(--bg-chat);
 
     @include breakpoint-down(750px) {
       font-size: 18px;

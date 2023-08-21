@@ -31,9 +31,9 @@
       margin-right: 1rem;
       background: #ffffff50;
 
-      @include breakpoint-down(400px) {
-        font-size: 10px;
-      }
+      //@include breakpoint-down(400px) {
+      //  font-size: 10px;
+      //}
     }
 
     .subtitle {
@@ -46,10 +46,6 @@
         @include tablet {
           font-size: 14px;
         }
-        @include breakpoint-down(400px) {
-          font-size: 12px;
-          padding: 10px;
-        }
       }
     }
 
@@ -60,9 +56,6 @@
 
       @include tablet {
         font-size: 40px;
-      }
-      @include breakpoint-down(400px) {
-        font-size: 26px;
       }
 
       .txt {
@@ -78,9 +71,6 @@
 
       @include tablet {
         font-size: 18px;
-      }
-      @include breakpoint-down(400px) {
-        font-size: 14px;
       }
 
       .icon {

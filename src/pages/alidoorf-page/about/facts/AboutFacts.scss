@@ -40,7 +40,7 @@
 
       .item {
         text-align: center;
-        padding: 2rem;
+        padding-block: 2rem;
         background: var(--bg-chat);
         @include transition-color-bg;
 

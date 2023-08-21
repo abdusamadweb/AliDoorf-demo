@@ -2,12 +2,12 @@ import React from 'react';
 import Hero from "./hero/Hero";
 import Direction from "./direction/Direction";
 
-const Home = () => {
+const Home = ({ lang }) => {
 
     return (
         <main>
-            <Hero />
-            <Direction />
+            <Hero lang={lang} />
+            <Direction lang={lang} />
         </main>
     );
 };

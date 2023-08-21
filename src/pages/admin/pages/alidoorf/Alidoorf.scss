@@ -91,6 +91,33 @@
       }
     }
   }
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    .item {
+      position: relative;
+      padding: 12px 1rem 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+
+      .imgs {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+      }
+      .img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+      }
+
+      .title {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }
 
 .ali-about {
@@ -132,14 +159,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px 20px;
   overflow-y: scroll;
   z-index: 10;
   
   .form {
     position: relative;
     width: 700px;
-    padding: 2rem;
+    padding: 10px 2rem;
     margin: auto;
     border-radius: 10px;
     background: #fff;
@@ -147,6 +174,8 @@
 
     .admin-inp {
       width: 100%;
+      padding: 10px 1rem;
+      margin-bottom: 10px;
     }
   }
   

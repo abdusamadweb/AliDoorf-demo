@@ -1,19 +1,48 @@
-import React from 'react'
-import {putData} from "../../api/apiResp";
+import React, {useEffect, useState} from 'react'
+import {getPostData, postAttachment, putData} from "../../api/apiResp";
+import {toast} from "react-hot-toast";
+import {Link} from "react-router-dom";
 
 const AdminForm = ({
-   value,
-   valueRu,
-   valueEn,
-   valueUz,
-   setValueRu,
-   setValueEn,
-   setValueUz,
-   formTitle,
-   setEffect,
-   textarea,
-   one
+    i,
+    value,
+    valueRu,
+    valueEn,
+    valueUz,
+    setValueRu,
+    setValueEn,
+    setValueUz,
+    formTitle,
+    setEffect,
+    textarea,
+    one,
+    img,
+    setModal,
+    edit,
+    catalog,
+    link,
+    setLink
 }) => {
+
+
+    const [attachmentId, setAttachmentId] = useState(null)
+    const sendFile = async (files) => {
+        const res = await postAttachment('/api/alidoorf/v1/attachment/upload', files)
+        setAttachmentId(res.data[0].id)
+    }
+
+
+    useEffect(() => {
+        if (edit && img) {
+            setValueRu(i?.nameRu || '...')
+            setValueEn(i?.nameEn || '...')
+            setValueUz(i?.nameUz || '...')
+            setAttachmentId(i?.attachmentId || null)
+        }
+        if (catalog && edit) {
+            setLink(i?.link || '/')
+        }
+    }, [])
 
 
     const postData = (e) => {
@@ -23,20 +52,76 @@ const AdminForm = ({
             key: value,
             valueRu,
             valueEn,
-            valueUz
+            valueUz,
+            attachmentId
         }
         putData('/api/alidoorf/v1/content/update-content', item)
-
         setTimeout(() => setEffect(prev => !prev), 1000)
+    }
+
+    const itemAbout = {
+        nameRu: valueRu,
+        nameEn: valueEn,
+        nameUz: valueUz,
+        attachmentId: attachmentId,
+        orderIndex: 1
+    }
+    const itemCatalog = {
+        nameRu: valueRu,
+        nameEn: valueEn,
+        nameUz: valueUz,
+        link: link,
+        attachmentId: attachmentId,
+        orderIndex: 1
+    }
+    const postAboutData = (e) => {
+        e.preventDefault()
+
+        const get = async () => {
+            const res = await getPostData(!catalog ? '/api/alidoorf/v1/about' : '/api/alidoorf/v1/category', catalog ? itemCatalog : itemAbout)
+            if (res.success) {
+                toast.success('Success !')
+                setEffect(prev => !prev)
+                setTimeout(() => setModal(false), 1000)
+            }
+        }
+        get()
+    }
+    const editData = (e) => {
+        e.preventDefault()
+        putData(!catalog ? `/api/alidoorf/v1/about/${i.id}` : `/api/alidoorf/v1/category/${i.id}`, catalog ? itemCatalog : itemAbout)
+        setTimeout(() => {
+            setModal(false)
+            setEffect(prev => !prev)
+        }, 1000)
     }
 
 
     return (
-        <form className='form' onSubmit={postData}>
-            <span className='title fw500 fz18 mb1'>{ formTitle }:</span>
+        <form className='form' onSubmit={img && edit ? editData : img ? postAboutData : postData}>
+            {
+                img ?
+                    <span className='title d-block center fw500 fz22 mb2'>{ edit ? 'Edit' : 'Add' }</span>
+                    :
+                    <span className='title fw500 fz18 mb1'>{ formTitle }:</span>
+            }
             {
                 one === false ?
-                    <>
+                    <div>
+                        {
+                            img &&
+                            <div>
+                                <div className='content__subtitle fz20 fw500 mb1'>Img:</div>
+                                <label>
+                                    <input
+                                        className='admin-inp mb1'
+                                        type="file"
+                                        placeholder='Img . . .'
+                                        onChange={(e) => sendFile(e.target.files)}
+                                    />
+                                </label>
+                            </div>
+                        }
                         <label>
                             <span className='txt'>Ru</span>
                             {
@@ -97,7 +182,23 @@ const AdminForm = ({
                                     />
                             }
                         </label>
-                    </>
+                        {
+                            catalog &&
+                            <div>
+                                <span className='title fw500 fz18 mb1'>Link:</span>
+                                <label>
+                                    <input
+                                        className='admin-inp'
+                                        type="text"
+                                        placeholder='Link . . .'
+                                        defaultValue='/'
+                                        value={link}
+                                        onChange={(e) => setLink(e.target.value)}
+                                    />
+                                </label>
+                            </div>
+                        }
+                    </div>
                     : one === true ?
                         <label>
                             {

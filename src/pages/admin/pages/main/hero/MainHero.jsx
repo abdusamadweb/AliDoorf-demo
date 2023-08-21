@@ -8,7 +8,8 @@ const MainHero = () => {
     const [result, setResult] = useState([])
     const arr = [
         'main_hero_sub',
-        'main_hero_tit'
+        'main_hero_tit',
+        'main_hero_tit_txt',
     ]
     useEffect(() => {
         const get = async () => {
@@ -27,6 +28,10 @@ const MainHero = () => {
     const [titEn, setTitEn] = useState('')
     const [titUz, setTitUz] = useState('')
 
+    const [titTxtRu, setTitTxtRu] = useState('')
+    const [titTxtEn, setTitTxtEn] = useState('')
+    const [titTxtUz, setTitTxtUz] = useState('')
+
     useEffect(() => {
         setSubRu(result?.data?.main_hero_sub_ru)
         setSubEn(result?.data?.main_hero_sub_en)
@@ -35,6 +40,10 @@ const MainHero = () => {
         setTitRu(result?.data?.main_hero_tit_ru)
         setTitEn(result?.data?.main_hero_tit_en)
         setTitUz(result?.data?.main_hero_tit_uz)
+
+        setTitTxtRu(result?.data?.main_hero_tit_txt_ru)
+        setTitTxtEn(result?.data?.main_hero_tit_txt_en)
+        setTitTxtUz(result?.data?.main_hero_tit_txt_uz)
     }, [result, effect])
 
 
@@ -62,6 +71,18 @@ const MainHero = () => {
                 setValueEn={setTitEn}
                 setValueUz={setTitUz}
                 formTitle={'Title'}
+                setEffect={setEffect}
+                one={false}
+            />
+            <AdminForm
+                value='main_hero_tit_txt'
+                valueRu={titTxtRu}
+                valueEn={titTxtEn}
+                valueUz={titTxtUz}
+                setValueRu={setTitTxtRu}
+                setValueEn={setTitTxtEn}
+                setValueUz={setTitTxtUz}
+                formTitle={'Title number text'}
                 setEffect={setEffect}
                 one={false}
             />

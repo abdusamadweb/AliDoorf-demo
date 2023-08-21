@@ -1,42 +1,52 @@
 import './Catalog.scss'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
-import catalog1 from '../../../assets/images/catalog1.jpg'
-import catalog2 from '../../../assets/images/catalog2.jpg'
-import catalog3 from '../../../assets/images/catalog3.jpg'
-import catalog4 from '../../../assets/images/catalog4.jpg'
+import {getData, getPostDataUser} from "../../../api/apiResp";
+import {API_TEST} from "../../../api/apiConfig";
 
-const Catalog = () => {
+const Catalog = ({ lang }) => {
+
+
+    const [result, setResult] = useState([])
+    const arr = [
+        'ali_catalog_hero_tit'
+    ]
+    useEffect(() => {
+        const get = async () => {
+            const res = await getPostDataUser('/api/alidoorf/v1/content/data-graph', arr, lang)
+            setResult(res)
+        }
+        get()
+    }, [lang])
+
+
+    // get data
+    const [list, setList] = useState([])
+    useEffect(() => {
+        const get = async () => {
+            const res = await getData(`/api/alidoorf/v1/category?page=0&size=20`)
+            setList(res)
+        }
+        get()
+    }, [])
+
+
     return (
         <div className='catalog page bg-cl pt2 pb3'>
             <div className="container">
                 <div className="catalog__inner">
-                    <h1 className="catalog__title">Каталог продукции</h1>
+                    <h1 className="catalog__title">{ result.data?.ali_catalog_hero_tit || '...' }</h1>
                     <ul className='catalog__list grid'>
-                        <li className="item">
-                            <Link className='item__link' to="/">
-                                <img className='img' src={catalog1} alt="img"/>
-                                <span className='txt'>Межкомнатные двери</span>
-                            </Link>
-                        </li>
-                        <li className="item">
-                            <Link className='item__link' to="/">
-                                <img className='img' src={catalog2} alt="img"/>
-                                <span className='txt'>Складская программа</span>
-                            </Link>
-                        </li>
-                        <li className="item">
-                            <Link className='item__link' to="/">
-                                <img className='img' src={catalog3} alt="img"/>
-                                <span className='txt'>Межкомнатные двери</span>
-                            </Link>
-                        </li>
-                        <li className="item">
-                            <Link className='item__link' to="/">
-                                <img className='img' src={catalog4} alt="img"/>
-                                <span className='txt'>Складская программа</span>
-                            </Link>
-                        </li>
+                        {
+                            list?.data?.map(i => (
+                                <li className="item" key={i.id}>
+                                    <Link className='item__link' to={`${i.id}`}>
+                                        <img className='img' src={API_TEST + 'api/alidoorf/v1/attachment/get/' + i.attachmentId || null} alt="img"/>
+                                        <span className='txt'>{ i.name }</span>
+                                    </Link>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
             </div>
