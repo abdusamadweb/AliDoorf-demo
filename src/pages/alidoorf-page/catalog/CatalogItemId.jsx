@@ -12,38 +12,25 @@ const CatalogItemId = ({ lang }) => {
     const navigate = useNavigate()
 
 
-    const [result, setResult] = useState([])
-    const arr = [
-        'ali_about_hero_tit',
-    ]
-    useEffect(() => {
-        const get = async () => {
-            const res = await getPostDataUser('/api/alidoorf/v1/content/data-graph', arr, lang)
-            setResult(res)
-        }
-        get()
-    }, [lang])
-
-
     // get data
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/category?parent-id=${id}&page=0&size=50`)
+            const res = await getData(`/api/alidoorf/v1/category?parent-id=${id}&page=0&size=50`, lang)
             setList(res)
         }
         get()
-    }, [])
+    }, [lang])
 
     // get data
     const [product, setProduct] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/product?categoryId=${id}&page=0&size=50`)
+            const res = await getData(`/api/alidoorf/v1/product?categoryId=${id}&page=0&size=50`, lang)
             setProduct(res)
         }
         get()
-    }, [])
+    }, [lang])
 
 
     const img = API_TEST + 'api/alidoorf/v1/attachment/get/' + list?.data?.[0]?.attachmentId

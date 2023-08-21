@@ -26,21 +26,21 @@ const CatalogItem = ({ lang }) => {
     const [list1, setList1] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/category?page=0&size=50`)
+            const res = await getData(`/api/alidoorf/v1/category?page=0&size=50`, lang)
             setList1(res?.data?.filter(i => i.id == id && i))
         }
         get()
-    }, [])
+    }, [lang])
 
     // get data
     const [list2, setList2] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/category?parent-id=${id}&page=0&size=50`)
+            const res = await getData(`/api/alidoorf/v1/category?parent-id=${id}&page=0&size=50`, lang)
             setList2(res)
         }
         get()
-    }, [])
+    }, [lang])
 
 
     return (

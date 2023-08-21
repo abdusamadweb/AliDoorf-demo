@@ -9,9 +9,20 @@ export const $resp = axios.create({
     headers: {
         "Content-Type": "application/json",
         Authorization: localStorage.getItem('token'),
-        Lang: userLang
+        Lang: userLang,
+        "Accept-Language": userLang
     }
 })
+
+
+export const header = (lang) => {
+    return {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem('token'),
+        Lang: lang,
+        "Accept-Language": lang
+    }
+}
 
 
 export const getPostData = (url, data) => {
@@ -40,27 +51,6 @@ export const putData = (url, data) => {
         .put(url, data)
         .then(res => {
             toast.success('Success !')
-            return res.data
-        })
-        .catch(err => {
-            if (!err?.response) {
-                toast.error('No Server Response')
-            } else if (err?.response.status === 403) {
-                localStorage.removeItem('token')
-                document.location.replace('/admin/login')
-            } else {
-                err.response.data.errors.map(i => (
-                    toast.error(i.errorMsg)
-                ))
-            }
-            return err
-        })
-}
-
-export const getData = (url) => {
-    return $resp
-        .get(url)
-        .then(res => {
             return res.data
         })
         .catch(err => {
@@ -141,21 +131,32 @@ export const postAttachment = (url, files) => {
         })
 }
 
-
-export const header = (lang) => {
-    return {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem('token'),
-        Lang: lang
-    }
-}
-export const $respUser = axios.create({
-    baseURL: API_TEST
-})
-
 export const getPostDataUser = (url, data, lang) => {
-    return $respUser
+    return $resp
         .post(url, data, {
+            headers: header(lang)
+        })
+        .then(res => {
+            return res.data
+        })
+        .catch(err => {
+            if (!err?.response) {
+                toast.error('No Server Response')
+            } else if (err?.response.status === 403) {
+                localStorage.removeItem('token')
+                document.location.replace('/admin/login')
+            } else {
+                err.response.data.errors.map(i => (
+                    toast.error(i.errorMsg)
+                ))
+            }
+            return err
+        })
+}
+
+export const getData = (url, lang) => {
+    return $resp
+        .get(url, {
             headers: header(lang)
         })
         .then(res => {

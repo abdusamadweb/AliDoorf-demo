@@ -3,7 +3,7 @@ import {Link, useParams} from "react-router-dom"
 import {getData} from "../../../api/apiResp";
 import {API_TEST} from "../../../api/apiConfig";
 
-const CatalogProduct = () => {
+const CatalogProduct = ({ lang }) => {
 
 
     const { id } = useParams()
@@ -23,11 +23,11 @@ const CatalogProduct = () => {
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/category?parent-id=${id}&page=0&size=50`)
+            const res = await getData(`/api/alidoorf/v1/category?parent-id=${id}&page=0&size=50`, lang)
             setList(res)
         }
         get()
-    }, [])
+    }, [lang])
 
 
     const [activeImg, setActiveImg] = useState(0)

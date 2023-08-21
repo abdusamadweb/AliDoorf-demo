@@ -9,15 +9,11 @@ import React, {useEffect, useLayoutEffect, useState} from "react"
 import Header from "./components/header/Header"
 import Home from "./pages/home/Home"
 import Footer from "./components/footer/Footer";
-import Alidoorf from "./pages/alidoorf-page/Alidoorf";
+import Alidoorf from "./pages/alidoorf-page/main/Alidoorf";
 import Catalog from "./pages/alidoorf-page/catalog/Catalog";
 import {ReactLenis} from '@studio-freight/react-lenis'
 import About from "./pages/alidoorf-page/about/About";
 import NewsPage from "./pages/alidoorf-page/news/NewsPage";
-import Primeloft from "./pages/primeloft-page/Primeloft";
-import PrimeCatalog from "./pages/primeloft-page/catalog/PrimeCatalog";
-import PrimeAbout from "./pages/primeloft-page/about/PrimeAbout";
-import PrimeNewsPage from "./pages/primeloft-page/news/PrimeNewsPage";
 import Contacts from "./pages/contacts/Contacts";
 import PageNotFound from "./components/page-not-found/PageNotFound";
 import RequireAuth from "./components/RequireAuth";
@@ -34,7 +30,7 @@ import Colors from "./pages/admin/colors/Colors";
 import AdminMenu from "./pages/admin/menu/AdminMenu";
 import Forms from "./pages/admin/forms/Forms";
 import AdminFooter from "./pages/admin/footer/AdminFooter";
-import {getData, getPostData, userLang} from "./api/apiResp";
+import {getPostData, userLang} from "./api/apiResp";
 import CatalogItem from "./pages/alidoorf-page/catalog/CatalogItem";
 import CatalogProduct from "./pages/alidoorf-page/catalog/CatalogProduct";
 import CatalogItemId from "./pages/alidoorf-page/catalog/CatalogItemId";
@@ -52,12 +48,15 @@ const Wrapper = ({children}) => {
 function App() {
 
     const [darkMode, setDarkMode] = useState(false)
+
     const [result, setResult] = useState([])
     const arr = [
         'color_primary_light',
         'color_primary_dark',
         'color_secondary1_light',
         'color_secondary1_dark',
+        'color_secondary2_light',
+        'color_secondary2_dark',
     ]
     useEffect(() => {
         const get = async () => {
@@ -74,21 +73,13 @@ function App() {
 
         const secondary1 = !darkMode ? result.data?.color_secondary1_light : result.data?.color_secondary1_dark
         document.documentElement.style.setProperty('--bg-chat', secondary1)
+
+        const secondary2 = !darkMode ? result.data?.color_secondary2_light : result.data?.color_secondary2_dark
+        document.documentElement.style.setProperty('--bg-chat-contact', secondary2)
     }, [darkMode, result])
 
 
     const [lang, setLang] = useState(userLang)
-
-
-    // get catalog
-    const [list, setList] = useState([])
-    useEffect(() => {
-        const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/category?page=0&size=20`)
-            setList(res)
-        }
-        get()
-    }, [])
 
 
     return (
@@ -109,25 +100,21 @@ function App() {
 
                             <Route path='/' element={<Home lang={lang}/>}/>
 
-                            <Route path='/alidoorf' element={<Alidoorf/>}/>
+                            <Route path='/alidoorf' element={<Alidoorf lang={lang}/>}/>
 
                             <Route path='/alidoorf/catalog' element={<Catalog lang={lang}/>}/>
                             <Route path={'/alidoorf/catalog/:id'} element={<CatalogItem lang={lang}/>}/>
                             <Route path={'/alidoorf/catalog/:id/:id'} element={<CatalogItemId lang={lang}/>}/>
                             <Route path={'/alidoorf/catalog/:id/:id/:id'} element={<CatalogProduct lang={lang}/>}/>
 
-                            <Route path='ali' element={<CatalogItemId/>}/>
-                            <Route path='ali/:id' element={<CatalogProduct/>}/>
+                            <Route path='/alidoorf/about' element={<About lang={lang}/>}/>
+                            <Route path='/alidoorf/news' element={<NewsPage lang={lang}/>}/>
 
-                            <Route path='/alidoorf/about' element={<About/>}/>
-                            <Route path='/alidoorf/news' element={<NewsPage/>}/>
+                            <Route path='/primeloft' element={<Alidoorf lang={lang}/>}/>
+                            <Route path='/primeloft/about' element={<About lang={lang}/>}/>
+                            <Route path='/primeloft/news' element={<NewsPage lang={lang}/>}/>
 
-                            <Route path='/primeloft' element={<Primeloft/>}/>
-                            <Route path='/primeloft/catalog' element={<PrimeCatalog/>}/>
-                            <Route path='/primeloft/about' element={<PrimeAbout/>}/>
-                            <Route path='/primeloft/news' element={<PrimeNewsPage/>}/>
-
-                            <Route path='/mebel' element={<Alidoorf/>}/>
+                            <Route path='/mebel' element={<Alidoorf lang={lang}/>}/>
 
                             <Route path='/contacts' element={<Contacts/>}/>
 

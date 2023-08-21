@@ -39,8 +39,8 @@ const FormsEmail = () => {
 
 
     return (
-        <form onSubmit={postData}>
-            <div className='admin-main__title fw500 fz22 mt3 mb1'>Email for forms</div>
+        <form className='mb3' onSubmit={postData}>
+            <div className='admin-main__title fw500 fz20 mb1'>Email for forms</div>
             <label className='mb1'>
                 <input
                     className='admin-inp'

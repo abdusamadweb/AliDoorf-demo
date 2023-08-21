@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import ScrollTop from "../../assets/icons/ScrollTop";
 import {Link, useLocation} from "react-router-dom";
 import HeaderNav from "./HeaderNav";
-import {getPostData} from "../../api/apiResp";
+import {getPostDataUser} from "../../api/apiResp";
 import {API_TEST} from "../../api/apiConfig";
 
 const Header = ({darkMode, setDarkMode, lang, setLang}) => {
@@ -103,11 +103,11 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
     ]
     useEffect(() => {
         const get = async () => {
-            const res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
+            const res = await getPostDataUser('/api/alidoorf/v1/content/data-graph', arr, lang)
             setResult(res)
         }
         get()
-    }, [])
+    }, [lang])
 
 
     // get img

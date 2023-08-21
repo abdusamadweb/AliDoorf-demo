@@ -10,17 +10,6 @@ const AboutMain = ({ lang }) => {
     const [popupModal, setPopupModal] = useState(false)
 
 
-    // get data
-    const [list, setList] = useState([])
-    useEffect(() => {
-        const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/menu?type=alidoorf`)
-            setList(res)
-        }
-        get()
-    }, [])
-
-
     const [result, setResult] = useState([])
     const arr = [
         'ali_about_hero_tit',

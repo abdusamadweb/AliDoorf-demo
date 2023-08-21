@@ -30,10 +30,6 @@
       content: '';
       margin-right: 1rem;
       background: #ffffff50;
-
-      //@include breakpoint-down(400px) {
-      //  font-size: 10px;
-      //}
     }
 
     .subtitle {
@@ -42,6 +38,7 @@
         padding: 12px 1rem;
         color: #fff;
         background: #33190F;
+        //background: var(--bg-chat-contact);
 
         @include tablet {
           font-size: 14px;

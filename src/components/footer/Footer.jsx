@@ -12,7 +12,11 @@ const Footer = ({ lang, darkMode }) => {
         'footer_flw_txt',
         'footer_desc_txt',
         'footer_bot_txt',
-        'logo'
+        'logo',
+
+        'header_route_catalog',
+        'header_route_about',
+        'header_route_contact'
     ]
     useEffect(() => {
         const get = async () => {
@@ -101,24 +105,22 @@ const Footer = ({ lang, darkMode }) => {
                                 </a>
                             </div>
                         </div>
-                        <p className='desc'>
-                            ООО «Forever Quality» использует файлы «cookie», с целью персонализации сервисов и повышения удобства пользования веб-сайтом. «Cookie» представляют собой небольшие файлы, содержащие информацию о предыдущих посещениях веб-сайта. Если вы не хотите использовать файлы «cookie», измените настройки браузера.
-                        </p>
                     </div>
                     <div className="footer__bot row no-wrap between pt2">
                         <p className='copyright'>{ result.data?.footer_bot_txt || '...' }</p>
                         <ul className='list row align-center'>
                             <li className='item'>
-                                <Link className='item__link' to='/alidoorf/catalog'>католог</Link>
+                                <Link className='item__link' to='/alidoorf/catalog'>{ result.data?.header_route_catalog || '...' }</Link>
                             </li>
                             <li className='item'>
-                                <Link className='item__link' to='/alidoorf/about'>о компании</Link>
+                                <Link className='item__link' to='/alidoorf/about'>{ result.data?.header_route_about || '...' }</Link>
                             </li>
                             <li className='item'>
-                                <Link className='item__link' to='/contacts'>контакты</Link>
+                                <Link className='item__link' to='/contacts'>{ result.data?.header_route_contact || '...' }</Link>
                             </li>
                         </ul>
                     </div>
+                    <div className='fluggi'>developed by FLUGGI IT AGENCY (www.fluggi.uz)</div>
                 </div>
             </div>
         </div>

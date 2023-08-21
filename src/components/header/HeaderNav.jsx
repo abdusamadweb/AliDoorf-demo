@@ -32,20 +32,20 @@ const HeaderNav = ({ openNav, setOpenNav, lang, setLang, result }) => {
     const [result1, setResult1] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/menu?type=alidoorf`)
+            const res = await getData(`/api/alidoorf/v1/menu?type=alidoorf`, lang)
             setResult1(res)
         }
         get()
-    }, [])
+    }, [lang])
 
     const [result2, setResult2] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/menu?type=primeloft`)
+            const res = await getData(`/api/alidoorf/v1/menu?type=primeloft`, lang)
             setResult2(res)
         }
         get()
-    }, [])
+    }, [lang])
 
 
     return (

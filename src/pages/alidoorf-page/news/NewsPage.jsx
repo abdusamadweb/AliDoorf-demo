@@ -3,11 +3,11 @@ import NewsHero from "./hero/NewsHero";
 import NewsSection from "./news-section/NewsSection";
 
 
-const NewsPage = () => {
+const NewsPage = ({ lang }) => {
     return (
         <div className='news-page'>
-            <NewsHero />
-            <NewsSection />
+            <NewsHero lang={lang} />
+            <NewsSection lang={lang} />
         </div>
     )
 }

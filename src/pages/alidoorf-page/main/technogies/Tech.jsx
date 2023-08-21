@@ -29,11 +29,11 @@ const Tech = ({ lang }) => {
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/technology?page=0&size=20`)
+            const res = await getData(`/api/alidoorf/v1/technology?page=0&size=20`, lang)
             setList(res)
         }
         get()
-    }, [])
+    }, [lang])
 
 
     return (
@@ -69,12 +69,12 @@ const Tech = ({ lang }) => {
                     >
                         {
                             list?.data?.map(i => (
-                                <div>
-                                    <SwiperSlide key={i.attachmentId}>
+                                <React.Fragment key={i.attachmentId}>
+                                    <SwiperSlide>
                                         <img className='slider__img' src={API_TEST + 'api/alidoorf/v1/attachment/get/' + i.attachmentId || null} alt="img"/>
                                         <h4 className='slider__txt'>{ i.title }</h4>
                                     </SwiperSlide>
-                                </div>
+                                </React.Fragment>
                             ))
                         }
                     </Swiper>

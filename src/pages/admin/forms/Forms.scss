@@ -27,6 +27,23 @@
       }
     }
   }
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    .item {
+      padding: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+
+      .row {
+        flex-flow: nowrap;
+        margin-bottom: 12px;
+      }
+    }
+  }
 }
 
 .checkbox {

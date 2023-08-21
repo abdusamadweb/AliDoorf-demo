@@ -24,11 +24,11 @@ const Catalog = ({ lang }) => {
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/category?page=0&size=20`)
+            const res = await getData(`/api/alidoorf/v1/category?page=0&size=20`, lang)
             setList(res)
         }
         get()
-    }, [])
+    }, [lang])
 
 
     return (

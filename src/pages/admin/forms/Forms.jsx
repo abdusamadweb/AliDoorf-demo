@@ -2,8 +2,10 @@ import './Forms.scss'
 import React, {useEffect, useState} from 'react'
 import {getPostData, putData} from "../../../api/apiResp";
 import FormsEmail from "./FormsEmail";
+import RequestForms from "./RequestForms";
 
 const Forms = () => {
+
 
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
@@ -85,10 +87,13 @@ const Forms = () => {
         setTimeout(() => setEffect(prev => !prev), 1000)
     }
 
+
     return (
         <div className='forms admin-main admin-page'>
             <div className='admin-main__title fw500 fz24 mb3'>Forms</div>
-            <div className='home__chat'>
+            <FormsEmail />
+            <div className='home__chat mb3'>
+                <div className='admin-main__title fw500 fz20 mb1'>Access forms</div>
                 <form className='form' onSubmit={postData}>
                     <div className='form__labels'>
                         <div className='form__label'>
@@ -141,8 +146,7 @@ const Forms = () => {
                     <button className='admin-btn'>Submit</button>
                 </form>
             </div>
-
-            <FormsEmail />
+            <RequestForms />
         </div>
     )
 }

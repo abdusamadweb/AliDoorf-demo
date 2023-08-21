@@ -24,11 +24,11 @@ const AboutFacts = ({ lang }) => {
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/about`)
+            const res = await getData(`/api/alidoorf/v1/about`, lang)
             setList(res)
         }
         get()
-    }, [])
+    }, [lang])
 
 
     return (

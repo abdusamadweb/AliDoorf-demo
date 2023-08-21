@@ -71,7 +71,7 @@ const Contact = ({ lang }) => {
                                 <input
                                     className='inp'
                                     type="text"
-                                    placeholder='Ваше имя'
+                                    placeholder='Name'
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </label>
@@ -84,7 +84,7 @@ const Contact = ({ lang }) => {
                                 <input
                                     className='inp'
                                     type="text"
-                                    placeholder='Телефон'
+                                    placeholder='Phone number'
                                     onChange={(e) => setPhoneNumber(e.target.value)}
                                 />
                             </label>
@@ -96,7 +96,7 @@ const Contact = ({ lang }) => {
                                 <input
                                     className='inp'
                                     type="text"
-                                    placeholder='Город'
+                                    placeholder='City'
                                     onChange={(e) => setAddress(e.target.value)}
                                 />
                             </label>
@@ -117,7 +117,7 @@ const Contact = ({ lang }) => {
                             <i className="fa-solid fa-envelope icon"/>
                             <textarea
                                 className='inp area'
-                                placeholder='Собшение'
+                                placeholder='Message'
                                 onChange={(e) => setDescription(e.target.value)}
                             />
                         </label>

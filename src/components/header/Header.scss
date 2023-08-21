@@ -251,8 +251,8 @@
             z-index: 11;
 
             @include tablet {
-              font-weight: 500;
               font-size: 12px;
+              letter-spacing: 0.5px;
             }
           }
 

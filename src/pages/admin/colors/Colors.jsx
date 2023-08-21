@@ -2,6 +2,7 @@ import './Colors.scss'
 import React from 'react'
 import SecondaryColor1 from "./other/SecondaryColor1";
 import PrimaryColor from "./primary/PrimaryColor";
+import SecondaryColor2 from "./other/SecondaryColor2";
 
 const Colors = () => {
 
@@ -12,6 +13,7 @@ const Colors = () => {
             <PrimaryColor />
 
             <SecondaryColor1 />
+            <SecondaryColor2 />
         </div>
     )
 }
