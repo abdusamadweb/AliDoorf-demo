@@ -1,6 +1,6 @@
 import './AboutMain.scss'
 import React, {useEffect, useState} from 'react'
-import {$resp, getData, getPostDataUser} from "../../../../api/apiResp";
+import {$resp, getPostDataUser} from "../../../../api/apiResp";
 import {toast} from "react-hot-toast";
 import {API_TEST} from "../../../../api/apiConfig";
 

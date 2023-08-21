@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import {getPostDataUser} from "../../../api/apiResp";
+import {$resp, getPostDataUser} from "../../../api/apiResp";
 import {formatPhone} from "../../../assets/scripts/global";
+import {toast} from "react-hot-toast";
 
 const ChatUs = ({ chatUsBtn, lang }) => {
+
 
     const [result, setResult] = useState([])
     const arr = [
@@ -11,6 +13,11 @@ const ChatUs = ({ chatUsBtn, lang }) => {
         'chat_us',
         'chat_us_btn',
         'chat_us_contact',
+
+        'form_access_name',
+        'form_access_phone',
+        'form_access_city',
+        'form_access_email',
     ]
     useEffect(() => {
         const get = async () => {
@@ -21,42 +28,86 @@ const ChatUs = ({ chatUsBtn, lang }) => {
     }, [lang])
 
 
+    const [name, setName] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [address, setAddress] = useState('')
+    const [email, setEmail] = useState('')
+    const [description, setDescription] = useState('')
+
+    const postForm = (e) => {
+        e.preventDefault()
+
+        const item = {
+            name,
+            phoneNumber,
+            address,
+            email,
+            description
+        }
+        $resp
+            .post('/api/alidoorf/v1/order', item)
+            .then(() => toast.success('Success !'))
+            .catch(err => {
+                err.response.data.errors.map(i => (
+                    toast.error(i.errorMsg)
+                ))
+            })
+    }
+
+
     return (
         <div className={`home__chat grid px3 ${chatUsBtn ? 'active' : ''}`}>
-            <form className='form'>
+            <form className='form' onSubmit={postForm}>
                 <span className='title fw600 fz22 pb2 mb2'>{ result.data?.chat_us || '...' }</span>
-                <label className='form__label'>
-                    <i className="fa-solid fa-user icon"/>
-                    <input
-                        className='inp'
-                        type="text"
-                        placeholder='Your name'
-                    />
-                </label>
-                <label className='form__label'>
-                    <i className="fa-solid fa-phone icon"/>
-                    <input
-                        className='inp'
-                        type="text"
-                        placeholder='Phone number'
-                    />
-                </label>
-                <label className='form__label'>
-                    <i className="fa-regular fa-building icon"/>
-                    <input
-                        className='inp'
-                        type="text"
-                        placeholder='City'
-                    />
-                </label>
-                <label className='form__label'>
-                    <i className="fa-solid fa-at icon"/>
-                    <input
-                        className='inp'
-                        type="text"
-                        placeholder='Email'
-                    />
-                </label>
+                {
+                    result.data?.form_access_name === 'true' &&
+                    <label className='form__label'>
+                        <i className="fa-solid fa-user icon"/>
+                        <input
+                            className='inp'
+                            type="text"
+                            placeholder='Name'
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                    </label>
+                }
+                {
+
+                    result.data?.form_access_phone === 'true' &&
+                    <label className='form__label'>
+                        <i className="fa-solid fa-phone icon"/>
+                        <input
+                            className='inp'
+                            type="text"
+                            placeholder='Phone number'
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                        />
+                    </label>
+                }
+                {
+                    result.data?.form_access_city === 'true' &&
+                    <label className='form__label'>
+                        <i className="fa-regular fa-building icon"/>
+                        <input
+                            className='inp'
+                            type="text"
+                            placeholder='City'
+                            onChange={(e) => setAddress(e.target.value)}
+                        />
+                    </label>
+                }
+                {
+                    result.data?.form_access_email === 'true' &&
+                    <label className='form__label'>
+                        <i className="fa-solid fa-at icon"/>
+                        <input
+                            className='inp'
+                            type="text"
+                            placeholder='Email'
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </label>
+                }
                 <label className='form__label'>
                     <i className="fa-solid fa-envelope icon"/>
                     <textarea

@@ -48,6 +48,9 @@ const HeaderNav = ({ openNav, setOpenNav, lang, setLang, result }) => {
     }, [lang])
 
 
+
+
+
     return (
         <div className={`navs__modal grid grid-center ${openNav ? 'active' : ''}`}>
             <div className='content grid grid-center'>

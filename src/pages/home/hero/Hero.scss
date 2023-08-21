@@ -151,6 +151,16 @@
     @include tablet {
       width: calc(100% - $header-main-width-tablet);
     }
+    @include breakpoint-down(920px) {
+      grid-template-columns: 50% 50%;
+      gap: 1rem;
+    }
+    @include breakpoint-down(777px) {
+      grid-template-columns: 1fr;
+    }
+    @include mobile {
+      display: none;
+    }
 
     &.active {
       transform: translateX(0);
@@ -162,7 +172,13 @@
         align-items: center;
         margin-bottom: 1rem;
 
+        @include breakpoint-down(777px) {
+          margin-bottom: 10px;
+        }
+
         .icon {
+          width: 18px;
+          height: 18px;
           font-size: 18px;
           margin-right: 1rem;
           color: var(--cl-txt-white);
@@ -183,6 +199,11 @@
             font-weight: 500;
             color: var(--cl-txt-white);
           }
+
+          @include breakpoint-down(777px) {
+            font-size: 14px;
+            padding: 10px 1rem;
+          }
         }
       }
 
@@ -193,6 +214,12 @@
         border: 1px solid var(--bor-chat-inp);
         color: var(--cl-txt-white);
         background: var(--bg-chat-contact);
+
+        @include breakpoint-down(777px) {
+          font-size: 14px;
+          padding: 10px 2rem;
+          margin-top: 1rem;
+        }
       }
     }
 
@@ -217,6 +244,12 @@
         background: var(--cl-txt-white);
         z-index: 1;
       }
+
+      @include breakpoint-down(777px) {
+        padding-bottom: 1rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
     }
 
     .contact {
@@ -227,12 +260,29 @@
       @include breakpoint-down(1300px) {
         padding: 2rem 2rem 0;
       }
+      @include breakpoint-down(920px) {
+        padding: 1rem;
+      }
+      @include breakpoint-down(777px) {
+        display: none;
+      }
 
       &__body {
+        .mb2 {
+
+          @include breakpoint-down(777px) {
+            margin-bottom: 1rem;
+          }
+        }
+
         .name {
           font-weight: 400;
           margin-bottom: 1rem;
           color: var(--cl-txt-white);
+
+          @include breakpoint-down(777px) {
+            margin-bottom: 10px;
+          }
         }
 
         .link {
