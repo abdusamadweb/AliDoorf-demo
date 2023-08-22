@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="Logos">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/apiConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/apiConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/Alidoorf.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/Alidoorf.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/id/AlidoorfCatalogIdItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/id/AlidoorfCatalogIdItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/id/ProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/id/ProductItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/list/CatalogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/list/CatalogItem.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="Fixed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,7 +137,7 @@
       <workItem from="1692540151871" duration="16518000" />
       <workItem from="1692599588748" duration="18685000" />
       <workItem from="1692633364975" duration="2865000" />
-      <workItem from="1692704817711" duration="1858000" />
+      <workItem from="1692704817711" duration="2398000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -322,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692635435453</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed">
+      <option name="closed" value="true" />
+      <created>1692707259704</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1692707259704</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,6 +358,7 @@
     <MESSAGE value="fixed language" />
     <MESSAGE value="responsive" />
     <MESSAGE value="Logos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logos" />
+    <MESSAGE value="Fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed" />
   </component>
 </project>
