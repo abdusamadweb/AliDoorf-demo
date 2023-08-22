@@ -83,6 +83,9 @@
       position: relative;
 
       &__link {
+        height: unset;
+        padding: 1rem;
+        border-radius: 10px;
         background: #f1f1f1;
 
         .txt {
@@ -115,6 +118,10 @@
 
       .title {
         margin-bottom: 10px;
+      }
+
+      .descc {
+        text-align: end;
       }
     }
   }

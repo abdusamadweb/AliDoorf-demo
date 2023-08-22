@@ -102,6 +102,7 @@ const ProductItem = ({ i, setEffect }) => {
             details: details?.length > 0 ? details : i.details
         }
         putData(`/api/alidoorf/v1/product/${i.id}`, item)
+        setCount(1)
         setTimeout(() => {
             setModal(false)
             setEffect(prev => !prev)
@@ -130,11 +131,11 @@ const ProductItem = ({ i, setEffect }) => {
             <div>
                 <div className='mb1'>
                     <span className='title fw500 fz18'>Title:</span>
-                    <div className='row between align-center'>
+                    <div className='row between align-center mb1'>
                         <span>Ru</span>
                         <span>{ i.titleRu }</span>
                     </div>
-                    <div className='row between align-center'>
+                    <div className='row between align-center mb1'>
                         <span>En</span>
                         <span>{ i.titleEn }</span>
                     </div>
@@ -145,17 +146,17 @@ const ProductItem = ({ i, setEffect }) => {
                 </div>
                 <div className='mb1'>
                     <span className='title fw500 fz18'>Description:</span>
-                    <div className='row between align-center'>
+                    <div className='row no-wrap between g1 mb1'>
                         <span>Ru</span>
-                        <span>{ i.descRu }</span>
+                        <span className='descc'>{ i.descRu }</span>
                     </div>
-                    <div className='row between align-center'>
+                    <div className='row no-wrap between g1 mb1'>
                         <span>En</span>
-                        <span>{ i.descEn }</span>
+                        <span className='descc'>{ i.descEn }</span>
                     </div>
-                    <div className='row between align-center'>
+                    <div className='row no-wrap between g1'>
                         <span>Uz</span>
-                        <span>{ i.descUz }</span>
+                        <span className='descc'>{ i.descUz }</span>
                     </div>
                 </div>
                 <div className='details mb1'>

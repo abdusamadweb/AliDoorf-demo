@@ -33,7 +33,7 @@ const CatalogItem = ({ i, setEffect }) => {
 
     return (
         <li className="item">
-            <Link to={`/admin/pages/alidoorf/catalog/${i.id}`} style={{color: '#111'}}>
+            <Link className='item__link' to={`/admin/pages/alidoorf/catalog/${i.id}`} style={{color: '#111'}}>
                 <img className='img mb1' src={img} alt="img" style={{height: '200px', width: '100%'}}/>
                 <div className='row no-wrap between mb1'>
                     <span className='fw500 mr1'>Title ru:</span>
