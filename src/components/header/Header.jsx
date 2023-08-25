@@ -136,7 +136,7 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                                         className='img'
                                         style={{filter: darkMode ? 'invert(1)' : 'none'}}
                                         src={logoImg}
-                                        alt="site-logo"
+                                        alt="logo"
                                     />
                                     :
                                     <img

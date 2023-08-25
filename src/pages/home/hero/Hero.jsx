@@ -42,6 +42,7 @@ const Hero = ({ lang }) => {
                     loop={true}
                     poster={videoPre}
                     muted={true}
+                    controls={false}
                 >
                     <source src={videoSc} type="video/mp4"/>
                 </video>
