@@ -116,7 +116,7 @@ function App() {
 
                             <Route path='/mebel' element={<Alidoorf lang={lang}/>}/>
 
-                            <Route path='/contacts' element={<Contacts/>}/>
+                            <Route path='/contacts' element={<Contacts/>} lang={lang}/>
 
                             // 404
                             <Route path='*' element={<PageNotFound/>}/>

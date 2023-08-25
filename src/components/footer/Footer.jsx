@@ -1,8 +1,9 @@
 import './Footer.scss'
-import React, {useEffect, useState} from 'react';
-import {Link, useLocation} from "react-router-dom";
-import {getPostDataUser} from "../../api/apiResp";
-import {API_TEST} from "../../api/apiConfig";
+import React, {useEffect, useState} from 'react'
+import {Link, useLocation} from "react-router-dom"
+import {getPostDataUser} from "../../api/apiResp"
+import {API_TEST} from "../../api/apiConfig"
+import defLogo from '../../assets/images/logo.png'
 
 const Footer = ({ lang, darkMode }) => {
 
@@ -55,7 +56,7 @@ const Footer = ({ lang, darkMode }) => {
 
 
     // get img
-    const logoImg = API_TEST + 'api/alidoorf/v1/attachment/get/' + result.data?.logo || null
+    const logoImg = (API_TEST + 'api/alidoorf/v1/attachment/get/' + result.data?.logo) || defLogo
 
 
     return (
@@ -67,7 +68,7 @@ const Footer = ({ lang, darkMode }) => {
                         <div className="row between align-center mb1">
                             <Link className='logo' to='/'>
                                 {
-                                    logoImg !== null ?
+                                    result.data?.logo ?
                                         <img
                                             className='logo__img'
                                             style={{filter: darkMode ? 'invert(1)' : 'none'}}
@@ -75,7 +76,11 @@ const Footer = ({ lang, darkMode }) => {
                                             alt="site-logo"
                                         />
                                         :
-                                        <h1 className='logo__title'>AliDoorf</h1>
+                                        <img
+                                            className='logo__img'
+                                            src={defLogo}
+                                            alt="site-logo"
+                                        />
                                 }
                             </Link>
                             <h5 className="txt fw400">{ result.data?.footer_flw_txt || '...' }</h5>

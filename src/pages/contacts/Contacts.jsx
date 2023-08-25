@@ -3,9 +3,9 @@ import React, {useEffect, useState} from 'react'
 import insta from "../../assets/images/intagram.png";
 import tg from "../../assets/images/telegram.png";
 import youtube from "../../assets/images/youtube.png";
-import {getPostData} from "../../api/apiResp";
+import {getPostDataUser} from "../../api/apiResp";
 
-const Contacts = () => {
+const Contacts = ({ lang }) => {
 
 
     // data
@@ -18,11 +18,11 @@ const Contacts = () => {
     ]
     useEffect(() => {
         const get = async () => {
-            const res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
+            const res = await getPostDataUser('/api/alidoorf/v1/content/data-graph', arr, lang)
             setResult(res)
         }
         get()
-    }, [])
+    }, [lang])
 
 
     return (

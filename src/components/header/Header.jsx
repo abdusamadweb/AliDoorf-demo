@@ -1,10 +1,11 @@
 import './Header.scss'
-import React, {useEffect, useState} from 'react';
-import ScrollTop from "../../assets/icons/ScrollTop";
-import {Link, useLocation} from "react-router-dom";
-import HeaderNav from "./HeaderNav";
-import {getPostDataUser} from "../../api/apiResp";
-import {API_TEST} from "../../api/apiConfig";
+import React, {useEffect, useState} from 'react'
+import ScrollTop from "../../assets/icons/ScrollTop"
+import {Link, useLocation} from "react-router-dom"
+import HeaderNav from "./HeaderNav"
+import {getPostDataUser} from "../../api/apiResp"
+import {API_TEST} from "../../api/apiConfig"
+import defLogo from '../../assets/images/logo.png'
 
 const Header = ({darkMode, setDarkMode, lang, setLang}) => {
 
@@ -111,7 +112,7 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
 
 
     // get img
-    const logoImg = API_TEST + 'api/alidoorf/v1/attachment/get/' + result.data?.logo || null
+    const logoImg = (API_TEST + 'api/alidoorf/v1/attachment/get/' + result.data?.logo) || defLogo
 
 
     const catalogImg = API_TEST + 'api/alidoorf/v1/attachment/get/' + result?.data?.ali_catalog_hero_img
@@ -120,7 +121,8 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
     return (
         !location.pathname.includes('/admin') &&
         <div className='header'>
-            <div className='header__inner' style={{backgroundImage: location.pathname.includes('/catalog') && `url(${catalogImg})`}}>
+            <div className='header__inner'
+                 style={{backgroundImage: location.pathname.includes('/catalog') && `url(${catalogImg})`}}>
                 {
                     location.pathname === '/catalog' &&
                     <div className='bg-shadow'/>
@@ -129,15 +131,19 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                     <div className='header__main pt1 pb3'>
                         <Link className='logo' to='/'>
                             {
-                                logoImg !== null ?
-                                <img
-                                    className='img'
-                                    style={{filter: darkMode ? 'invert(1)' : 'none'}}
-                                    src={logoImg}
-                                    alt="site-logo"
-                                />
-                                :
-                                <h1 className='txt fz16'>AliDoorf</h1>
+                                result.data?.logo ?
+                                    <img
+                                        className='img'
+                                        style={{filter: darkMode ? 'invert(1)' : 'none'}}
+                                        src={logoImg}
+                                        alt="site-logo"
+                                    />
+                                    :
+                                    <img
+                                        className='img'
+                                        src={defLogo}
+                                        alt="site-logo"
+                                    />
                             }
                         </Link>
                         <div className='for-padd row flex-column between align-center px3 pb1'>
@@ -227,8 +233,10 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                             <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
                                 {[...Array(8)].map((_, index) => (
                                     <React.Fragment key={index}>
-                                        <span className='txt'>{result.data?.ali_about_parallax || 'About company'}</span>
-                                        <span className='txt txt-stroke'>{result.data?.ali_about_parallax || 'About company'}</span>
+                                        <span
+                                            className='txt'>{result.data?.ali_about_parallax || 'About company'}</span>
+                                        <span
+                                            className='txt txt-stroke'>{result.data?.ali_about_parallax || 'About company'}</span>
                                     </React.Fragment>
                                 ))}
                             </div>
@@ -236,8 +244,9 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                                 <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
                                     {[...Array(8)].map((_, index) => (
                                         <React.Fragment key={index}>
-                                            <span className='txt'>{ result.data?.ali_news_parallax || 'News' }</span>
-                                            <span className='txt txt-stroke'>{ result.data?.ali_news_parallax || 'News' }</span>
+                                            <span className='txt'>{result.data?.ali_news_parallax || 'News'}</span>
+                                            <span
+                                                className='txt txt-stroke'>{result.data?.ali_news_parallax || 'News'}</span>
                                         </React.Fragment>
                                     ))}
                                 </div>
@@ -245,8 +254,10 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                                     <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
                                         {[...Array(8)].map((_, index) => (
                                             <React.Fragment key={index}>
-                                                <span className='txt'>{ result.data?.ali_catalog_parallax || 'Catalog' }</span>
-                                                <span className='txt txt-stroke'>{ result.data?.ali_catalog_parallax || 'Catalog' }</span>
+                                                <span
+                                                    className='txt'>{result.data?.ali_catalog_parallax || 'Catalog'}</span>
+                                                <span
+                                                    className='txt txt-stroke'>{result.data?.ali_catalog_parallax || 'Catalog'}</span>
                                             </React.Fragment>
                                         ))}
                                     </div>
@@ -254,8 +265,10 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                                         <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
                                             {[...Array(8)].map((_, index) => (
                                                 <React.Fragment key={index}>
-                                                    <span className='txt'>{ result.data?.contact_page_parallax || 'Contacts' }</span>
-                                                    <span className='txt txt-stroke'>{ result.data?.contact_page_parallax || 'Contacts' }</span>
+                                                    <span
+                                                        className='txt'>{result.data?.contact_page_parallax || 'Contacts'}</span>
+                                                    <span
+                                                        className='txt txt-stroke'>{result.data?.contact_page_parallax || 'Contacts'}</span>
                                                 </React.Fragment>
                                             ))}
                                         </div>
@@ -263,8 +276,10 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                                         <div className='txts' style={{transform: `translate(0px, ${slideScrollCount}px)`}}>
                                             {[...Array(8)].map((_, index) => (
                                                 <React.Fragment key={index}>
-                                                    <span className='txt'>{ result.data?.main_page_parallax || 'Alidoorf' }</span>
-                                                    <span className='txt txt-stroke'>{ result.data?.main_page_parallax || 'Primeloft' }</span>
+                                                    <span
+                                                        className='txt'>{result.data?.main_page_parallax || 'Alidoorf'}</span>
+                                                    <span
+                                                        className='txt txt-stroke'>{result.data?.main_page_parallax || 'Primeloft'}</span>
                                                 </React.Fragment>
                                             ))}
                                         </div>

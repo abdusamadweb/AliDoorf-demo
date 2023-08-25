@@ -18,7 +18,6 @@ export const $resp = axios.create({
 export const header = (lang) => {
     return {
         "Content-Type": "application/json",
-        Authorization: localStorage.getItem('token'),
         Lang: lang,
         "Accept-Language": lang
     }
@@ -144,7 +143,7 @@ export const getPostDataUser = (url, data, lang) => {
                 toast.error('No Server Response')
             } else if (err?.response.status === 403) {
                 localStorage.removeItem('token')
-                document.location.replace('/admin/login')
+                // document.location.replace('/admin/login')
             } else {
                 err.response.data.errors.map(i => (
                     toast.error(i.errorMsg)
@@ -167,7 +166,7 @@ export const getData = (url, lang) => {
                 toast.error('No Server Response')
             } else if (err?.response.status === 403) {
                 localStorage.removeItem('token')
-                document.location.replace('/admin/login')
+                // document.location.replace('/admin/login')
             } else {
                 err.response.data.errors.map(i => (
                     toast.error(i.errorMsg)
