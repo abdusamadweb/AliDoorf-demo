@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="Fixed">
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="bugs((">
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/id/NewsId.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/id/NewsId.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/apiConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/apiConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/apiResp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/apiResp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contacts/Contacts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contacts/Contacts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/news/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/news/News.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/news/hero/NewsHero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/hero/NewsHero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/news/news-section/NewsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/news-section/NewsSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/news/news-section/NewsSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/news-section/NewsSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;js.last.introduce.type&quot;: &quot;VAR&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/Documents/Front-End/React/alidoorf/my-app/src/pages/home&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/Documents/Front-End/React/beruniy&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -152,7 +154,10 @@
       <workItem from="1692811845271" duration="1824000" />
       <workItem from="1692821236859" duration="104000" />
       <workItem from="1692876505933" duration="452000" />
-      <workItem from="1692957955964" duration="1825000" />
+      <workItem from="1692957955964" duration="2600000" />
+      <workItem from="1692984360669" duration="520000" />
+      <workItem from="1693040988326" duration="40000" />
+      <workItem from="1693158098229" duration="2387000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -362,7 +367,23 @@
       <option name="project" value="LOCAL" />
       <updated>1692783683229</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Fixed some bugs">
+      <option name="closed" value="true" />
+      <created>1692960064890</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1692960064898</updated>
+    </task>
+    <task id="LOCAL-00028" summary="bugs((">
+      <option name="closed" value="true" />
+      <created>1692960424824</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1692960424824</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,6 +419,8 @@
     <MESSAGE value="responsive" />
     <MESSAGE value="Logos" />
     <MESSAGE value="Fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed" />
+    <MESSAGE value="Fixed some bugs" />
+    <MESSAGE value="bugs((" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugs((" />
   </component>
 </project>

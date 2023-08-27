@@ -36,6 +36,7 @@ import CatalogProduct from "./pages/alidoorf-page/catalog/CatalogProduct";
 import CatalogItemId from "./pages/alidoorf-page/catalog/CatalogItemId";
 import AlidoorfCatalogId from "./pages/admin/pages/alidoorf/catalog/id/AlidoorfCatalogId";
 import Product from "./pages/admin/pages/alidoorf/catalog/id/Product";
+import NewsId from "./pages/alidoorf-page/news/id/NewsId";
 
 const Wrapper = ({children}) => {
     const location = useLocation()
@@ -109,6 +110,7 @@ function App() {
 
                             <Route path='/alidoorf/about' element={<About lang={lang}/>}/>
                             <Route path='/alidoorf/news' element={<NewsPage lang={lang}/>}/>
+                            <Route path='/alidoorf/news/:id' element={<NewsId lang={lang}/>}/>
 
                             <Route path='/primeloft' element={<Alidoorf lang={lang}/>}/>
                             <Route path='/primeloft/about' element={<About lang={lang}/>}/>

@@ -290,10 +290,19 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                 <div className='row align-center' style={{flex: 1}}>
                     <Link className='logo mr2' to='/'>
                         {
-                            logoImg !== null ?
-                                <img className='img' src={logoImg} alt="site-logo"/>
+                            result.data?.logo ?
+                                <img
+                                    className='img'
+                                    style={{filter: darkMode ? 'invert(1)' : 'none'}}
+                                    src={logoImg}
+                                    alt="logo"
+                                />
                                 :
-                                <h1 className='txt fz16'>AliDoorf</h1>
+                                <img
+                                    className='img'
+                                    src={defLogo}
+                                    alt="site-logo"
+                                />
                         }
                     </Link>
                     <div className="dark-light">
