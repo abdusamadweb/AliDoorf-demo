@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="bugs(((">
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="icon forget" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,7 +146,7 @@
       <workItem from="1692957955964" duration="2600000" />
       <workItem from="1692984360669" duration="520000" />
       <workItem from="1693040988326" duration="40000" />
-      <workItem from="1693158098229" duration="2804000" />
+      <workItem from="1693158098229" duration="3056000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -382,7 +380,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693160677557</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="icon forget">
+      <option name="closed" value="true" />
+      <created>1693161180212</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1693161180212</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,6 +427,7 @@
     <MESSAGE value="Fixed some bugs" />
     <MESSAGE value="bugs((" />
     <MESSAGE value="bugs(((" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugs(((" />
+    <MESSAGE value="icon forget" />
+    <option name="LAST_COMMIT_MESSAGE" value="icon forget" />
   </component>
 </project>
