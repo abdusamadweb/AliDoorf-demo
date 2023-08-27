@@ -6,6 +6,7 @@ import HeaderNav from "./HeaderNav"
 import {getPostDataUser} from "../../api/apiResp"
 import {API_TEST} from "../../api/apiConfig"
 import defLogo from '../../assets/images/logo.png'
+import sun from '../../assets/icons/sun.png'
 
 const Header = ({darkMode, setDarkMode, lang, setLang}) => {
 
@@ -156,7 +157,7 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                                         </button>
                                         :
                                         <button className='btn light-btn' onClick={() => setDarkMode(false)}>
-                                            <i className="fa-regular fa-sun icon"/>
+                                            <img className='icon sun' src={sun} alt="sun-icon"/>
                                         </button>
                                 }
                             </div>
@@ -313,7 +314,7 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                                 </button>
                                 :
                                 <button className='btn light-btn' onClick={() => setDarkMode(false)}>
-                                    <i className="fa-regular fa-sun icon"/>
+                                    <img className='icon sun' src={sun} alt="sun-icon"/>
                                 </button>
                         }
                     </div>

@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="bugs((">
-      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/id/NewsId.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/id/NewsId.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="bugs(((">
       <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/news/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/news/News.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/news/hero/NewsHero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/hero/NewsHero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/news/news-section/NewsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/news-section/NewsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/news/news-section/NewsSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/news-section/NewsSection.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +148,7 @@
       <workItem from="1692957955964" duration="2600000" />
       <workItem from="1692984360669" duration="520000" />
       <workItem from="1693040988326" duration="40000" />
-      <workItem from="1693158098229" duration="2387000" />
+      <workItem from="1693158098229" duration="2804000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -383,7 +374,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692960424824</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="bugs(((">
+      <option name="closed" value="true" />
+      <created>1693160677553</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1693160677557</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,6 +420,7 @@
     <MESSAGE value="Fixed" />
     <MESSAGE value="Fixed some bugs" />
     <MESSAGE value="bugs((" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugs((" />
+    <MESSAGE value="bugs(((" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugs(((" />
   </component>
 </project>
