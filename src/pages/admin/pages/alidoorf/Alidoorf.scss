@@ -97,8 +97,12 @@
 
   .list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     .item {
       position: relative;

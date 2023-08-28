@@ -73,7 +73,7 @@ const AboutTexts = ({ lang }) => {
                         <h3 className="desc fw500 mb2">{ result.data?.ali_about_doors_txt1 || '...' }</h3>
                         <p className='desc'>{ result.data?.ali_about_doors_txt3 || '...' }</p>
                         <p className="desc">{ result.data?.ali_about_doors_txt4 || '...' }</p>
-                        <Link className='btn mt2' to='/catalog'>{ result.data?.ali_about_doors_btn || '...' }</Link>
+                        <Link className='btn mt2' to='/alidoorf/catalog'>{ result.data?.ali_about_doors_btn || '...' }</Link>
                     </div>
                 </div>
             </div>

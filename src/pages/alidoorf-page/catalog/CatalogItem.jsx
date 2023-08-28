@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import {getData, getPostDataUser} from "../../../api/apiResp";
 import {API_TEST} from "../../../api/apiConfig";
 
@@ -7,6 +7,8 @@ const CatalogItem = ({ lang }) => {
 
 
     const { id } = useParams()
+
+    const navigate = useNavigate()
 
 
     const [result, setResult] = useState([])
@@ -55,7 +57,7 @@ const CatalogItem = ({ lang }) => {
                         {
                             list2?.data?.map(item => (
                                 <li className="item" key={item.id}>
-                                    <Link className='item__link' to={`${id}`}>
+                                    <Link className='item__link' to={`${item.id}`}>
                                         <img className='img' src={API_TEST + 'api/alidoorf/v1/attachment/get/' + item.attachmentId || null} alt="img"/>
                                         <span className='txt'>{ item.name }</span>
                                     </Link>
@@ -63,6 +65,7 @@ const CatalogItem = ({ lang }) => {
                             ))
                         }
                     </ul>
+                    <button className='btn' onClick={() => navigate(-1)}>↑</button>
                 </div>
             </div>
         </div>

@@ -11,12 +11,16 @@ const CatalogItemId = ({ lang }) => {
     const navigate = useNavigate()
 
 
+    const currentURL = window.location.href
+    const pattern = /\/alidoorf\/catalog\/(\d+)\/\d+/
+    const matches = currentURL.match(pattern)
+
     // get data
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/category?parent-id=${id}&page=0&size=50`, lang)
-            setList(res)
+            const res = await getData(`/api/alidoorf/v1/category?parent-id=${matches?.[1]}&page=0&size=50`, lang)
+            setList(res?.data?.find(i => i.id == id))
         }
         get()
     }, [lang])
@@ -32,20 +36,20 @@ const CatalogItemId = ({ lang }) => {
     }, [lang])
 
 
-    const img = API_TEST + 'api/alidoorf/v1/attachment/get/' + list?.data?.[0]?.attachmentId
+    const img = API_TEST + 'api/alidoorf/v1/attachment/get/' + list?.attachmentId
 
 
     return (
         <div className='catalog-inner' style={{backgroundImage: `url(${img})`}}>
             <div className="page">
                 <div className="container">
-                    <h1 className="catalog-inner__title">{ list?.data?.[0]?.name || '...' }</h1>
+                    <h1 className="catalog-inner__title">{ list?.name || '...' }</h1>
                 </div>
             </div>
             <div className="catalog-inner__wrapper py3">
                 <div className="container">
                     <div className="titles">
-                        <h2 className='title'>{ list?.data?.[0]?.name || '...' }</h2>
+                        <h2 className='title'>{ list?.name || '...' }</h2>
                     </div>
                     <ul className='list'>
                         {

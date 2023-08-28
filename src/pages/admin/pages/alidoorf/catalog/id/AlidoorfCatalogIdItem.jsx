@@ -57,7 +57,7 @@ const AlidoorfCatalogIdItem = ({ i, id, setEffect }) => {
 
     return (
         <li className="item">
-            <Link className='item__link' to={`${i.categoryId}`} style={{color: '#111'}}>
+            <Link className='item__link' to={`${i.id}`} style={{color: '#111'}}>
                 <img className='img mb1' src={img} alt="img" style={{height: '200px', width: '100%'}}/>
                 <div className='row no-wrap between mb1'>
                     <span className='fw500 mr1'>Title ru:</span>

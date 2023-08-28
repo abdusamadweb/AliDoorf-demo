@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="icon forget" />
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="bugs(">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/Alidoorf.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/Alidoorf.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/id/AlidoorfCatalogIdItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/catalog/id/AlidoorfCatalogIdItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/Catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/Catalog.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogItemId.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogItemId.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogProduct.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,6 +156,10 @@
       <workItem from="1692984360669" duration="520000" />
       <workItem from="1693040988326" duration="40000" />
       <workItem from="1693158098229" duration="3056000" />
+      <workItem from="1693161256939" duration="631000" />
+      <workItem from="1693162204500" duration="638000" />
+      <workItem from="1693216128865" duration="4935000" />
+      <workItem from="1693221203835" duration="292000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -388,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693161180212</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="bugs(">
+      <option name="closed" value="true" />
+      <created>1693161354855</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1693161354855</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,6 +449,7 @@
     <MESSAGE value="bugs((" />
     <MESSAGE value="bugs(((" />
     <MESSAGE value="icon forget" />
-    <option name="LAST_COMMIT_MESSAGE" value="icon forget" />
+    <MESSAGE value="bugs(" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugs(" />
   </component>
 </project>

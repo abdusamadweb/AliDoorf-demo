@@ -150,6 +150,15 @@
       background: none !important;
     }
   }
+
+  .btn {
+    display: block;
+    font-size: 20px;
+    padding: 8px 2rem 10px;
+    margin: 4rem auto 0 auto;
+    border: 1px solid var(--bor-header-inner);
+    color: var(--cl-txt-white);
+  }
 }
 
 .catalog-inner {
@@ -297,6 +306,15 @@
     @include phone {
       font-size: 50px;
     }
+  }
+
+  .btn {
+    display: block;
+    font-size: 20px;
+    padding: 8px 1rem 10px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--bor-header-inner);
+    color: var(--cl-txt-white);
   }
 
   .title-list {

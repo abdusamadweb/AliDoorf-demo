@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Link, useParams} from "react-router-dom"
+import {Link, useHref, useNavigate, useParams} from "react-router-dom"
 import {getData} from "../../../api/apiResp";
 import {API_TEST} from "../../../api/apiConfig";
 
@@ -7,6 +7,8 @@ const CatalogProduct = ({ lang }) => {
 
 
     const { id } = useParams()
+
+    const navigate = useNavigate()
 
 
     const [result, setResult] = useState([])
@@ -16,14 +18,20 @@ const CatalogProduct = ({ lang }) => {
             setResult(res)
         }
         get()
-    }, [])
+    }, [id])
 
+
+    const url = useHref()
+
+    const currentURL = window.location.href
+    const pattern = /\/alidoorf\/catalog\/\d+\/(\d+)\/\d+/
+    const matches = currentURL.match(pattern)
 
     // get recommendations
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/category?parent-id=${id}&page=0&size=50`, lang)
+            const res = await getData(`/api/alidoorf/v1/product?categoryId=${matches?.[1]}&page=0&size=50`, lang)
             setList(res)
         }
         get()
@@ -42,15 +50,23 @@ const CatalogProduct = ({ lang }) => {
             <div className="container">
                 <div className='mb3'>
                     <div className='catalog-id__title'>{ result?.data?.title || '...' }</div>
-                    <ul className='title-list'>
-                        {
-                            list?.data?.map(i => (
-                                <li className="item">
-                                    <Link className='item__link' to={`/alidoorf/catalog/${i.id}/${i.id}`}>{ i.name }</Link>
-                                </li>
-                            ))
-                        }
-                    </ul>
+                    <div>
+                        <button className='btn' onClick={() => navigate(-1)}>←</button>
+                        <ul className='title-list'>
+                            {
+                                list?.data?.map(i => (
+                                    <li className="item">
+                                        <Link
+                                            className='item__link'
+                                            to={url?.replace(/\/\d+$/, `/${i.id}`)}
+                                        >
+                                            { i.title }
+                                        </Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
                 </div>
                 <div className='content pt2'>
                     <div className="content__wrapper grid">
