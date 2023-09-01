@@ -1,4 +1,4 @@
-@use '../../../../scss/index' as *;
+@use '../../../../scss' as *;
 
 .news-id {
   background-position: center !important;
@@ -21,12 +21,13 @@
 
 .news-desc {
   padding-block: 5rem;
+  color: var(--cl-txt-white);
+  background: var(--bg-body);
 
   .title {
     position: relative;
-    font-weight: 600;
-    font-size: 22px;
-    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 26px;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
 
@@ -46,6 +47,7 @@
   }
 
   .desc {
-    line-height: 1.4;
+    font-size: 18px;
+    line-height: 1.5;
   }
 }

@@ -58,6 +58,11 @@ function App() {
         'color_secondary1_dark',
         'color_secondary2_light',
         'color_secondary2_dark',
+
+        'ali_home_page_access',
+        'ali_about_page_access',
+        'ali_news_page_access',
+        'ali_catalog_page_access',
     ]
     useEffect(() => {
         const get = async () => {
@@ -68,6 +73,7 @@ function App() {
     }, [])
 
 
+    // colors from API
     useEffect(() => {
         const primary = !darkMode ? (result.data?.color_primary_light || '#eee') : result.data?.color_primary_dark
         document.documentElement.style.setProperty('--bg-body', primary)
@@ -103,13 +109,23 @@ function App() {
 
                             <Route path='/alidoorf' element={<Alidoorf lang={lang}/>}/>
 
-                            <Route path='/alidoorf/catalog' element={<Catalog lang={lang}/>}/>
+                            {
+                                result?.data?.ali_catalog_page_access === 'true' &&
+                                <Route path='/alidoorf/catalog' element={<Catalog lang={lang}/>}/>
+                            }
                             <Route path={'/alidoorf/catalog/:id'} element={<CatalogItem lang={lang}/>}/>
                             <Route path={'/alidoorf/catalog/:id/:id'} element={<CatalogItemId lang={lang}/>}/>
                             <Route path={'/alidoorf/catalog/:id/:id/:id'} element={<CatalogProduct lang={lang}/>}/>
 
-                            <Route path='/alidoorf/about' element={<About lang={lang}/>}/>
-                            <Route path='/alidoorf/news' element={<NewsPage lang={lang}/>}/>
+                            {
+                                result?.data?.ali_about_page_access === 'true' &&
+                                <Route path='/alidoorf/about' element={<About lang={lang}/>}/>
+                            }
+
+                            {
+                                result?.data?.ali_news_page_access === 'true' &&
+                                <Route path='/alidoorf/news' element={<NewsPage lang={lang}/>}/>
+                            }
                             <Route path='/alidoorf/news/:id' element={<NewsId lang={lang}/>}/>
 
                             <Route path='/primeloft' element={<Alidoorf lang={lang}/>}/>
@@ -121,7 +137,7 @@ function App() {
                             <Route path='/contacts' element={<Contacts/>} lang={lang}/>
 
                             // 404
-                            <Route path='*' element={<PageNotFound/>}/>
+                            <Route path='/*' element={<PageNotFound/>}/>
 
 
                             // Protect-able routes

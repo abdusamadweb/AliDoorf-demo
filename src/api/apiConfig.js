@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const API_TEST = 'http://95.130.227.148:8081/api'
+export const API_TEST = 'http://95.130.227.148:8081/'
 
 
 const $api = axios.create({

@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {Link, useHref, useNavigate, useParams} from "react-router-dom"
-import {getData} from "../../../api/apiResp";
+import {$resp, getData, getPostDataUser} from "../../../api/apiResp";
 import {API_TEST} from "../../../api/apiConfig";
+import {toast} from "react-hot-toast";
 
 const CatalogProduct = ({ lang }) => {
 
@@ -42,6 +43,49 @@ const CatalogProduct = ({ lang }) => {
 
     const img = (attachmentId) => {
         return API_TEST + 'api/alidoorf/v1/attachment/get/' + attachmentId
+    }
+
+
+    // get content
+    const [content, setContent] = useState([])
+    const arr = [
+        'chat_us_btn',
+
+        'product_form__desc',
+
+        'product_warn'
+    ]
+    useEffect(() => {
+        const get = async () => {
+            const res = await getPostDataUser('/api/alidoorf/v1/content/data-graph', arr, lang)
+            setContent(res)
+        }
+        get()
+    }, [lang])
+    
+    
+    // forms
+    const [name, setName] = useState('')
+    const [number, setNumber] = useState('')
+
+    const postForm = (e) => {
+        e.preventDefault()
+
+        const item = {
+            name: name,
+            phoneNumber: number,
+            address: null,
+            email: null,
+            description: `Product - ${result?.data?.title}`
+        }
+        $resp
+            .post('/api/alidoorf/v1/order', item)
+            .then(() => toast.success('Ваша заявка принята !'))
+            .catch(err => {
+                err.response.data.errors.map(i => (
+                    toast.error(i.errorMsg)
+                ))
+            })
     }
 
 
@@ -105,13 +149,29 @@ const CatalogProduct = ({ lang }) => {
                                 </div>
                             </div>
                             <p className='desc mt2'>{ result?.data?.desc || '...' }</p>
+                            <form className='form' onSubmit={postForm}>
+                                <span className='form__txt'>{ content?.data?.product_form__desc || '...' }</span>
+                                <div className='diver grid'>
+                                    <input
+                                        className='form__inp'
+                                        type="text"
+                                        placeholder='Name'
+                                        required={true}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                    <input
+                                        className='form__inp'
+                                        type="tel"
+                                        placeholder='+998'
+                                        required={true}
+                                        onChange={(e) => setNumber(e.target.value)}
+                                    />
+                                </div>
+                                <button className='form__btn'>{ content?.data?.chat_us_btn || '...' }</button>
+                            </form>
                         </div>
                     </div>
-                    <p className='warn-desc'>
-                        {
-                            'Внимание! Изображения дверных полотен и арок, рисунки стёкол, цветовая гамма могут отличаться от реальных в зависимости от цветопередачи и разрешения монитора. Обратите внимание, что при нанесении патины на дверное полотно, декоративное покрытие патиной может немного отличаться от представленного на сайте или в салоне, т.к. это ручной процесс создания эффекта старины.'
-                        }
-                    </p>
+                    <p className='warn-desc'>{ content?.data?.product_warn || '...' }</p>
                 </div>
             </div>
         </div>

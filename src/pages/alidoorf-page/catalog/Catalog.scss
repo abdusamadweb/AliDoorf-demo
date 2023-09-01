@@ -434,6 +434,51 @@
         .desc {
           color: var(--cl-txt-white);
         }
+
+        .form {
+          margin-top: 2rem;
+
+          &__txt {
+            margin-bottom: 1rem;
+            color: var(--cl-txt-white);
+          }
+
+          .diver {
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+
+            @include breakpoint-down(1250px) {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          &__inp {
+            padding: 1rem 12px;
+            border-radius: 15px;
+            border: none;
+            background: #fff;
+            box-shadow: 0 2px 20px 1px rgba(0,0,0,0.1);
+
+            @include breakpoint-down(1250px) {
+              padding: 1rem;
+            }
+          }
+
+          &__btn {
+            display: block;
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+            border-radius: 15px;
+            background: #E3AB34;
+
+            @include breakpoint-down(1400px) {
+              width: 100%;
+            }
+          }
+        }
       }
     }
 

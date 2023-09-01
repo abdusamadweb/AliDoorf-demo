@@ -115,7 +115,6 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
     // get img
     const logoImg = (API_TEST + 'api/alidoorf/v1/attachment/get/' + result.data?.logo) || defLogo
 
-
     const catalogImg = API_TEST + 'api/alidoorf/v1/attachment/get/' + result?.data?.ali_catalog_hero_img
 
 

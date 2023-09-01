@@ -18,6 +18,11 @@ const ChatUs = ({ chatUsBtn, lang }) => {
         'form_access_phone',
         'form_access_city',
         'form_access_email',
+
+        'form_name',
+        'form_phone',
+        'form_city',
+        'form_desc',
     ]
     useEffect(() => {
         const get = async () => {
@@ -66,7 +71,8 @@ const ChatUs = ({ chatUsBtn, lang }) => {
                         <input
                             className='inp'
                             type="text"
-                            placeholder='Name'
+                            placeholder={result.data?.form_name || '...'}
+                            required={true}
                             onChange={(e) => setName(e.target.value)}
                         />
                     </label>
@@ -79,7 +85,8 @@ const ChatUs = ({ chatUsBtn, lang }) => {
                         <input
                             className='inp'
                             type="text"
-                            placeholder='Phone number'
+                            placeholder={result.data?.form_phone || '...'}
+                            required={true}
                             onChange={(e) => setPhoneNumber(e.target.value)}
                         />
                     </label>
@@ -91,7 +98,8 @@ const ChatUs = ({ chatUsBtn, lang }) => {
                         <input
                             className='inp'
                             type="text"
-                            placeholder='City'
+                            placeholder={result.data?.form_city || '...'}
+                            required={true}
                             onChange={(e) => setAddress(e.target.value)}
                         />
                     </label>
@@ -104,6 +112,7 @@ const ChatUs = ({ chatUsBtn, lang }) => {
                             className='inp'
                             type="text"
                             placeholder='Email'
+                            required={true}
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </label>
@@ -112,7 +121,9 @@ const ChatUs = ({ chatUsBtn, lang }) => {
                     <i className="fa-solid fa-envelope icon"/>
                     <textarea
                         className='inp area'
-                        placeholder='Message'
+                        placeholder={result.data?.form_desc || '...'}
+                        required={true}
+                        onChange={(e) => setDescription(e.target.value)}
                     />
                 </label>
                 <button className='form__btn fw600 mt2'>{ result.data?.chat_us_btn || '...' }</button>
@@ -125,7 +136,7 @@ const ChatUs = ({ chatUsBtn, lang }) => {
                         <a className='link' href={`mailto: ${result.data?.global_email || '...'}`}>{ result.data?.global_email || '...' }</a>
                     </div>
                     <div>
-                        <h4 className="name">Phone Number</h4>
+                        <h4 className="name">{ result.data?.form_phone || '...' }</h4>
                         <a className='link' href={`tel: ${result.data?.global_phone || '...'}`}>{ formatPhone(result.data?.global_phone || '...') }</a>
                     </div>
                 </div>

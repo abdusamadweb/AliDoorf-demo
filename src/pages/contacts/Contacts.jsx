@@ -4,6 +4,7 @@ import insta from "../../assets/images/intagram.png";
 import tg from "../../assets/images/telegram.png";
 import youtube from "../../assets/images/youtube.png";
 import {getPostDataUser} from "../../api/apiResp";
+import {formatPhone} from "../../assets/scripts/global";
 
 const Contacts = ({ lang }) => {
 
@@ -38,7 +39,7 @@ const Contacts = ({ lang }) => {
                         <div className='links'>
                             <div className="row no-wrap align-center mb2">
                                 <i className="fa-solid fa-mobile-screen-button icon"/>
-                                <a className='link' href={`tel: ${result.data?.global_phone || '+998'}`}>{result.data?.global_phone || '+998'}</a>
+                                <a className='link' href={`tel: ${result.data?.global_phone || '+998'}`}>{ formatPhone(result.data?.global_phone || '+998') }</a>
                             </div>
                             <div className="row no-wrap align-center">
                                 <i className="fa-solid fa-envelope icon"/>

@@ -21,6 +21,8 @@ const AdminMain = () => {
             <div className='admin-main__title fw500 fz24 mb3'>Main Page</div>
             <Parallax />
 
+            {/*<MainHeroVideo />*/}
+
             <MainHero />
 
             <div>

@@ -19,6 +19,11 @@ const Contact = ({ lang }) => {
         'form_access_phone',
         'form_access_city',
         'form_access_email',
+
+        'form_name',
+        'form_phone',
+        'form_city',
+        'form_desc',
     ]
     useEffect(() => {
         const get = async () => {
@@ -71,7 +76,8 @@ const Contact = ({ lang }) => {
                                 <input
                                     className='inp'
                                     type="text"
-                                    placeholder='Name'
+                                    placeholder={result.data?.form_name || '...'}
+                                    required={true}
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </label>
@@ -84,7 +90,7 @@ const Contact = ({ lang }) => {
                                 <input
                                     className='inp'
                                     type="text"
-                                    placeholder='Phone number'
+                                    placeholder={result.data?.form_phone || '...'}
                                     onChange={(e) => setPhoneNumber(e.target.value)}
                                 />
                             </label>
@@ -96,7 +102,7 @@ const Contact = ({ lang }) => {
                                 <input
                                     className='inp'
                                     type="text"
-                                    placeholder='City'
+                                    placeholder={result.data?.form_city || '...'}
                                     onChange={(e) => setAddress(e.target.value)}
                                 />
                             </label>
@@ -117,7 +123,7 @@ const Contact = ({ lang }) => {
                             <i className="fa-solid fa-envelope icon"/>
                             <textarea
                                 className='inp area'
-                                placeholder='Message'
+                                placeholder={result.data?.form_desc || '...'}
                                 onChange={(e) => setDescription(e.target.value)}
                             />
                         </label>
