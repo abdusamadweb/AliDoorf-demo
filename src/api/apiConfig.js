@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const API_TEST = 'http://95.130.227.148:8081/'
+export const API_TEST = 'https://alidoorf.uz/'
 
 
 const $api = axios.create({
