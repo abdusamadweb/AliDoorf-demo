@@ -132,5 +132,9 @@
     padding-top: 2rem;
     margin: 0 auto;
     border-top: 1px solid var(--bor-chat-inp);
+
+    a {
+      color: var(--cl-txt-white);
+    }
   }
 }
