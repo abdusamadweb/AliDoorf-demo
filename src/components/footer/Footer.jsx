@@ -125,7 +125,7 @@ const Footer = ({ lang, darkMode }) => {
                             </li>
                         </ul>
                     </div>
-                    <div className='fluggi'>DEVELOPED by FLUGGI IT AGENCY <a href="https://fluggi.uz" target='_blank'>(www.fluggi.uz)</a></div>
+                    <div className='fluggi'><a href="https://fluggi.uz" target='_blank'>DEVELOPED by FLUGGI IT AGENCY</a></div>
                 </div>
             </div>
         </div>

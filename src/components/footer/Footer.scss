@@ -135,6 +135,10 @@
 
     a {
       color: var(--cl-txt-white);
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
