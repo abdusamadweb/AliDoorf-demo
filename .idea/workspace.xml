@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="API changed">
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="access for facebook">
+      <change afterPath="$PROJECT_DIR$/src/pages/sitemap/SiteMap.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/direction/Direction.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/direction/Direction.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/direction/Direction.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/direction/Direction.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +162,9 @@
       <workItem from="1693475719636" duration="10681000" />
       <workItem from="1693633633354" duration="771000" />
       <workItem from="1693657929951" duration="419000" />
-      <workItem from="1693667555113" duration="682000" />
+      <workItem from="1693667555113" duration="2673000" />
+      <workItem from="1693759143603" duration="1996000" />
+      <workItem from="1693761249570" duration="229000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -459,7 +462,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693658130327</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="access for facebook">
+      <option name="closed" value="true" />
+      <created>1693668283258</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1693668283258</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +489,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="video" />
     <MESSAGE value="semi finished" />
     <MESSAGE value="slider" />
     <MESSAGE value="slider full" />
@@ -503,6 +513,7 @@
     <MESSAGE value="bugs(((((" />
     <MESSAGE value="zb" />
     <MESSAGE value="API changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="API changed" />
+    <MESSAGE value="access for facebook" />
+    <option name="LAST_COMMIT_MESSAGE" value="access for facebook" />
   </component>
 </project>

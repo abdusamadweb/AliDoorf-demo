@@ -37,6 +37,7 @@ import CatalogItemId from "./pages/alidoorf-page/catalog/CatalogItemId";
 import AlidoorfCatalogId from "./pages/admin/pages/alidoorf/catalog/id/AlidoorfCatalogId";
 import Product from "./pages/admin/pages/alidoorf/catalog/id/Product";
 import NewsId from "./pages/alidoorf-page/news/id/NewsId";
+import SiteMap from "./pages/sitemap/SiteMap";
 
 const Wrapper = ({children}) => {
     const location = useLocation()
@@ -106,6 +107,8 @@ function App() {
                         <Routes>
 
                             <Route path='/' element={<Home lang={lang}/>}/>
+
+                            <Route path='/sitemap.xml' element={<SiteMap />}/>
 
                             <Route path='/alidoorf' element={<Alidoorf lang={lang}/>}/>
 

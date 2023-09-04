@@ -46,7 +46,7 @@ const Direction = ({ lang }) => {
                     <div className="direction__content row no-wrap">
                         <Link className='item' to='/alidoorf'>
                             <img className='item__img' src={img1} alt="bg"/>
-                            <h4 className='item__title center-absolute center'>{ result.data?.main_direction_ali_space || '...' }</h4>
+                            <h1 className='item__title center-absolute center'>{ result.data?.main_direction_ali_space || '...' }</h1>
                             <div className="item__hover center-absolute">
                                 <h3 className='title'>alidoorf</h3>
                                 <p className='desc'>{ result.data?.main_direction_ali_desc || '...' }</p>
@@ -55,7 +55,7 @@ const Direction = ({ lang }) => {
                         </Link>
                         <Link className='item' to='/primeloft'>
                             <img className='item__img' src={img2} alt="bg"/>
-                            <h4 className='item__title center-absolute center'>{ result.data?.main_direction_prime_space || '...' }</h4>
+                            <h1 className='item__title center-absolute center'>{ result.data?.main_direction_prime_space || '...' }</h1>
                             <div className="item__hover center-absolute">
                                 <h3 className='title'>primeloft</h3>
                                 <p className='desc'>{ result.data?.main_direction_prime_desc || '...' }</p>
@@ -64,7 +64,7 @@ const Direction = ({ lang }) => {
                         </Link>
                         <Link className='item' to='/mebel'>
                             <img className='item__img' src={img3} alt="bg"/>
-                            <h4 className='item__title center-absolute center'>{ result.data?.main_direction_mebel_space || '...' }</h4>
+                            <h1 className='item__title center-absolute center'>{ result.data?.main_direction_mebel_space || '...' }</h1>
                             <div className="item__hover center-absolute">
                                 <h3 className='title'>mebel</h3>
                                 <p className='desc'>{ result.data?.main_direction_mebel_desc || '...' }</p>
