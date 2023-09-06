@@ -4,11 +4,13 @@ import AdminForm from "../../../../../../components/admin/AdminForm";
 
 const HomeHero = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_home_hero_sub',
-        'ali_home_hero_tit'
+        `${type}_home_hero_sub`,
+        `${type}_home_hero_tit`
     ]
     useEffect(() => {
         const get = async () => {
@@ -28,13 +30,13 @@ const HomeHero = () => {
     const [titUz, setTitUz] = useState('')
 
     useEffect(() => {
-        setSubRu(result?.data?.ali_home_hero_sub_ru)
-        setSubEn(result?.data?.ali_home_hero_sub_en)
-        setSubUz(result?.data?.ali_home_hero_sub_uz)
+        setSubRu(result?.data?.[`${type}_home_hero_sub_ru`])
+        setSubEn(result?.data?.[`${type}_home_hero_sub_en`])
+        setSubUz(result?.data?.[`${type}_home_hero_sub_uz`])
 
-        setTitRu(result?.data?.ali_home_hero_tit_ru)
-        setTitEn(result?.data?.ali_home_hero_tit_en)
-        setTitUz(result?.data?.ali_home_hero_tit_uz)
+        setTitRu(result?.data?.[`${type}_home_hero_tit_ru`])
+        setTitEn(result?.data?.[`${type}_home_hero_tit_en`])
+        setTitUz(result?.data?.[`${type}_home_hero_tit_uz`])
     }, [result, effect])
 
 
@@ -42,7 +44,7 @@ const HomeHero = () => {
         <div>
             <div className='admin-main__subtitle fw500 fz20 mb2'>Hero section texts:</div>
             <AdminForm
-                value='ali_home_hero_sub'
+                value={`${type}_home_hero_sub`}
                 valueRu={subRu}
                 valueEn={subEn}
                 valueUz={subUz}
@@ -52,9 +54,10 @@ const HomeHero = () => {
                 formTitle={'Subtitle'}
                 setEffect={setEffect}
                 one={false}
+                setType={setType}
             />
             <AdminForm
-                value='ali_home_hero_tit'
+                value={`${type}_home_hero_tit`}
                 valueRu={titRu}
                 valueEn={titEn}
                 valueUz={titUz}
@@ -64,6 +67,7 @@ const HomeHero = () => {
                 formTitle={'Title'}
                 setEffect={setEffect}
                 one={false}
+                setType={setType}
             />
         </div>
     )

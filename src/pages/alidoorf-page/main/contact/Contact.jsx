@@ -91,6 +91,7 @@ const Contact = ({ lang }) => {
                                     className='inp'
                                     type="text"
                                     placeholder={result.data?.form_phone || '...'}
+                                    required={true}
                                     onChange={(e) => setPhoneNumber(e.target.value)}
                                 />
                             </label>
@@ -103,6 +104,7 @@ const Contact = ({ lang }) => {
                                     className='inp'
                                     type="text"
                                     placeholder={result.data?.form_city || '...'}
+                                    required={true}
                                     onChange={(e) => setAddress(e.target.value)}
                                 />
                             </label>
@@ -115,6 +117,7 @@ const Contact = ({ lang }) => {
                                     className='inp'
                                     type="text"
                                     placeholder='Email'
+                                    required={true}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
                             </label>
@@ -124,6 +127,7 @@ const Contact = ({ lang }) => {
                             <textarea
                                 className='inp area'
                                 placeholder={result.data?.form_desc || '...'}
+                                required={true}
                                 onChange={(e) => setDescription(e.target.value)}
                             />
                         </label>
@@ -137,7 +141,7 @@ const Contact = ({ lang }) => {
                                 <a className='link' href={`mailto: ${ result.data?.global_email || '...' }`}>{ result.data?.global_email || '...' }</a>
                             </div>
                             <div>
-                                <h4 className="name">Телефон</h4>
+                                <h4 className="name">{result.data?.form_phone || '...'}</h4>
                                 <a className='link' href={`tel: ${result.data?.global_phone || '+998'}`}>{ formatPhone(result.data?.global_phone || '+998') }</a>
                             </div>
                         </div>

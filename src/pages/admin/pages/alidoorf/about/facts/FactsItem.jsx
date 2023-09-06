@@ -4,7 +4,7 @@ import {toast} from "react-hot-toast";
 import AdminForm from "../../../../../../components/admin/AdminForm";
 import {API_TEST} from "../../../../../../api/apiConfig";
 
-const FactsItem = ({ i, setEffect }) => {
+const FactsItem = ({ i, setEffect, type }) => {
 
 
     const [modal, setModal] = useState(false)
@@ -66,6 +66,7 @@ const FactsItem = ({ i, setEffect }) => {
                             img={true}
                             edit={true}
                             one={false}
+                            type={type}
                         />
                         <div className="bg" onClick={() => setModal(false)}/>
                     </div>

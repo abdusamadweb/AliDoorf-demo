@@ -5,7 +5,7 @@ import {toast} from "react-hot-toast";
 import AdminForm from "../../../../../../components/admin/AdminForm";
 import {Link} from "react-router-dom";
 
-const CatalogItem = ({ i, setEffect }) => {
+const CatalogItem = ({ i, setEffect, type }) => {
 
 
     const [modal, setModal] = useState(false)
@@ -38,10 +38,6 @@ const CatalogItem = ({ i, setEffect }) => {
                 <div className='row no-wrap between mb1'>
                     <span className='fw500 mr1'>Title ru:</span>
                     <span className='txts'>{ i.nameRu }</span>
-                </div>
-                <div className='row no-wrap between mb1'>
-                    <span className='fw500 mr1'>Link:</span>
-                    <span className='txts'>{ i.link }</span>
                 </div>
                 <div className='row no-wrap between mb1'>
                     <span className='fw500 mr1'>Title en:</span>
@@ -77,6 +73,7 @@ const CatalogItem = ({ i, setEffect }) => {
                             catalog={true}
                             link={link}
                             setLink={setLink}
+                            type={type}
                         />
                         <div className="bg" onClick={() => setModal(false)}/>
                     </div>

@@ -4,11 +4,13 @@ import AttachmentForm from "../../../../../../components/admin/AttachmentForm";
 
 const HeroImg = () => {
 
+    const [type, setType] = useState('ali')
+
 
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_news_hero_img',
+        `${type}_news_hero_img`,
     ]
     useEffect(() => {
         const get = async () => {
@@ -21,14 +23,14 @@ const HeroImg = () => {
     const [file1, setFile1] = useState(null)
 
     useEffect(() => {
-        setFile1(result?.data?.ali_news_hero_img)
+        setFile1(result?.data?.[`${type}_news_hero_img`])
     }, [result, effect])
 
 
     return (
         <div className='mb2'>
             <AttachmentForm
-                value='ali_news_hero_img'
+                value={`${type}_news_hero_img`}
                 valueRu={file1}
                 valueEn={file1}
                 valueUz={file1}
@@ -38,6 +40,7 @@ const HeroImg = () => {
                 formTitle={'Background img'}
                 setEffect={setEffect}
                 one={true}
+                setType={setType}
             />
         </div>
     )

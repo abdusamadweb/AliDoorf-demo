@@ -52,8 +52,9 @@ const CatalogProduct = ({ lang }) => {
         'chat_us_btn',
 
         'product_form__desc',
+        'form_name',
 
-        'product_warn'
+        'product_warn',
     ]
     useEffect(() => {
         const get = async () => {
@@ -155,7 +156,7 @@ const CatalogProduct = ({ lang }) => {
                                     <input
                                         className='form__inp'
                                         type="text"
-                                        placeholder='Name'
+                                        placeholder={content?.data?.form_name || 'Name'}
                                         required={true}
                                         onChange={(e) => setName(e.target.value)}
                                     />

@@ -28,7 +28,7 @@ const MenuLinkItem = ({ i, setEffect }) => {
             const res = await putData(`/api/alidoorf/v1/menu/${i.id}`, item)
             if (res.success) {
                 setEffect(prev => !prev)
-                setTimeout(() => {setModal(false)}, 1500)
+                setTimeout(() => {setModal(false)}, 1000)
             }
         }
         get()

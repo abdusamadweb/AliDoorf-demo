@@ -4,7 +4,7 @@ import {deleteData} from "../../../../../../../api/apiResp";
 import {toast} from "react-hot-toast";
 import AttachmentTextForm from "../../../../../../../components/admin/AttachmentTextForm";
 
-const NewsListItem = ({ i, setEffect }) => {
+const NewsListItem = ({ i, setEffect, type }) => {
 
 
     const [modal, setModal] = useState(false)
@@ -74,6 +74,7 @@ const NewsListItem = ({ i, setEffect }) => {
                             textarea={true}
                             edit={true}
                             news={true}
+                            type={type}
                         />
                         <div className="bg" onClick={() => setModal(false)}/>
                     </div>

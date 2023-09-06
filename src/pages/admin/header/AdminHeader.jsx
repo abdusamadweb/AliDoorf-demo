@@ -9,8 +9,6 @@ const AdminHeader = () => {
     //states
     const [pages, setPages] = useState(false)
     const [alidoorf, setAlidoorf] = useState(false)
-    const [primeloft, setPrimeloft] = useState(false)
-    const [mebel, setMebel] = useState(false)
 
 
     return (
@@ -61,62 +59,6 @@ const AdminHeader = () => {
                                     </li>
                                     <li className='li'>
                                         <NavLink className='li__link item__txt wrap__link' to='/admin/pages/alidoorf/catalog'>
-                                            catalog
-                                        </NavLink>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className={`wrap ${primeloft ? 'clicked' : ''}`}>
-                                <div className='item__txt hovered' onClick={() => setPrimeloft(!primeloft)}>
-                                    <span>primeloft</span>
-                                    <i className={`fa-solid fa-chevron-right icon ${location.pathname.includes('primeloft') ? 'active' : ''}`}/>
-                                </div>
-                                <ul className='wrap__list'>
-                                    <li className='li'>
-                                        <NavLink className='li__link item__txt wrap__link' to='/admin/pages/primeloft/home'>
-                                            home
-                                        </NavLink>
-                                    </li>
-                                    <li className='li'>
-                                        <NavLink className='li__link item__txt wrap__link' to='/admin/pages/primeloft/about'>
-                                            about
-                                        </NavLink>
-                                    </li>
-                                    <li className='li'>
-                                        <NavLink className='li__link item__txt wrap__link' to='/admin/pages/primeloft/news'>
-                                            news
-                                        </NavLink>
-                                    </li>
-                                    <li className='li'>
-                                        <NavLink className='li__link item__txt wrap__link' to='/admin/pages/primeloft/catalog'>
-                                            catalog
-                                        </NavLink>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className={`wrap ${mebel ? 'clicked' : ''}`}>
-                                <div className='item__txt hovered' onClick={() => setMebel(!mebel)}>
-                                    <span>mebel</span>
-                                    <i className={`fa-solid fa-chevron-right icon ${location.pathname.includes('mebel') ? 'active' : ''}`}/>
-                                </div>
-                                <ul className='wrap__list'>
-                                    <li className='li'>
-                                        <NavLink className='li__link item__txt wrap__link' to='/admin/pages/mebel/home'>
-                                            home
-                                        </NavLink>
-                                    </li>
-                                    <li className='li'>
-                                        <NavLink className='li__link item__txt wrap__link' to='/admin/pages/mebel/about'>
-                                            about
-                                        </NavLink>
-                                    </li>
-                                    <li className='li'>
-                                        <NavLink className='li__link item__txt wrap__link' to='/admin/pages/mebel/news'>
-                                            news
-                                        </NavLink>
-                                    </li>
-                                    <li className='li'>
-                                        <NavLink className='li__link item__txt wrap__link' to='/admin/pages/mebel/catalog'>
                                             catalog
                                         </NavLink>
                                     </li>

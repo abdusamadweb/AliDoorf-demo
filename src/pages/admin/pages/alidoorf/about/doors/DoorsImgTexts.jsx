@@ -8,18 +8,19 @@ import about4 from "../../../../../../assets/images/admin/alidoorf-about4.png";
 
 const DoorsImgTexts = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_about_doors_txt1',
-        'ali_about_doors_txt2',
-        'ali_about_doors_txt3',
-        'ali_about_doors_txt4'
+        `${type}_about_doors_txt1`,
+        `${type}_about_doors_txt2`,
+        `${type}_about_doors_txt3`,
+        `${type}_about_doors_txt4`
     ]
     useEffect(() => {
         const get = async () => {
-            let res = null
-            res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
+            const res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
             setResult(res)
         }
         get()
@@ -42,21 +43,21 @@ const DoorsImgTexts = () => {
     const [txt4Uz, setTxt4Uz] = useState('')
 
     useEffect(() => {
-        setTxt1Ru(result?.data?.ali_about_doors_txt1_ru)
-        setTxt1En(result?.data?.ali_about_doors_txt1_en)
-        setTxt1Uz(result?.data?.ali_about_doors_txt1_uz)
+        setTxt1Ru(result?.data?.[`${type}_about_doors_txt1_ru`])
+        setTxt1En(result?.data?.[`${type}_about_doors_txt1_en`])
+        setTxt1Uz(result?.data?.[`${type}_about_doors_txt1_uz`])
 
-        setTxt2Ru(result?.data?.ali_about_doors_txt2_ru)
-        setTxt2En(result?.data?.ali_about_doors_txt2_en)
-        setTxt2Uz(result?.data?.ali_about_doors_txt2_uz)
+        setTxt2Ru(result?.data?.[`${type}_about_doors_txt2_ru`])
+        setTxt2En(result?.data?.[`${type}_about_doors_txt2_en`])
+        setTxt2Uz(result?.data?.[`${type}_about_doors_txt2_uz`])
 
-        setTxt3Ru(result?.data?.ali_about_doors_txt3_ru)
-        setTxt3En(result?.data?.ali_about_doors_txt3_en)
-        setTxt3Uz(result?.data?.ali_about_doors_txt3_uz)
+        setTxt3Ru(result?.data?.[`${type}_about_doors_txt3_ru`])
+        setTxt3En(result?.data?.[`${type}_about_doors_txt3_en`])
+        setTxt3Uz(result?.data?.[`${type}_about_doors_txt3_uz`])
 
-        setTxt4Ru(result?.data?.ali_about_doors_txt4_ru)
-        setTxt4En(result?.data?.ali_about_doors_txt4_en)
-        setTxt4Uz(result?.data?.ali_about_doors_txt4_uz)
+        setTxt4Ru(result?.data?.[`${type}_about_doors_txt4_ru`])
+        setTxt4En(result?.data?.[`${type}_about_doors_txt4_en`])
+        setTxt4Uz(result?.data?.[`${type}_about_doors_txt4_uz`])
     }, [result, effect])
 
 
@@ -65,7 +66,7 @@ const DoorsImgTexts = () => {
             <div>
                 <img className='img' src={about1} alt="img"/>
                 <AdminForm
-                    value='ali_about_doors_txt1'
+                    value={`${type}_about_doors_txt1`}
                     valueRu={txt1Ru}
                     valueEn={txt1En}
                     valueUz={txt1Uz}
@@ -76,13 +77,14 @@ const DoorsImgTexts = () => {
                     setEffect={setEffect}
                     textarea={true}
                     one={false}
+                    setType={setType}
                 />
             </div>
 
             <div>
                 <img className='img' src={about2} alt="img"/>
                 <AdminForm
-                    value='ali_about_doors_txt2'
+                    value={`${type}_about_doors_txt2`}
                     valueRu={txt2Ru}
                     valueEn={txt2En}
                     valueUz={txt2Uz}
@@ -93,13 +95,14 @@ const DoorsImgTexts = () => {
                     setEffect={setEffect}
                     textarea={true}
                     one={false}
+                    setType={setType}
                 />
             </div>
 
             <div>
                 <img className='img' src={about3} alt="img"/>
                 <AdminForm
-                    value='ali_about_doors_txt3'
+                    value={`${type}_about_doors_txt3`}
                     valueRu={txt3Ru}
                     valueEn={txt3En}
                     valueUz={txt3Uz}
@@ -110,13 +113,14 @@ const DoorsImgTexts = () => {
                     setEffect={setEffect}
                     textarea={true}
                     one={false}
+                    setType={setType}
                 />
             </div>
 
             <div>
                 <img className='img' src={about4} alt="img"/>
                 <AdminForm
-                    value='ali_about_doors_txt4'
+                    value={`${type}_about_doors_txt4`}
                     valueRu={txt4Ru}
                     valueEn={txt4En}
                     valueUz={txt4Uz}
@@ -127,6 +131,7 @@ const DoorsImgTexts = () => {
                     setEffect={setEffect}
                     textarea={true}
                     one={false}
+                    setType={setType}
                 />
             </div>
         </div>

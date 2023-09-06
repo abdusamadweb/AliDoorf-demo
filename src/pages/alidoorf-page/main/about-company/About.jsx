@@ -3,24 +3,24 @@ import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 import {getPostDataUser} from "../../../../api/apiResp";
 
-const About = ({ lang }) => {
+const About = ({ lang, type }) => {
 
 
     const [result, setResult] = useState([])
     const arr = [
-        'ali_home_hero_sub',
-        'ali_home_hero_tit',
-        'ali_home_news_btn',
-        'ali_cont_tit',
-        'ali_cont_desc',
-        'ali_cont_sub',
-        'ali_cont_btn',
-        'ali_cont_num_count1',
-        'ali_cont_num_count2',
-        'ali_cont_num_year',
-        'ali_cont_num_tit1',
-        'ali_cont_num_tit2',
-        'ali_cont_list',
+        `${type ? type : 'ali'}_home_hero_sub`,
+        `${type ? type : 'ali'}_home_hero_tit`,
+        `${type ? type : 'ali'}_home_news_btn`,
+        `${type ? type : 'ali'}_cont_tit`,
+        `${type ? type : 'ali'}_cont_desc`,
+        `${type ? type : 'ali'}_cont_sub`,
+        `${type ? type : 'ali'}_cont_btn`,
+        `${type ? type : 'ali'}_cont_num_count1`,
+        `${type ? type : 'ali'}_cont_num_count2`,
+        `${type ? type : 'ali'}_cont_num_year`,
+        `${type ? type : 'ali'}_cont_num_tit1`,
+        `${type ? type : 'ali'}_cont_num_tit2`,
+        `${type ? type : 'ali'}_cont_list`,
     ]
     useEffect(() => {
         const get = async () => {
@@ -30,7 +30,7 @@ const About = ({ lang }) => {
         get()
     }, [lang])
 
-    const texts = result.data?.ali_cont_list.split(', ').map(item => item)
+    const texts = result.data?.ali_cont_list?.split(', ')?.map(item => item)
 
 
     return (
@@ -38,17 +38,17 @@ const About = ({ lang }) => {
             <div className="container">
                 <div className="head row no-wrap between align-center">
                     <div className="titles">
-                        <span className='subtitle'>{ result.data?.ali_home_hero_sub || '...' }</span>
-                        <h2 className="title">{ result.data?.ali_home_hero_tit || '...' }</h2>
+                        <span className='subtitle'>{ result.data?.[`${type ? type : 'ali'}_home_hero_sub`] || '...' }</span>
+                        <h2 className="title">{ result.data?.[`${type ? type : 'ali'}_home_hero_tit`] || '...' }</h2>
                     </div>
-                    <Link className='head__btn fw500 fz14' to='news'>{ result.data?.ali_home_news_btn || '...' }</Link>
+                    <Link className='head__btn fw500 fz14' to='news'>{ result.data?.[`${type ? type : 'ali'}_home_news_btn`] || '...' }</Link>
                 </div>
                 <div className="body grid">
                     <div className="body__content pr1">
-                        <h2 className='title fw600 fz22 mb2'>{ result.data?.ali_cont_tit || '...' }</h2>
+                        <h2 className='title fw600 fz22 mb2'>{ result.data?.[`${type}_cont_tit`] || '...' }</h2>
                         <div className="descs">
-                            <p className='desc'>{ result.data?.ali_cont_desc || '...' }</p>
-                            <p className="desc last fw500">{ result.data?.ali_cont_sub || '...' }</p>
+                            <p className='desc'>{ result.data?.[`${type}_cont_desc`] || '...' }</p>
+                            <p className="desc last fw500">{ result.data?.[`${type}_cont_sub`] || '...' }</p>
                             <ul className='descs__list row flex-column mb1'>
                                 {
                                     texts?.map((i, index) => (
@@ -60,18 +60,18 @@ const About = ({ lang }) => {
                                 }
                             </ul>
                         </div>
-                        <Link className='btn fw500' to='/alidoorf/about'>{ result.data?.ali_cont_btn || '...' }</Link>
+                        <Link className='btn fw500' to='/alidoorf/about'>{ result.data?.[`${type}_cont_btn`] || '...' }</Link>
                     </div>
                     <div className="body__numbers">
                         <div className='wrapper mb3'>
-                            <span className='number'>{ result.data?.ali_cont_num_count1 || '...' }</span>
-                            <span className='title fw500'>{ result.data?.ali_cont_num_year || '...' }</span>
-                            <span className='title'>{ result.data?.ali_cont_num_tit1 || '...' }</span>
+                            <span className='number'>{ result.data?.[`${type}_cont_num_count1`] || '...' }</span>
+                            <span className='title fw500'>{ result.data?.[`${type}_cont_num_year`] || '...' }</span>
+                            <span className='title'>{ result.data?.[`${type}_cont_num_tit1`] || '...' }</span>
                         </div>
                         <div className='wrapper'>
-                            <span className='number number2'>{ result.data?.ali_cont_num_count2 || '...' }</span>
-                            <span className='title fw500'>{ result.data?.ali_cont_num_year || '...' }</span>
-                            <span className='title'>{ result.data?.ali_cont_num_tit2 || '...' }</span>
+                            <span className='number number2'>{ result.data?.[`${type}_cont_num_count2`] || '...' }</span>
+                            <span className='title fw500'>{ result.data?.[`${type}_cont_num_year`] || '...' }</span>
+                            <span className='title'>{ result.data?.[`${type}_cont_num_tit2`] || '...' }</span>
                         </div>
                     </div>
                 </div>

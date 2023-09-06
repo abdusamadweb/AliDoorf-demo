@@ -3,13 +3,13 @@ import React, {useEffect, useState} from 'react'
 import {getData, getPostDataUser} from "../../../../api/apiResp";
 import {API_TEST} from "../../../../api/apiConfig";
 
-const AboutFacts = ({ lang }) => {
+const AboutFacts = ({ lang, type }) => {
 
 
     const [result, setResult] = useState([])
     const arr = [
-        'ali_about_facts_sub',
-        'ali_about_facts_tit',
+        `${type}_about_facts_sub`,
+        `${type}_about_facts_tit`,
     ]
     useEffect(() => {
         const get = async () => {
@@ -24,7 +24,7 @@ const AboutFacts = ({ lang }) => {
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/about`, lang)
+            const res = await getData(`/api/alidoorf/v1/about?type=${type}`, lang)
             setList(res)
         }
         get()
@@ -36,8 +36,8 @@ const AboutFacts = ({ lang }) => {
             <div className="container">
                 <div className="facts__inner">
                     <div className="titles">
-                        <span className="subtitle">{ result.data?.ali_about_facts_sub || '...' }</span>
-                        <h2 className="title">{ result.data?.ali_about_facts_tit || '...' }</h2>
+                        <span className="subtitle">{ result.data?.[`${type}_about_facts_sub`] || '...' }</span>
+                        <h2 className="title">{ result.data?.[`${type}_about_facts_tit`] || '...' }</h2>
                     </div>
                     <ul className="facts__body grid">
                         {

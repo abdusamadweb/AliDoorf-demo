@@ -1,6 +1,5 @@
 import '../Alidoorf.scss'
-import React, {useState} from 'react'
-import FactsItem from "./facts/FactsItem";
+import React from 'react'
 import AboutHero from "./hero/AboutHero";
 import AboutHeroStaticText from "./hero/AboutHeroStaticText";
 import AboutHeroBtn from "./hero/AboutHeroBtn";

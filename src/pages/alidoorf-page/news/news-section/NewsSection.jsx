@@ -4,14 +4,14 @@ import {Link} from "react-router-dom";
 import {getData, getPostDataUser} from "../../../../api/apiResp";
 import {API_TEST} from "../../../../api/apiConfig";
 
-const NewsSection = ({ lang }) => {
+const NewsSection = ({ lang, type }) => {
 
 
     const [result, setResult] = useState([])
     const arr = [
-        'ali_news_news_sub',
-        'ali_news_news_tit',
-        'ali_news_news_btn',
+        `${type}_news_news_sub`,
+        `${type}_news_news_tit`,
+        `${type}_news_news_btn`,
     ]
     useEffect(() => {
         const get = async () => {
@@ -26,7 +26,7 @@ const NewsSection = ({ lang }) => {
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/news?page=0&size=20`, lang)
+            const res = await getData(`/api/alidoorf/v1/news?page=0&size=20&type=${type}`, lang)
             setList(res)
         }
         get()

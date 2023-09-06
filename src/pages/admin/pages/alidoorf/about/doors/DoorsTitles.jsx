@@ -4,16 +4,17 @@ import AdminForm from "../../../../../../components/admin/AdminForm";
 
 const DoorsTitles = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_about_doors_sub',
-        'ali_about_doors_tit'
+        `${type}_about_doors_sub`,
+        `${type}_about_doors_tit`
     ]
     useEffect(() => {
         const get = async () => {
-            let res = null
-            res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
+            const res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
             setResult(res)
         }
         get()
@@ -28,20 +29,20 @@ const DoorsTitles = () => {
     const [titUz, setTitUz] = useState('')
 
     useEffect(() => {
-        setSubRu(result?.data?.ali_about_doors_sub_ru)
-        setSubEn(result?.data?.ali_about_doors_sub_en)
-        setSubUz(result?.data?.ali_about_doors_sub_uz)
+        setSubRu(result?.data?.[`${type}_about_doors_sub_ru`])
+        setSubEn(result?.data?.[`${type}_about_doors_sub_en`])
+        setSubUz(result?.data?.[`${type}_about_doors_sub_uz`])
 
-        setTitRu(result?.data?.ali_about_doors_tit_ru)
-        setTitEn(result?.data?.ali_about_doors_tit_en)
-        setTitUz(result?.data?.ali_about_doors_tit_uz)
+        setTitRu(result?.data?.[`${type}_about_doors_tit_ru`])
+        setTitEn(result?.data?.[`${type}_about_doors_tit_en`])
+        setTitUz(result?.data?.[`${type}_about_doors_tit_uz`])
     }, [result, effect])
 
 
     return (
         <div>
             <AdminForm
-                value='ali_about_doors_sub'
+                value={`${type}_about_doors_sub`}
                 valueRu={subRu}
                 valueEn={subEn}
                 valueUz={subUz}
@@ -52,9 +53,10 @@ const DoorsTitles = () => {
                 setEffect={setEffect}
                 textarea={true}
                 one={false}
+                setType={setType}
             />
             <AdminForm
-                value='ali_about_doors_tit'
+                value={`${type}_about_doors_tit`}
                 valueRu={titRu}
                 valueEn={titEn}
                 valueUz={titUz}
@@ -64,6 +66,7 @@ const DoorsTitles = () => {
                 formTitle={'Title'}
                 setEffect={setEffect}
                 one={false}
+                setType={setType}
             />
         </div>
     )

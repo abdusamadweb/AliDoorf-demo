@@ -24,7 +24,8 @@ const AttachmentTextForm = ({
     textarea,
     index,
     news,
-    edit
+    edit,
+    type
 }) => {
 
 
@@ -54,6 +55,7 @@ const AttachmentTextForm = ({
 
 
     const item = {
+        type: type,
         titleRu: valueRu,
         titleEn: valueEn,
         titleUz: valueUz,
@@ -61,6 +63,8 @@ const AttachmentTextForm = ({
         attachmentId: attachmentId
     }
     const newsItem = {
+        primeloft: type,
+        type: type,
         titleRu: valueRu,
         titleEn: valueEn,
         titleUz: valueUz,

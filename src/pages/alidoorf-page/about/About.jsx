@@ -3,15 +3,14 @@ import AboutMain from "./hero/AboutMain";
 import AboutTexts from "./texts/AboutTexts";
 import AboutFacts from "./facts/AboutFacts";
 import Contact from "../main/contact/Contact";
-import Instagram from "./instagram/Instagram";
 
-const About = ({ lang }) => {
+const About = ({ lang, type }) => {
     return (
         <div className='about-page'>
-            <AboutMain lang={lang} />
-            <AboutTexts lang={lang} />
-            <AboutFacts lang={lang} />
-            <Instagram lang={lang} />
+            <AboutMain lang={lang} type={type} />
+            <AboutTexts lang={lang} type={type} />
+            <AboutFacts lang={lang} type={type} />
+            {/*<Instagram lang={lang} type={type} />*/}
             <Contact lang={lang} />
         </div>
     )

@@ -12,6 +12,7 @@ import MebelDesc from "./direction/mebel/MebelDesc";
 import MebelSpace from "./direction/mebel/MebelSpace";
 import MebelImg from "./direction/mebel/MebelImg";
 import Parallax from "./parallax/Parallax";
+import MainNews from "./news/MainNews";
 
 const AdminMain = () => {
 
@@ -43,6 +44,8 @@ const AdminMain = () => {
                 <MebelDesc />
                 <MebelSpace />
                 <MebelImg />
+
+                <MainNews />
             </div>
         </div>
     )

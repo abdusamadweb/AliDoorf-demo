@@ -4,7 +4,7 @@ import {$resp, getPostDataUser} from "../../../../api/apiResp";
 import {toast} from "react-hot-toast";
 import {API_TEST} from "../../../../api/apiConfig";
 
-const AboutMain = ({ lang }) => {
+const AboutMain = ({ lang, type }) => {
 
 
     const [popupModal, setPopupModal] = useState(false)
@@ -12,17 +12,17 @@ const AboutMain = ({ lang }) => {
 
     const [result, setResult] = useState([])
     const arr = [
-        'ali_about_hero_tit',
-        'ali_about_hero_static_txt',
-        'ali_about_hero_animation_txt',
-        'ali_about_hero_btn',
+        `${type}_about_hero_tit`,
+        `${type}_about_hero_static_txt`,
+        `${type}_about_hero_animation_txt`,
+        `${type}_about_hero_btn`,
+
+        `${type}_about_hero_img`,
 
         'form_access_name',
         'form_access_phone',
         'form_access_city',
         'form_access_email',
-
-        'ali_about_hero_img'
     ]
     useEffect(() => {
         const get = async () => {
@@ -34,7 +34,7 @@ const AboutMain = ({ lang }) => {
 
 
     const [textActive, setTextActive] = useState(1)
-    const texts = result.data?.ali_about_hero_animation_txt.split(', ').map(item => item)
+    const texts = result.data?.[`${type}_about_hero_animation_txt`]?.split(', ')?.map(item => item)
     setTimeout(() => {
         setTextActive(textActive < 4 ? textActive+1 : textActive-3)
     }, 2000)
@@ -67,7 +67,7 @@ const AboutMain = ({ lang }) => {
             })
     }
 
-    const img = API_TEST + 'api/alidoorf/v1/attachment/get/' + result?.data?.ali_about_hero_img
+    const img = API_TEST + 'api/alidoorf/v1/attachment/get/' + result?.data?.[`${type}_about_hero_img`]
 
 
     return (
@@ -75,9 +75,9 @@ const AboutMain = ({ lang }) => {
             <div className="bg-shadow"/>
             <div className="container">
                 <div className="about__titles">
-                    <span className="title mb2">{ result.data?.ali_about_hero_tit || '...' }</span>
+                    <span className="title mb2">{ result.data?.[`${type}_about_hero_tit`] || '...' }</span>
                     <h2 className='subtitle lato mb2'>
-                        <span className='txt'>{ result.data?.ali_about_hero_static_txt || '...' }</span>
+                        <span className='txt'>{ result.data?.[`${type}_about_hero_static_txt`] || '...' }</span>
                         <span className='txt2'>
                             {
                                 texts?.map((i, num) => (
@@ -92,7 +92,7 @@ const AboutMain = ({ lang }) => {
                             }
                         </span>
                     </h2>
-                    <button className='btn' onClick={() => setPopupModal(true)}>{ result.data?.ali_about_hero_btn || '...' }</button>
+                    <button className='btn' onClick={() => setPopupModal(true)}>{ result.data?.[`${type}_about_hero_btn`] || '...' }</button>
                 </div>
             </div>
 
@@ -101,7 +101,7 @@ const AboutMain = ({ lang }) => {
                     <span className='form__close no-copy' onClick={() => setPopupModal(false)}>
                         <i className="fa-solid fa-x icon"/>
                     </span>
-                    <span className='form__title'>{ result.data?.ali_about_hero_btn || '...' }</span>
+                    <span className='form__title'>{ result.data?.[`${type}_about_hero_btn`] || '...' }</span>
                     {
                         result.data?.form_access_name === 'true' &&
                         <label className='form__label'>

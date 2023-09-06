@@ -4,13 +4,15 @@ import {getPostData} from "../../../../../../api/apiResp";
 
 const ContentNumbers = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_cont_num_count1',
-        'ali_cont_num_count2',
-        'ali_cont_num_tit1',
-        'ali_cont_num_tit2'
+        `${type}_cont_num_count1`,
+        `${type}_cont_num_count2`,
+        `${type}_cont_num_tit1`,
+        `${type}_cont_num_tit2`
     ]
     useEffect(() => {
         const get = async () => {
@@ -33,16 +35,16 @@ const ContentNumbers = () => {
     const [tit2Uz, setTit2Uz] = useState('')
 
     useEffect(() => {
-        setNum1(result?.data?.ali_cont_num_count1_ru)
-        setNum2(result?.data?.ali_cont_num_count2_ru)
+        setNum1(result?.data?.[`${type}_cont_num_count1_ru`])
+        setNum2(result?.data?.[`${type}_cont_num_count2_ru`])
 
-        setTit1Ru(result?.data?.ali_cont_num_tit1_ru)
-        setTit1En(result?.data?.ali_cont_num_tit1_en)
-        setTit1Uz(result?.data?.ali_cont_num_tit1_uz)
+        setTit1Ru(result?.data?.[`${type}_cont_num_tit1_ru`])
+        setTit1En(result?.data?.[`${type}_cont_num_tit1_en`])
+        setTit1Uz(result?.data?.[`${type}_cont_num_tit1_uz`])
 
-        setTit2Ru(result?.data?.ali_cont_num_tit2_ru)
-        setTit2En(result?.data?.ali_cont_num_tit2_en)
-        setTit2Uz(result?.data?.ali_cont_num_tit2_uz)
+        setTit2Ru(result?.data?.[`${type}_cont_num_tit2_ru`])
+        setTit2En(result?.data?.[`${type}_cont_num_tit2_en`])
+        setTit2Uz(result?.data?.[`${type}_cont_num_tit2_uz`])
     }, [result, effect])
 
 
@@ -51,7 +53,7 @@ const ContentNumbers = () => {
             <div className='admin-main__subtitle fw500 fz20 mb2'>Content numbers:</div>
             <div>
                 <AdminForm
-                    value='ali_cont_num_count1'
+                    value={`${type}_cont_num_count1`}
                     valueRu={num1}
                     valueEn={num1}
                     valueUz={num1}
@@ -61,9 +63,10 @@ const ContentNumbers = () => {
                     formTitle={'Year of market'}
                     setEffect={setEffect}
                     one={true}
+                    setType={setType}
                 />
                 <AdminForm
-                    value='ali_cont_num_tit1'
+                    value={`${type}_cont_num_tit1`}
                     valueRu={tit1Ru}
                     valueEn={tit1En}
                     valueUz={tit1Uz}
@@ -73,12 +76,13 @@ const ContentNumbers = () => {
                     formTitle={'Text'}
                     setEffect={setEffect}
                     one={false}
+                    setType={setType}
                 />
             </div>
 
             <div>
                 <AdminForm
-                    value='ali_cont_num_count2'
+                    value={`${type}_cont_num_count2`}
                     valueRu={num2}
                     valueEn={num2}
                     valueUz={num2}
@@ -88,9 +92,10 @@ const ContentNumbers = () => {
                     formTitle={'Year of guarantee'}
                     setEffect={setEffect}
                     one={true}
+                    setType={setType}
                 />
                 <AdminForm
-                    value='ali_cont_num_tit2'
+                    value={`${type}_cont_num_tit2`}
                     valueRu={tit2Ru}
                     valueEn={tit2En}
                     valueUz={tit2Uz}
@@ -100,6 +105,7 @@ const ContentNumbers = () => {
                     formTitle={'Text'}
                     setEffect={setEffect}
                     one={false}
+                    setType={setType}
                 />
             </div>
         </div>

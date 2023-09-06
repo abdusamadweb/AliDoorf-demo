@@ -4,12 +4,12 @@ import {Link} from "react-router-dom";
 import {getData, getPostDataUser} from "../../../api/apiResp";
 import {API_TEST} from "../../../api/apiConfig";
 
-const Catalog = ({ lang }) => {
+const Catalog = ({ lang, type }) => {
 
 
     const [result, setResult] = useState([])
     const arr = [
-        'ali_catalog_hero_tit'
+        `${type}_catalog_hero_tit`
     ]
     useEffect(() => {
         const get = async () => {
@@ -24,7 +24,7 @@ const Catalog = ({ lang }) => {
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/category?page=0&size=20`, lang)
+            const res = await getData(`/api/alidoorf/v1/category?page=0&size=20&type=${type}`, lang)
             setList(res)
         }
         get()
@@ -35,7 +35,7 @@ const Catalog = ({ lang }) => {
         <div className='catalog page bg-cl pt2 pb3'>
             <div className="container">
                 <div className="catalog__inner">
-                    <h1 className="catalog__title">{ result.data?.ali_catalog_hero_tit || '...' }</h1>
+                    <h1 className="catalog__title">{ result.data?.[`${type}_catalog_hero_tit`] || '...' }</h1>
                     <ul className='catalog__list grid'>
                         {
                             list?.data?.map(i => (

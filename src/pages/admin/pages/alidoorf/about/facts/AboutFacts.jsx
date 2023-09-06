@@ -4,11 +4,13 @@ import {getPostData} from "../../../../../../api/apiResp";
 
 const AboutFacts = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_about_facts_sub',
-        'ali_about_facts_tit'
+        `${type}_about_facts_sub`,
+        `${type}_about_facts_tit`
     ]
     useEffect(() => {
         const get = async () => {
@@ -28,20 +30,20 @@ const AboutFacts = () => {
     const [titUz, setTitUz] = useState('')
 
     useEffect(() => {
-        setSubRu(result?.data?.ali_about_facts_sub_ru)
-        setSubEn(result?.data?.ali_about_facts_sub_en)
-        setSubUz(result?.data?.ali_about_facts_sub_uz)
+        setSubRu(result?.data?.[`${type}_about_facts_sub_ru`])
+        setSubEn(result?.data?.[`${type}_about_facts_sub_en`])
+        setSubUz(result?.data?.[`${type}_about_facts_sub_uz`])
 
-        setTitRu(result?.data?.ali_about_facts_tit_ru)
-        setTitEn(result?.data?.ali_about_facts_tit_en)
-        setTitUz(result?.data?.ali_about_facts_tit_uz)
+        setTitRu(result?.data?.[`${type}_about_facts_tit_ru`])
+        setTitEn(result?.data?.[`${type}_about_facts_tit_en`])
+        setTitUz(result?.data?.[`${type}_about_facts_tit_uz`])
     }, [result, effect])
 
 
     return (
         <div>
             <AdminForm
-                value='ali_about_facts_sub'
+                value={`${type}_about_facts_sub`}
                 valueRu={subRu}
                 valueEn={subEn}
                 valueUz={subUz}
@@ -51,9 +53,10 @@ const AboutFacts = () => {
                 formTitle={'Subtitle'}
                 setEffect={setEffect}
                 one={false}
+                setType={setType}
             />
             <AdminForm
-                value='ali_about_facts_tit'
+                value={`${type}_about_facts_tit`}
                 valueRu={titRu}
                 valueEn={titEn}
                 valueUz={titUz}
@@ -64,6 +67,7 @@ const AboutFacts = () => {
                 setEffect={setEffect}
                 textarea={true}
                 one={false}
+                setType={setType}
             />
         </div>
     )

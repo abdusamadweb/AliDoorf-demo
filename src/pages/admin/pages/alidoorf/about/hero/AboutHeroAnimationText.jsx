@@ -3,13 +3,14 @@ import {getPostData, putData} from "../../../../../../api/apiResp";
 
 const AboutHeroAnimationText = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
-    const arr = 'ali_about_hero_animation_txt'
+    const arr = `${type}_about_hero_animation_txt`
     useEffect(() => {
         const get = async () => {
-            let res = null
-            res = await getPostData('/api/alidoorf/v1/content/data-graph', [arr])
+            const res = await getPostData('/api/alidoorf/v1/content/data-graph', [arr])
             setResult(res)
         }
         get()
@@ -20,9 +21,9 @@ const AboutHeroAnimationText = () => {
     const [titUz, setTitUz] = useState('')
 
     useEffect(() => {
-        setTitRu(result?.data?.ali_about_hero_animation_txt_ru)
-        setTitEn(result?.data?.ali_about_hero_animation_txt_en)
-        setTitUz(result?.data?.ali_about_hero_animation_txt_uz)
+        setTitRu(result?.data?.[`${type}_about_hero_animation_txt_ru`])
+        setTitEn(result?.data?.[`${type}_about_hero_animation_txt_en`])
+        setTitUz(result?.data?.[`${type}_about_hero_animation_txt_uz`])
     }, [result, effect])
 
 
@@ -40,9 +41,22 @@ const AboutHeroAnimationText = () => {
     }
 
 
+    // change select
+    const changeType = (e) => {
+        setType(e)
+        setTimeout(() => setEffect(prev => !prev), 1000)
+    }
+
     return (
         <form className='form' onSubmit={postData}>
-            <span className='title fw500 fz18 mb1'>Animation texts (with ','):</span>
+            <div className='row between'>
+                <span className='title fw500 fz18 mb1'>Animation texts (with ','):</span>
+                <select className='select mb1' onChange={(e) => changeType(e.target.value)}>
+                    <option value="ali">Alidoorf</option>
+                    <option value="prime">Primeloft</option>
+                    <option value="mebel">Mebel</option>
+                </select>
+            </div>
             <label>
                 <span className='txt'>Ru</span>
                 <textarea

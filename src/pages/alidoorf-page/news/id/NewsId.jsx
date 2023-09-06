@@ -4,7 +4,7 @@ import {API_TEST} from "../../../../api/apiConfig";
 import {getData} from "../../../../api/apiResp";
 import {useParams} from "react-router-dom";
 
-const NewsId = ({ lang }) => {
+const NewsId = ({ lang, type}) => {
 
 
     const { id } = useParams()
@@ -14,7 +14,7 @@ const NewsId = ({ lang }) => {
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/news?page=0&size=20`, lang)
+            const res = await getData(`/api/alidoorf/v1/news?page=0&size=20&type=${type}`, lang)
             setList(res?.data?.find(i => i.id == id))
         }
         get()

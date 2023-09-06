@@ -23,17 +23,30 @@
     position: relative;
 
     .before::before {
-      position: relative;
-      bottom: 3px;
+      position: absolute;
+      top: 50%;
+      left: 0;
       width: 4vw;
       height: 1px;
       content: '';
       margin-right: 1rem;
       background: #ffffff50;
+
+      @include phone {
+        content: none;
+      }
     }
 
     .subtitle {
+      position: relative;
+      padding-left: calc(4vw + 10px);
+
+      @include phone {
+        padding-left: 0;
+      }
+
       .txt {
+        line-height: 1.5;
         letter-spacing: 1px;
         padding: 12px 1rem;
         color: #fff;
@@ -63,11 +76,16 @@
     }
 
     .tel {
+      position: relative;
       letter-spacing: 2px;
+      padding-left: calc(4vw + 10px);
       color: #fff;
 
       @include tablet {
         font-size: 18px;
+      }
+      @include phone {
+        padding-left: 0;
       }
 
       .icon {

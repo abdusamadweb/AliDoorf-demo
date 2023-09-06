@@ -5,15 +5,15 @@ import Tech from "./technogies/Tech";
 import News from "./news/News";
 import Contact from "./contact/Contact";
 
-const Alidoorf = ({ lang }) => {
+const Alidoorf = ({ lang, type }) => {
 
     return (
         <div>
             <Hero lang={lang} />
-            <About lang={lang} />
-            <Tech lang={lang} />
-            <News lang={lang} />
-            <Contact lang={lang} />
+            <About lang={lang} type={type} />
+            <Tech lang={lang} type={type} />
+            <News lang={lang} type={type} main={false} />
+            <Contact lang={lang} type={type} />
         </div>
     )
 }

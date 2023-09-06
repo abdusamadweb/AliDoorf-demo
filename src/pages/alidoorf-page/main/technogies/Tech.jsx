@@ -9,12 +9,12 @@ import {Navigation, Pagination} from "swiper/modules";
 import {getData, getPostDataUser} from "../../../../api/apiResp";
 import {API_TEST} from "../../../../api/apiConfig";
 
-const Tech = ({ lang }) => {
+const Tech = ({ lang, type }) => {
 
     const [result, setResult] = useState([])
     const arr = [
-        'ali_tech_sub',
-        'ali_tech_tit',
+        `${type}_tech_sub`,
+        `${type}_tech_tit`,
     ]
     useEffect(() => {
         const get = async () => {
@@ -29,7 +29,7 @@ const Tech = ({ lang }) => {
     const [list, setList] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/technology?page=0&size=20`, lang)
+            const res = await getData(`/api/alidoorf/v1/technology?page=0&size=20&type=${type}`, lang)
             setList(res)
         }
         get()
@@ -40,8 +40,8 @@ const Tech = ({ lang }) => {
         <div className='tech page bg-cl pt2'>
             <div className="container">
                 <div className="titles">
-                    <span className='subtitle'>{ result.data?.ali_tech_sub || '...' }</span>
-                    <h2 className="title">{ result.data?.ali_tech_tit || '...' }</h2>
+                    <span className='subtitle'>{ result.data?.[`${type}_tech_sub`] || '...' }</span>
+                    <h2 className="title">{ result.data?.[`${type}_tech_tit`] || '...' }</h2>
                 </div>
                 <div className="slider no-copy">
                     <Swiper

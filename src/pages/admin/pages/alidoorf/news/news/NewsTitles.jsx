@@ -4,11 +4,13 @@ import AdminForm from "../../../../../../components/admin/AdminForm";
 
 const NewsTitles = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_news_news_sub',
-        'ali_news_news_tit'
+        `${type}_news_news_sub`,
+        `${type}_news_news_tit`
     ]
     useEffect(() => {
         const get = async () => {
@@ -28,20 +30,20 @@ const NewsTitles = () => {
     const [titUz, setTitUz] = useState('')
 
     useEffect(() => {
-        setSubRu(result?.data?.ali_news_news_sub_ru)
-        setSubEn(result?.data?.ali_news_news_sub_en)
-        setSubUz(result?.data?.ali_news_news_sub_uz)
+        setSubRu(result?.data?.[`${type}_news_news_sub_ru`])
+        setSubEn(result?.data?.[`${type}_news_news_sub_en`])
+        setSubUz(result?.data?.[`${type}_news_news_sub_uz`])
 
-        setTitRu(result?.data?.ali_news_news_tit_ru)
-        setTitEn(result?.data?.ali_news_news_tit_en)
-        setTitUz(result?.data?.ali_news_news_tit_uz)
+        setTitRu(result?.data?.[`${type}_news_news_tit_ru`])
+        setTitEn(result?.data?.[`${type}_news_news_tit_en`])
+        setTitUz(result?.data?.[`${type}_news_news_tit_uz`])
     }, [result, effect])
 
 
     return (
         <div>
             <AdminForm
-                value='ali_news_news_sub'
+                value={`${type}_news_news_sub`}
                 valueRu={subRu}
                 valueEn={subEn}
                 valueUz={subUz}
@@ -51,9 +53,10 @@ const NewsTitles = () => {
                 formTitle={'Subtitle'}
                 setEffect={setEffect}
                 one={false}
+                setType={setType}
             />
             <AdminForm
-                value='ali_news_news_tit'
+                value={`${type}_news_news_tit`}
                 valueRu={titRu}
                 valueEn={titEn}
                 valueUz={titUz}
@@ -63,6 +66,7 @@ const NewsTitles = () => {
                 formTitle={'Title'}
                 setEffect={setEffect}
                 one={false}
+                setType={setType}
             />
         </div>
     )

@@ -4,12 +4,14 @@ import AdminForm from "../../../../../../components/admin/AdminForm";
 
 const ContentTitles = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_cont_tit',
-        'ali_cont_desc',
-        'ali_cont_sub'
+        `${type}_cont_tit`,
+        `${type}_cont_desc`,
+        `${type}_cont_sub`
     ]
     useEffect(() => {
         const get = async () => {
@@ -33,24 +35,24 @@ const ContentTitles = () => {
     const [subUz, setSubUz] = useState('')
 
     useEffect(() => {
-        setTitRu(result?.data?.ali_cont_tit_ru)
-        setTitEn(result?.data?.ali_cont_tit_en)
-        setTitUz(result?.data?.ali_cont_tit_uz)
+        setTitRu(result?.data?.[`${type}_cont_tit_ru`])
+        setTitEn(result?.data?.[`${type}_cont_tit_en`])
+        setTitUz(result?.data?.[`${type}_cont_tit_uz`])
 
-        setDescRu(result?.data?.ali_cont_desc_ru)
-        setDescEn(result?.data?.ali_cont_desc_en)
-        setDescUz(result?.data?.ali_cont_desc_uz)
+        setDescRu(result?.data?.[`${type}_cont_desc_ru`])
+        setDescEn(result?.data?.[`${type}_cont_desc_en`])
+        setDescUz(result?.data?.[`${type}_cont_desc_uz`])
 
-        setSubRu(result?.data?.ali_cont_sub_ru)
-        setSubEn(result?.data?.ali_cont_sub_en)
-        setSubUz(result?.data?.ali_cont_sub_uz)
+        setSubRu(result?.data?.[`${type}_cont_sub_ru`])
+        setSubEn(result?.data?.[`${type}_cont_sub_en`])
+        setSubUz(result?.data?.[`${type}_cont_sub_uz`])
     }, [result, effect])
 
 
     return (
         <div>
             <AdminForm
-                value='ali_cont_tit'
+                value={`${type}_cont_tit`}
                 valueRu={titRu}
                 valueEn={titEn}
                 valueUz={titUz}
@@ -61,10 +63,11 @@ const ContentTitles = () => {
                 setEffect={setEffect}
                 textarea={true}
                 one={false}
+                setType={setType}
             />
 
             <AdminForm
-                value='ali_cont_desc'
+                value={`${type}_cont_desc`}
                 valueRu={descRu}
                 valueEn={descEn}
                 valueUz={descUz}
@@ -75,10 +78,11 @@ const ContentTitles = () => {
                 setEffect={setEffect}
                 textarea={true}
                 one={false}
+                setType={setType}
             />
 
             <AdminForm
-                value='ali_cont_sub'
+                value={`${type}_cont_sub`}
                 valueRu={subRu}
                 valueEn={subEn}
                 valueUz={subUz}
@@ -89,6 +93,7 @@ const ContentTitles = () => {
                 setEffect={setEffect}
                 textarea={true}
                 one={false}
+                setType={setType}
             />
         </div>
     )

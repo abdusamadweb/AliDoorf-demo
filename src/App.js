@@ -64,6 +64,16 @@ function App() {
         'ali_about_page_access',
         'ali_news_page_access',
         'ali_catalog_page_access',
+
+        'prime_home_page_access',
+        'prime_about_page_access',
+        'prime_news_page_access',
+        'prime_catalog_page_access',
+
+        'mebel_home_page_access',
+        'mebel_about_page_access',
+        'mebel_news_page_access',
+        'mebel_catalog_page_access',
     ]
     useEffect(() => {
         const get = async () => {
@@ -106,41 +116,104 @@ function App() {
 
                         <Routes>
 
-                            <Route path='/' element={<Home lang={lang}/>}/>
+                            <Route path='/' element={<Home lang={lang} type='ali'/>}/>
 
-                            <Route path='/sitemap.xml' element={<SiteMap />}/>
-
-                            <Route path='/alidoorf' element={<Alidoorf lang={lang}/>}/>
-
+                            // alidoorf
+                            {
+                                result?.data?.ali_home_page_access === 'true' &&
+                                <Route path='/alidoorf' element={<Alidoorf lang={lang} type='ali'/>}/>
+                            }
+                            // catalog
                             {
                                 result?.data?.ali_catalog_page_access === 'true' &&
-                                <Route path='/alidoorf/catalog' element={<Catalog lang={lang}/>}/>
+                                <>
+                                    <Route path='/alidoorf/catalog' element={<Catalog lang={lang} type='ali'/>}/>
+                                    <Route path={'/alidoorf/catalog/:id'} element={<CatalogItem lang={lang} type='ali'/>}/>
+                                    <Route path={'/alidoorf/catalog/:id/:id'} element={<CatalogItemId lang={lang} type='ali'/>}/>
+                                    <Route path={'/alidoorf/catalog/:id/:id/:id'} element={<CatalogProduct lang={lang} type='ali'/>}/>
+                                </>
                             }
-                            <Route path={'/alidoorf/catalog/:id'} element={<CatalogItem lang={lang}/>}/>
-                            <Route path={'/alidoorf/catalog/:id/:id'} element={<CatalogItemId lang={lang}/>}/>
-                            <Route path={'/alidoorf/catalog/:id/:id/:id'} element={<CatalogProduct lang={lang}/>}/>
-
+                            // about
                             {
                                 result?.data?.ali_about_page_access === 'true' &&
-                                <Route path='/alidoorf/about' element={<About lang={lang}/>}/>
+                                <Route path='/alidoorf/about' element={<About lang={lang} type='ali'/>}/>
                             }
-
+                            // news
                             {
                                 result?.data?.ali_news_page_access === 'true' &&
-                                <Route path='/alidoorf/news' element={<NewsPage lang={lang}/>}/>
+                                <>
+                                    <Route path='/alidoorf/news' element={<NewsPage lang={lang} type='ali'/>}/>
+                                    <Route path='/alidoorf/news/:id' element={<NewsId lang={lang} type='ali'/>}/>
+                                </>
                             }
-                            <Route path='/alidoorf/news/:id' element={<NewsId lang={lang}/>}/>
 
-                            <Route path='/primeloft' element={<Alidoorf lang={lang}/>}/>
-                            <Route path='/primeloft/about' element={<About lang={lang}/>}/>
-                            <Route path='/primeloft/news' element={<NewsPage lang={lang}/>}/>
 
-                            <Route path='/mebel' element={<Alidoorf lang={lang}/>}/>
+                            // primeloft
+                            {
+                                result?.data?.prime_home_page_access === 'true' &&
+                                <Route path='/primeloft' element={<Alidoorf lang={lang} type='prime'/>}/>
+                            }
+                            // catalog
+                            {
+                                result?.data?.prime_catalog_page_access === 'true' &&
+                                <>
+                                    <Route path='/primeloft/catalog' element={<Catalog lang={lang} type='prime'/>}/>
+                                    <Route path={'/primeloft/catalog/:id'} element={<CatalogItem lang={lang} type='prime'/>}/>
+                                    <Route path={'/primeloft/catalog/:id/:id'} element={<CatalogItemId lang={lang} type='prime'/>}/>
+                                    <Route path={'/primeloft/catalog/:id/:id/:id'} element={<CatalogProduct lang={lang} type='prime'/>}/>
+                                </>
+                            }
+                            // about
+                            {
+                                result?.data?.prime_about_page_access === 'true' &&
+                                <Route path='/primeloft/about' element={<About lang={lang} type='prime'/>}/>
+                            }
+                            // news
+                            {
+                                result?.data?.prime_news_page_access === 'true' &&
+                                <>
+                                    <Route path='/primeloft/news' element={<NewsPage lang={lang} type='prime'/>}/>
+                                    <Route path='/primeloft/news/:id' element={<NewsId lang={lang} type='prime'/>}/>
+                                </>
+                            }
+
+
+                            // mebel
+                            {
+                                result?.data?.mebel_home_page_access === 'true' &&
+                                <Route path='/mebel' element={<Alidoorf lang={lang} type='mebel'/>}/>
+                            }
+                            // catalog
+                            {
+                                result?.data?.mebel_catalog_page_access === 'true' &&
+                                <>
+                                    <Route path='/mebel/catalog' element={<Catalog lang={lang} type='mebel'/>}/>
+                                    <Route path={'/mebel/catalog/:id'} element={<CatalogItem lang={lang} type='mebel'/>}/>
+                                    <Route path={'/mebel/catalog/:id/:id'} element={<CatalogItemId lang={lang} type='mebel'/>}/>
+                                    <Route path={'/mebel/catalog/:id/:id/:id'} element={<CatalogProduct lang={lang} type='mebel'/>}/>
+                                </>
+                            }
+                            // about
+                            {
+                                result?.data?.mebel_about_page_access === 'true' &&
+                                <Route path='/mebel/about' element={<About lang={lang} type='mebel'/>}/>
+                            }
+                            // news
+                            {
+                                result?.data?.mebel_news_page_access === 'true' &&
+                                <>
+                                    <Route path='/mebel/news' element={<NewsPage lang={lang} type='mebel'/>}/>
+                                    <Route path='/mebel/news/:id' element={<NewsId lang={lang} type='mebel'/>}/>
+                                </>
+                            }
 
                             <Route path='/contacts' element={<Contacts/>} lang={lang}/>
 
                             // 404
                             <Route path='/*' element={<PageNotFound/>}/>
+
+                            // site-map
+                            <Route path='/sitemap.xml' element={<SiteMap />}/>
 
 
                             // Protect-able routes
@@ -159,21 +232,11 @@ function App() {
                                 <Route path='/admin/pages/main' element={<AdminMain/>}/>
 
                                 <Route path='/admin/pages/alidoorf/home' element={<AlidoorfHome/>}/>
-
                                 <Route path='/admin/pages/alidoorf/catalog' element={<AlidoorfCatalog/>}/>
                                 <Route path='/admin/pages/alidoorf/catalog/:id' element={<AlidoorfCatalogId/>}/>
                                 <Route path='/admin/pages/alidoorf/catalog/:id/:id' element={<Product/>}/>
-
                                 <Route path='/admin/pages/alidoorf/about' element={<AlidoorfAbout/>}/>
                                 <Route path='/admin/pages/alidoorf/news' element={<AlidoorfNews/>}/>
-
-                                <Route path='/admin/pages/primeloft/home' element={<AdminHome/>}/>
-                                <Route path='/admin/pages/primeloft/about' element={<AdminHome/>}/>
-                                <Route path='/admin/pages/primeloft/news' element={<AdminHome/>}/>
-
-                                <Route path='/admin/pages/mebel/home' element={<AdminHome/>}/>
-                                <Route path='/admin/pages/mebel/about' element={<AdminHome/>}/>
-                                <Route path='/admin/pages/mebel/news' element={<AdminHome/>}/>
 
                             </Route>
 

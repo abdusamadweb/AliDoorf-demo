@@ -4,10 +4,12 @@ import {getPostData} from "../../../../../../api/apiResp";
 
 const Parallax = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_news_parallax'
+        `${type}_news_parallax`
     ]
     useEffect(() => {
         const get = async () => {
@@ -21,13 +23,13 @@ const Parallax = () => {
     const [text, setText] = useState('')
 
     useEffect(() => {
-        setText(result?.data?.ali_news_parallax)
+        setText(result?.data?.[`${type}_news_parallax`])
     }, [result, effect])
 
 
     return (
         <AdminForm
-            value='ali_news_parallax'
+            value={`${type}_news_parallax`}
             valueRu={text}
             valueEn={text}
             valueUz={text}
@@ -37,6 +39,7 @@ const Parallax = () => {
             formTitle={'Parallax text'}
             setEffect={setEffect}
             one={'p'}
+            setType={setType}
         />
     )
 }

@@ -4,10 +4,12 @@ import AdminForm from "../../../../../../components/admin/AdminForm";
 
 const HeroTitle = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_news_hero_tit'
+        `${type}_news_hero_tit`
     ]
     useEffect(() => {
         const get = async () => {
@@ -23,15 +25,15 @@ const HeroTitle = () => {
     const [titUz, setTitUz] = useState('')
 
     useEffect(() => {
-        setTitRu(result?.data?.ali_news_hero_tit_ru)
-        setTitEn(result?.data?.ali_news_hero_tit_en)
-        setTitUz(result?.data?.ali_news_hero_tit_uz)
+        setTitRu(result?.data?.[`${type}_news_hero_tit_ru`])
+        setTitEn(result?.data?.[`${type}_news_hero_tit_en`])
+        setTitUz(result?.data?.[`${type}_news_hero_tit_uz`])
     }, [result, effect])
 
 
     return (
         <AdminForm
-            value='ali_news_hero_tit'
+            value={`${type}_news_hero_tit`}
             valueRu={titRu}
             valueEn={titEn}
             valueUz={titUz}
@@ -41,6 +43,7 @@ const HeroTitle = () => {
             formTitle={'Title'}
             setEffect={setEffect}
             one={false}
+            setType={setType}
         />
     )
 }

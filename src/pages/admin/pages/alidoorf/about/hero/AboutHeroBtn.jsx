@@ -4,15 +4,16 @@ import {getPostData} from "../../../../../../api/apiResp";
 
 const AboutHeroBtn = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_about_hero_btn'
+        `${type}_about_hero_btn`
     ]
     useEffect(() => {
         const get = async () => {
-            let res = null
-            res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
+            const res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
             setResult(res)
         }
         get()
@@ -23,15 +24,15 @@ const AboutHeroBtn = () => {
     const [titUz, setTitUz] = useState('')
 
     useEffect(() => {
-        setTitRu(result?.data?.ali_about_hero_btn_ru)
-        setTitEn(result?.data?.ali_about_hero_btn_en)
-        setTitUz(result?.data?.ali_about_hero_btn_uz)
+        setTitRu(result?.data?.[`${type}_about_hero_btn_ru`])
+        setTitEn(result?.data?.[`${type}_about_hero_btn_en`])
+        setTitUz(result?.data?.[`${type}_about_hero_btn_uz`])
     }, [result, effect])
 
 
     return (
         <AdminForm
-            value='ali_about_hero_btn'
+            value={`${type}_about_hero_btn`}
             valueRu={titRu}
             valueEn={titEn}
             valueUz={titUz}
@@ -41,6 +42,7 @@ const AboutHeroBtn = () => {
             formTitle={'Button text'}
             setEffect={setEffect}
             one={false}
+            setType={setType}
         />
     )
 

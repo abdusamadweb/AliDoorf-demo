@@ -42,7 +42,7 @@ const ContentList = () => {
 
     return (
         <form className='form' onSubmit={postData}>
-            <span className='title fw500 fz18 mb1'>Items (each item with ',')::</span>
+            <span className='title fw500 fz18 mb1'>Items (each item with ','):</span>
             <label>
                 <span className='txt'>Ru</span>
                 <textarea

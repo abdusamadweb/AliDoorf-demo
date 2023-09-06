@@ -6,11 +6,14 @@ import AdminForm from "../../../../../../components/admin/AdminForm";
 const FactsList = () => {
 
 
+    const [type, setType] = useState('ali')
+
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/about`)
+            const res = await getData(`/api/alidoorf/v1/about?type=${type}`)
             setResult(res)
         }
         get()
@@ -25,8 +28,23 @@ const FactsList = () => {
     const [titUz, setTitUz] = useState('')
 
 
+    // change select
+    const changeType = (e) => {
+        setType(e)
+        setTimeout(() => setEffect(prev => !prev), 1000)
+    }
+
+
     return (
         <div>
+            <div className="row between">
+                <div className='title d-block center fw500 fz22 mb2'>Facts</div>
+                <select className='select mb1' onChange={(e) => changeType(e.target.value)}>
+                    <option value="ali">Alidoorf</option>
+                    <option value="prime">Primeloft</option>
+                    <option value="mebel">Mebel</option>
+                </select>
+            </div>
             <ul className='ali-about__list grid'>
                 <li className="item item__link plus grid grid-center">
                     <button className='plus__btn' onClick={() => setModal(true)}>
@@ -37,8 +55,9 @@ const FactsList = () => {
                     result?.data?.map(i => (
                         <FactsItem
                             i={i}
-                            key={i.attachmentId}
                             setEffect={setEffect}
+                            type={type}
+                            key={i.attachmentId}
                         />
                     ))
                 }
@@ -60,6 +79,7 @@ const FactsList = () => {
                             setModal={setModal}
                             img={true}
                             one={false}
+                            type={type}
                         />
                         <div className="bg" onClick={() => setModal(false)}/>
                     </div>

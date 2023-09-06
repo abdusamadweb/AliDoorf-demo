@@ -4,15 +4,16 @@ import {getPostData} from "../../../../../../api/apiResp";
 
 const Parallax = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_catalog_parallax'
+        `${type}_catalog_parallax`
     ]
     useEffect(() => {
         const get = async () => {
-            let res = null
-            res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
+            const res = await getPostData('/api/alidoorf/v1/content/data-graph', arr)
             setResult(res)
         }
         get()
@@ -21,13 +22,13 @@ const Parallax = () => {
     const [text, setText] = useState('')
 
     useEffect(() => {
-        setText(result?.data?.ali_catalog_parallax)
+        setText(result?.data?.[`${type}_catalog_parallax`])
     }, [result, effect])
 
 
     return (
         <AdminForm
-            value='ali_catalog_parallax'
+            value={`${type}_catalog_parallax`}
             valueRu={text}
             valueEn={text}
             valueUz={text}
@@ -37,6 +38,7 @@ const Parallax = () => {
             formTitle={'Parallax text'}
             setEffect={setEffect}
             one={'p'}
+            setType={setType}
         />
     )
 }

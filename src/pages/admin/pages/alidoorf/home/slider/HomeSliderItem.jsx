@@ -4,7 +4,7 @@ import {toast} from "react-hot-toast";
 import AttachmentTextForm from "../../../../../../components/admin/AttachmentTextForm";
 import {API_TEST} from "../../../../../../api/apiConfig";
 
-const HomeSliderItem = ({ i, setEffect }) => {
+const HomeSliderItem = ({ i, setEffect, type }) => {
 
 
     const [modal, setModal] = useState(false)
@@ -66,6 +66,7 @@ const HomeSliderItem = ({ i, setEffect }) => {
                             setModal={setModal}
                             index={1}
                             edit={true}
+                            type={type}
                         />
                         <div className="bg" onClick={() => setModal(false)}/>
                     </div>

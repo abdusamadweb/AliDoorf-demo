@@ -11,7 +11,8 @@ const AttachmentForm = ({
     setValueUz,
     formTitle,
     setEffect,
-    one
+    one,
+    setType
 }) => {
 
 
@@ -39,6 +40,13 @@ const AttachmentForm = ({
             valueUz
         }
         putData('/api/alidoorf/v1/content/update-content', item)
+        setTimeout(() => setEffect(prev => !prev), 1000)
+    }
+
+
+    // change select
+    const changeType = (e) => {
+        setType(e)
         setTimeout(() => setEffect(prev => !prev), 1000)
     }
 
@@ -79,7 +87,14 @@ const AttachmentForm = ({
                     </div>
                     :
                     <div>
-                        <div className='content__subtitle fz20 fw500 mb1'>{ formTitle }:</div>
+                        <div className="row between">
+                            <div className='content__subtitle fz20 fw500 mb1'>{ formTitle }:</div>
+                            <select className='select mb1' onChange={(e) => changeType(e.target.value)}>
+                                <option value="ali">Alidoorf</option>
+                                <option value="prime">Primeloft</option>
+                                <option value="mebel">Mebel</option>
+                            </select>
+                        </div>
                         <label>
                             <input
                                 className='admin-inp mb1'

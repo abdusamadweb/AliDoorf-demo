@@ -6,11 +6,13 @@ import {getData} from "../../../../../../../api/apiResp";
 const NewsList = () => {
 
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/news?page=0&size=20`)
+            const res = await getData(`/api/alidoorf/v1/news?page=0&size=20&type=${type}`)
             setResult(res)
         }
         get()
@@ -31,9 +33,23 @@ const NewsList = () => {
     const [date, setDate] = useState(new Date())
 
 
+    // change select
+    const changeType = (e) => {
+        setType(e)
+        setTimeout(() => setEffect(prev => !prev), 1000)
+    }
+
+
     return (
         <div>
-            <div className='admin-main__subtitle fw500 fz20 mb2'>News items:</div>
+            <div className="row between">
+                <div className='admin-main__subtitle fw500 fz20 mb2'>News items:</div>
+                <select className='select mb1' onChange={(e) => changeType(e.target.value)}>
+                    <option value="ali">Alidoorf</option>
+                    <option value="prime">Primeloft</option>
+                    <option value="mebel">Mebel</option>
+                </select>
+            </div>
             <ul className='news__list grid'>
                 <li className='item plus'>
                     <button className='plus__btn' onClick={() => setModal(true)}>
@@ -45,6 +61,7 @@ const NewsList = () => {
                         <NewsListItem
                             i={i}
                             setEffect={setEffect}
+                            type={type}
                             key={i.id}
                         />
                     ))
@@ -76,6 +93,7 @@ const NewsList = () => {
                             index={result?.data?.length + 1}
                             textarea={true}
                             news={true}
+                            type={type}
                         />
                         <div className="bg" onClick={() => setModal(false)}/>
                     </div>

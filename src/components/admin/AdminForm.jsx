@@ -21,7 +21,9 @@ const AdminForm = ({
     edit,
     catalog,
     link,
-    setLink
+    setLink,
+    type,
+    setType
 }) => {
 
 
@@ -60,13 +62,15 @@ const AdminForm = ({
     }
 
     const itemAbout = {
+        type: type,
         nameRu: valueRu,
         nameEn: valueEn,
         nameUz: valueUz,
         attachmentId: attachmentId,
-        orderIndex: 1
+        orderIndex: 1,
     }
     const itemCatalog = {
+        type: type,
         nameRu: valueRu,
         nameEn: valueEn,
         nameUz: valueUz,
@@ -97,13 +101,27 @@ const AdminForm = ({
     }
 
 
+    // change select
+    const changeType = (e) => {
+        setType(e)
+        setTimeout(() => setEffect(prev => !prev), 1000)
+    }
+
+
     return (
         <form className='form' onSubmit={img && edit ? editData : img ? postAboutData : postData}>
             {
                 img ?
                     <span className='title d-block center fw500 fz22 mb2'>{ edit ? 'Edit' : 'Add' }</span>
                     :
-                    <span className='title fw500 fz18 mb1'>{ formTitle }:</span>
+                    <div className='row between'>
+                        <span className='title fw500 fz18 mb1'>{ formTitle }:</span>
+                        <select className='select mb1' onChange={(e) => changeType(e.target.value)}>
+                            <option value="ali">Alidoorf</option>
+                            <option value="prime">Primeloft</option>
+                            <option value="mebel">Mebel</option>
+                        </select>
+                    </div>
             }
             {
                 one === false ?
@@ -182,22 +200,6 @@ const AdminForm = ({
                                     />
                             }
                         </label>
-                        {
-                            catalog &&
-                            <div>
-                                <span className='title fw500 fz18 mb1'>Link:</span>
-                                <label>
-                                    <input
-                                        className='admin-inp'
-                                        type="text"
-                                        placeholder='Link . . .'
-                                        defaultValue='/'
-                                        value={link}
-                                        onChange={(e) => setLink(e.target.value)}
-                                    />
-                                </label>
-                            </div>
-                        }
                     </div>
                     : one === true ?
                         <label>

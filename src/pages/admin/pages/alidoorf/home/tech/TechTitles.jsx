@@ -4,11 +4,13 @@ import AdminForm from "../../../../../../components/admin/AdminForm";
 
 const TechTitles = () => {
 
+    const [type, setType] = useState('ali')
+
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_tech_sub',
-        'ali_tech_tit'
+        `${type}_tech_sub`,
+        `${type}_tech_tit`
     ]
     useEffect(() => {
         const get = async () => {
@@ -28,13 +30,13 @@ const TechTitles = () => {
     const [titUz, setTitUz] = useState('')
 
     useEffect(() => {
-        setSubRu(result?.data?.ali_tech_sub_ru)
-        setSubEn(result?.data?.ali_tech_sub_en)
-        setSubUz(result?.data?.ali_tech_sub_uz)
+        setSubRu(result?.data?.[`${type}_tech_sub_ru`])
+        setSubEn(result?.data?.[`${type}_tech_sub_en`])
+        setSubUz(result?.data?.[`${type}_tech_sub_uz`])
 
-        setTitRu(result?.data?.ali_tech_tit_ru)
-        setTitEn(result?.data?.ali_tech_tit_en)
-        setTitUz(result?.data?.ali_tech_tit_uz)
+        setTitRu(result?.data?.[`${type}_tech_tit_ru`])
+        setTitEn(result?.data?.[`${type}_tech_tit_en`])
+        setTitUz(result?.data?.[`${type}_tech_tit_uz`])
     }, [result, effect])
 
 
@@ -42,7 +44,7 @@ const TechTitles = () => {
         <div>
             <div className='admin-main__subtitle fw500 fz22 mb2'>Technologies section:</div>
             <AdminForm
-                value='ali_tech_sub'
+                value={`${type}_tech_sub`}
                 valueRu={subRu}
                 valueEn={subEn}
                 valueUz={subUz}
@@ -52,9 +54,10 @@ const TechTitles = () => {
                 formTitle={'Subtitle'}
                 setEffect={setEffect}
                 one={false}
+                setType={setType}
             />
             <AdminForm
-                value='ali_tech_tit'
+                value={`${type}_tech_tit`}
                 valueRu={titRu}
                 valueEn={titEn}
                 valueUz={titUz}
@@ -64,6 +67,7 @@ const TechTitles = () => {
                 formTitle={'Title'}
                 setEffect={setEffect}
                 one={false}
+                setType={setType}
             />
         </div>
     )
