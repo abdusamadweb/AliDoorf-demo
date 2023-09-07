@@ -2,9 +2,12 @@ import './NewsHero.scss'
 import React, {useEffect, useState} from 'react'
 import {getPostDataUser} from "../../../../api/apiResp";
 import {API_TEST} from "../../../../api/apiConfig";
+import {useHref, useLocation} from "react-router-dom";
 
 const NewsHero = ({ lang, type }) => {
 
+
+    const href = useHref()
 
     const [result, setResult] = useState([])
     const arr = [
@@ -17,7 +20,7 @@ const NewsHero = ({ lang, type }) => {
             setResult(res)
         }
         get()
-    }, [lang])
+    }, [lang, href])
 
     const img = API_TEST + 'api/alidoorf/v1/attachment/get/' + result?.data?.[`${type}_news_hero_img`]
 

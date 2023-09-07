@@ -1,8 +1,8 @@
 import React from 'react';
 import Hero from "./hero/Hero";
 import Direction from "./direction/Direction";
-import News from "../alidoorf-page/main/news/News";
 import Contact from "../alidoorf-page/main/contact/Contact";
+import News from "./news/News";
 
 const Home = ({ lang, type }) => {
 
@@ -10,7 +10,7 @@ const Home = ({ lang, type }) => {
         <main>
             <Hero lang={lang} />
             <Direction lang={lang} />
-            <News lang={lang} type={type} main={true} />
+            <News lang={lang} type={type} />
             {/*<Instagram lang={lang} />*/}
             <Contact lang={lang} />
         </main>

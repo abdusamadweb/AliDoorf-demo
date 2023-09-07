@@ -1,20 +1,18 @@
-import './NewsSection.scss'
 import React, {useEffect, useState} from 'react'
-import {Link, useHref} from "react-router-dom";
-import {getData, getPostDataUser} from "../../../../api/apiResp";
-import {API_TEST} from "../../../../api/apiConfig";
+import {getData, getPostDataUser} from "../../../api/apiResp"
+import {API_TEST} from "../../../api/apiConfig"
+import {Link} from "react-router-dom"
 
-const NewsSection = ({ lang, type }) => {
-
-
-    const href = useHref()
+const News = ({ lang, type }) => {
 
 
     const [result, setResult] = useState([])
     const arr = [
-        `${type}_news_news_sub`,
-        `${type}_news_news_tit`,
+        `${type}_news_sub`,
+        `${type}_news_tit`,
         `${type}_news_news_btn`,
+
+        'publish_news'
     ]
     useEffect(() => {
         const get = async () => {
@@ -22,26 +20,39 @@ const NewsSection = ({ lang, type }) => {
             setResult(res)
         }
         get()
-    }, [lang, href])
+    }, [lang])
 
 
-    // get data
+    // get news
+    const initialNews = result?.data?.publish_news || 'ali'
+    const [news, setNews] = useState(initialNews)
+
     const [list, setList] = useState([])
     useEffect(() => {
-        const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/news?page=0&size=20&type=${type}`, lang)
-            setList(res)
+        const fetchData = async () => {
+            try {
+                const res = await getData(`/api/alidoorf/v1/news?page=0&size=20&type=${news}`, lang)
+                setList(res)
+            } catch (error) {
+                console.error(error)
+            }
         }
-        get()
-    }, [lang, href])
+
+        fetchData()
+    }, [result, lang, news])
+
+    useEffect(() => {
+        const newNews = result?.data?.publish_news || 'ali'
+        setNews(newNews)
+    }, [result])
 
 
     return (
         <div className='news page bg-cl pt2 pb3'>
             <div className="container">
                 <div className="titles">
-                    <span className="subtitle">{ result.data?.ali_news_news_sub || '...' }</span>
-                    <h2 className="title">{ result.data?.ali_news_news_tit || '...' }</h2>
+                    <span className="subtitle">{ result.data?.[`${type}_news_sub`] || '...' }</span>
+                    <h2 className="title">{ result.data?.[`${type}_news_tit`] || '...' }</h2>
                 </div>
                 <ul className='news__list grid'>
                     {
@@ -51,12 +62,7 @@ const NewsSection = ({ lang, type }) => {
                                 <span className="item__time">{ new Date(i.date).toLocaleDateString() }</span>
                                 <h4 className="item__title">{ i.title }</h4>
                                 <p className='item__desc'>{ i.description }</p>
-                                <Link
-                                    className='item__btn'
-                                    to={`/${type === 'ali' ? 'alidoorf' : type === 'prime' ? 'primeloft' : 'mebel'}/news/${i.id}`}
-                                >
-                                    { result.data?.ali_news_news_btn || '...' }
-                                </Link>
+                                <Link className='item__btn' to={`/alidoorf/news/${i.id}`}>{ result.data?.[`${type}_news_news_btn`] || '...' }</Link>
                             </li>
                         ))
                     }
@@ -66,4 +72,4 @@ const NewsSection = ({ lang, type }) => {
     )
 }
 
-export default NewsSection
+export default News

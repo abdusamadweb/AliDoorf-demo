@@ -1,19 +1,20 @@
 import './News.scss'
 import React, {useEffect, useState} from 'react'
-import {Link} from "react-router-dom";
+import {Link, useHref} from "react-router-dom";
 import {getData, getPostDataUser} from "../../../../api/apiResp";
 import {API_TEST} from "../../../../api/apiConfig";
 
-const News = ({ lang, type, main }) => {
+const News = ({ lang, type }) => {
+
+
+    const href = useHref()
 
 
     const [result, setResult] = useState([])
     const arr = [
         `${type}_news_sub`,
         `${type}_news_tit`,
-        `${type}_news_news_btn`,
-
-        'publish_news'
+        `${type}_news_news_btn`
     ]
     useEffect(() => {
         const get = async () => {
@@ -21,33 +22,18 @@ const News = ({ lang, type, main }) => {
             setResult(res)
         }
         get()
-    }, [lang])
+    }, [lang, href])
 
 
     // get news
-    const [news, setNews] = useState(result?.data?.publish_news)
-    useEffect(() => {
-        setNews(result?.data?.publish_news)
-    }, [result])
-
     const [list, setList] = useState([])
     useEffect(() => {
-        if (main) {
-            setTimeout(() => {
-                const get = async () => {
-                    const res = await getData(`/api/alidoorf/v1/news?page=0&size=20&type=${news}`, lang)
-                    setList(res)
-                }
-                get()
-            }, 500)
-        } else {
-            const get = async () => {
-                const res = await getData(`/api/alidoorf/v1/news?page=0&size=20&type=${type}`, lang)
-                setList(res)
-            }
-            get()
+        const get = async () => {
+            const res = await getData(`/api/alidoorf/v1/news?page=0&size=20&type=${type}`, lang)
+            setList(res)
         }
-    }, [result, lang])
+        get()
+    }, [result, lang, type, href])
 
 
     return (
