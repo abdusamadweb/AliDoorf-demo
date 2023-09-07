@@ -62,7 +62,12 @@ const News = ({ lang, type }) => {
                                 <span className="item__time">{ new Date(i.date).toLocaleDateString() }</span>
                                 <h4 className="item__title">{ i.title }</h4>
                                 <p className='item__desc'>{ i.description }</p>
-                                <Link className='item__btn' to={`/alidoorf/news/${i.id}`}>{ result.data?.[`${type}_news_news_btn`] || '...' }</Link>
+                                <Link
+                                    className='item__btn'
+                                    to={`/${initialNews === 'ali' ? 'alidoorf' : initialNews === 'prime' ? 'primeloft' : 'mebel'}/news/${i.id}`}
+                                >
+                                    { result.data?.[`${type}_news_news_btn`] || '...' }
+                                </Link>
                             </li>
                         ))
                     }
