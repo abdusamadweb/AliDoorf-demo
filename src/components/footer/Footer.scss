@@ -117,6 +117,7 @@
 
       .item {
         &__link {
+          text-align: end;
           font-size: 13px;
           text-transform: uppercase;
           color: var(--cl-foot-link);

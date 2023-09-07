@@ -12,6 +12,7 @@
 
     @include mobile {
       background-position: center;
+      background-attachment: unset;
     }
 
     &.page {

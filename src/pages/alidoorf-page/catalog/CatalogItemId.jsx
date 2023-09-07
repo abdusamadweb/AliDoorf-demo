@@ -3,7 +3,7 @@ import {getData} from "../../../api/apiResp"
 import {API_TEST} from "../../../api/apiConfig"
 import {Link, useNavigate, useParams} from "react-router-dom"
 
-const CatalogItemId = ({ lang }) => {
+const CatalogItemId = ({ lang, type }) => {
 
 
     const { id } = useParams()
@@ -12,7 +12,8 @@ const CatalogItemId = ({ lang }) => {
 
 
     const currentURL = window.location.href
-    const pattern = /\/alidoorf\/catalog\/(\d+)\/\d+/
+    const pattern = type === 'ali' ? /\/alidoorf\/catalog\/(\d+)\/\d+/
+        : type === 'prime' ? /\/primeloft\/catalog\/(\d+)\/\d+/ : /\/mebel\/catalog\/(\d+)\/\d+/
     const matches = currentURL.match(pattern)
 
     // get data

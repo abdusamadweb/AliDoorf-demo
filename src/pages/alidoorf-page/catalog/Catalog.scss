@@ -171,6 +171,11 @@
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+
+    @include mobile {
+      background-position: center;
+      background-attachment: unset;
+    }
   }
 
   &__title {
@@ -458,9 +463,13 @@
             border: none;
             background: #fff;
             box-shadow: 0 2px 20px 1px rgba(0,0,0,0.1);
+            -webkit-box-shadow: 0 2px 20px 1px rgba(0,0,0,0.1);
 
             @include breakpoint-down(1250px) {
               padding: 1rem;
+            }
+            @include mobile {
+              border: 1px solid #f1f1f1;
             }
           }
 
@@ -472,6 +481,7 @@
             padding: 1rem 2rem;
             margin-top: 1rem;
             border-radius: 15px;
+            color: $txt-color;
             background: #E3AB34;
 
             @include breakpoint-down(1400px) {
