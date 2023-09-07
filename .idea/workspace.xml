@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="news bugs((">
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="news bugs(((">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/news/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/news/News.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/about/doors/DoorsImg.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/pages/alidoorf/about/doors/DoorsImg.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/facts/AboutFacts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/facts/AboutFacts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/hero/AboutMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/hero/AboutMain.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/about/texts/AboutTexts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/about-company/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/about-company/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/news/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/news/News.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/main/technogies/Tech.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/main/technogies/Tech.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/news/news-section/NewsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/news/news-section/NewsSection.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +176,7 @@
       <workItem from="1693903999016" duration="12603000" />
       <workItem from="1693977043338" duration="12410000" />
       <workItem from="1694067660604" duration="2376000" />
-      <workItem from="1694070081571" duration="2692000" />
+      <workItem from="1694070081571" duration="5015000" />
     </task>
     <task id="LOCAL-00001" summary="video">
       <option name="closed" value="true" />
@@ -522,7 +530,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694072383983</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="news bugs(((">
+      <option name="closed" value="true" />
+      <created>1694072903997</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1694072903997</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +557,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="full" />
     <MESSAGE value="ohio" />
     <MESSAGE value="geona txt deleted for all" />
     <MESSAGE value="fully completed" />
@@ -566,6 +581,7 @@
     <MESSAGE value="bugs" />
     <MESSAGE value="bugs(" />
     <MESSAGE value="news bugs((" />
-    <option name="LAST_COMMIT_MESSAGE" value="news bugs((" />
+    <MESSAGE value="news bugs(((" />
+    <option name="LAST_COMMIT_MESSAGE" value="news bugs(((" />
   </component>
 </project>

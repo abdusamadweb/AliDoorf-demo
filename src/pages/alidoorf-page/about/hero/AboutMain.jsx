@@ -30,7 +30,7 @@ const AboutMain = ({ lang, type }) => {
             setResult(res)
         }
         get()
-    }, [lang])
+    }, [lang, type])
 
 
     const [textActive, setTextActive] = useState(1)

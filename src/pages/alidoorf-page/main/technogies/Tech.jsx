@@ -22,7 +22,7 @@ const Tech = ({ lang, type }) => {
             setResult(res)
         }
         get()
-    }, [lang])
+    }, [lang, type])
 
 
     // get data
@@ -33,7 +33,7 @@ const Tech = ({ lang, type }) => {
             setList(res)
         }
         get()
-    }, [lang])
+    }, [lang, type])
 
 
     return (

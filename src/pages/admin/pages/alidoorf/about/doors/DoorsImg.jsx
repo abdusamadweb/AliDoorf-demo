@@ -4,11 +4,13 @@ import AttachmentForm from "../../../../../../components/admin/AttachmentForm";
 
 const DoorsImg = () => {
 
+    const [type, setType] = useState('ali')
+
 
     const [effect, setEffect] = useState(false)
     const [result, setResult] = useState([])
     const arr = [
-        'ali_about_doors_img',
+        `${type}_about_doors_img`,
     ]
     useEffect(() => {
         const get = async () => {
@@ -21,14 +23,14 @@ const DoorsImg = () => {
     const [file1, setFile1] = useState(null)
 
     useEffect(() => {
-        setFile1(result?.data?.ali_about_doors_img)
+        setFile1(result?.data?.[`${type}_about_doors_img`])
     }, [result, effect])
 
 
     return (
         <div className='mb2'>
             <AttachmentForm
-                value='ali_about_doors_img'
+                value={`${type}_about_doors_img`}
                 valueRu={file1}
                 valueEn={file1}
                 valueUz={file1}
@@ -38,6 +40,7 @@ const DoorsImg = () => {
                 formTitle={'Doors img'}
                 setEffect={setEffect}
                 one={true}
+                setType={setType}
             />
         </div>
     )

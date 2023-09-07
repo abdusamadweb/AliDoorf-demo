@@ -3,7 +3,7 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 import {getData, getPostDataUser} from "../../../api/apiResp";
 import {API_TEST} from "../../../api/apiConfig";
 
-const CatalogItem = ({ lang }) => {
+const CatalogItem = ({ lang, type }) => {
 
 
     const { id } = useParams()
@@ -28,7 +28,7 @@ const CatalogItem = ({ lang }) => {
     const [list1, setList1] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/category?page=0&size=50`, lang)
+            const res = await getData(`/api/alidoorf/v1/category?page=0&size=50&type=${type}`, lang)
             setList1(res?.data?.filter(i => i.id == id && i))
         }
         get()
@@ -43,6 +43,7 @@ const CatalogItem = ({ lang }) => {
         }
         get()
     }, [lang])
+    console.log(list1)
 
 
     return (

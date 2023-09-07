@@ -14,7 +14,7 @@ const NewsSection = ({ lang, type }) => {
     const arr = [
         `${type}_news_news_sub`,
         `${type}_news_news_tit`,
-        `${type}_news_news_btn`,
+        `ali_news_news_btn`,
     ]
     useEffect(() => {
         const get = async () => {
@@ -22,7 +22,7 @@ const NewsSection = ({ lang, type }) => {
             setResult(res)
         }
         get()
-    }, [lang, href])
+    }, [lang, type, href])
 
 
     // get data
@@ -33,15 +33,15 @@ const NewsSection = ({ lang, type }) => {
             setList(res)
         }
         get()
-    }, [lang, href])
+    }, [lang, type, href])
 
 
     return (
         <div className='news page bg-cl pt2 pb3'>
             <div className="container">
                 <div className="titles">
-                    <span className="subtitle">{ result.data?.ali_news_news_sub || '...' }</span>
-                    <h2 className="title">{ result.data?.ali_news_news_tit || '...' }</h2>
+                    <span className="subtitle">{ result.data?.[`${type}_news_news_sub`] || '...' }</span>
+                    <h2 className="title">{ result.data?.[`${type}_news_news_tit`] || '...' }</h2>
                 </div>
                 <ul className='news__list grid'>
                     {

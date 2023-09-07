@@ -30,10 +30,10 @@ const AboutTexts = ({ lang, type }) => {
             setResult(res)
         }
         get()
-    }, [lang])
+    }, [lang, type])
 
 
-    const img = API_TEST + 'api/alidoorf/v1/attachment/get/' + result?.data?.ali_about_doors_img
+    const img = API_TEST + 'api/alidoorf/v1/attachment/get/' + result?.data?.[`${type}_about_doors_img`]
 
 
     return (

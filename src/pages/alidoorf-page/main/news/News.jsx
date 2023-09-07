@@ -14,7 +14,7 @@ const News = ({ lang, type }) => {
     const arr = [
         `${type}_news_sub`,
         `${type}_news_tit`,
-        `${type}_news_news_btn`
+        `ali_news_news_btn`
     ]
     useEffect(() => {
         const get = async () => {
@@ -22,7 +22,7 @@ const News = ({ lang, type }) => {
             setResult(res)
         }
         get()
-    }, [lang, href])
+    }, [lang, href, type])
 
 
     // get news
@@ -51,7 +51,7 @@ const News = ({ lang, type }) => {
                                 <span className="item__time">{ new Date(i.date).toLocaleDateString() }</span>
                                 <h4 className="item__title">{ i.title }</h4>
                                 <p className='item__desc'>{ i.description }</p>
-                                <Link className='item__btn' to={`/alidoorf/news/${i.id}`}>{ result.data?.[`${type}_news_news_btn`] || '...' }</Link>
+                                <Link className='item__btn' to={`/${type === 'ali' ? 'alidoorf' : type === 'prime' ? 'primeloft' : 'mebel'}/news/${i.id}`}>{ result.data?.ali_news_news_btn || '...' }</Link>
                             </li>
                         ))
                     }

@@ -17,7 +17,7 @@ const AboutFacts = ({ lang, type }) => {
             setResult(res)
         }
         get()
-    }, [lang])
+    }, [lang, type])
 
 
     // get data
@@ -28,7 +28,7 @@ const AboutFacts = ({ lang, type }) => {
             setList(res)
         }
         get()
-    }, [lang])
+    }, [lang, type])
 
 
     return (
