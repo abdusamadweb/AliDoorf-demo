@@ -28,6 +28,8 @@ const AboutMain = ({ lang, type }) => {
         'form_phone',
         'form_city',
         'form_desc',
+
+        'chat_us_btn',
     ]
     useEffect(() => {
         const get = async () => {
@@ -159,7 +161,7 @@ const AboutMain = ({ lang, type }) => {
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </label>
-                    <button className='form__btn'>отправить</button>
+                    <button className='form__btn'>{ result.data?.chat_us_btn || '...' }</button>
                 </form>
                 <div className="bg" onClick={() => setPopupModal(false)}/>
             </div>

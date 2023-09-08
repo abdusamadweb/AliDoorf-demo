@@ -37,6 +37,15 @@ const CatalogItemId = ({ lang, type }) => {
     }, [lang])
 
 
+    useEffect(() => {
+        const title = `${list?.name || 'Category'}`
+        document.title = `${title} - ALIDOORF`
+        return () => {
+            document.title = 'ALIDOORF'
+        }
+    }, [lang, list])
+
+
     const img = API_TEST + 'api/alidoorf/v1/attachment/get/' + list?.attachmentId
 
 

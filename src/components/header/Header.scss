@@ -350,6 +350,7 @@
       transition: transform 0.4s ease-out;
     }
     .txt {
+      height: max-content;
       display: block;
       font-size: 90px;
       text-transform: uppercase;

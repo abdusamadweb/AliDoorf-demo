@@ -40,6 +40,15 @@ const CatalogProduct = ({ lang, type }) => {
     }, [lang])
 
 
+    useEffect(() => {
+        const title = `${result.data?.title || 'Product'}`
+        document.title = `${title} - ALIDOORF`
+        return () => {
+            document.title = 'ALIDOORF'
+        }
+    }, [lang, result])
+
+
     const [activeImg, setActiveImg] = useState(0)
 
     const img = (attachmentId) => {

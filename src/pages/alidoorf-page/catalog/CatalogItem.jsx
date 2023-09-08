@@ -43,7 +43,15 @@ const CatalogItem = ({ lang, type }) => {
         }
         get()
     }, [lang])
-    console.log(list1)
+
+
+    useEffect(() => {
+        const title = `${result.data?.header_route_catalog || 'Katalog'} ${list1?.[0]?.name || 'Category'}`
+        document.title = `${title} - ALIDOORF`
+        return () => {
+            document.title = 'ALIDOORF'
+        }
+    }, [lang, result, list1])
 
 
     return (

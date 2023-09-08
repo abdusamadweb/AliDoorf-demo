@@ -7,6 +7,15 @@ import {API_TEST} from "../../../api/apiConfig";
 const Catalog = ({ lang, type }) => {
 
 
+    useEffect(() => {
+        const title = lang === 'uz' ? 'Katalog' : lang === 'ru' ? 'Каталог' : 'Catalog'
+        document.title = `${title} - ALIDOORF`
+        return () => {
+            document.title = 'ALIDOORF'
+        }
+    }, [lang])
+
+
     const [result, setResult] = useState([])
     const arr = [
         `${type}_catalog_hero_tit`
