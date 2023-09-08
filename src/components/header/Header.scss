@@ -25,6 +25,10 @@
     display: grid;
     grid-template-columns: $header-main-width $header-slider-width;
     background: var(--bg-header-inner);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
     @include transition-color-bg;
 
     @include tablet {

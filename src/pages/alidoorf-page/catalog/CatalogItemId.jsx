@@ -50,8 +50,8 @@ const CatalogItemId = ({ lang, type }) => {
 
 
     return (
-        <div className='catalog-inner' style={{backgroundImage: `url(${img})`}}>
-            <div className="page">
+        <div className='catalog-inner'>
+            <div className="page" style={{backgroundImage: `url(${img})`}}>
                 <div className="container">
                     <h1 className="catalog-inner__title">{ list?.name || '...' }</h1>
                 </div>
