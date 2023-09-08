@@ -12,6 +12,7 @@ const Contacts = ({ lang }) => {
     // data
     const [result, setResult] = useState([])
     const arr = [
+        'menu_contact',
         'footer_flw_txt',
         'global_phone',
         'global_email',
@@ -29,7 +30,7 @@ const Contacts = ({ lang }) => {
     return (
         <div className='contacts page bg-cl py3'>
             <div className="container">
-                <h1 className="contacts__title pl3">Контакты</h1>
+                <h1 className="contacts__title pl3">{result.data?.menu_contact || '...'}</h1>
                 <div className="contacts__body grid">
                     <div>
                         <div className='mb3'>

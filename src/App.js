@@ -207,7 +207,7 @@ function App() {
                                 </>
                             }
 
-                            <Route path='/contacts' element={<Contacts/>} lang={lang}/>
+                            <Route path='/contacts' element={<Contacts lang={lang}/>}/>
 
                             // 404
                             <Route path='/*' element={<PageNotFound/>}/>

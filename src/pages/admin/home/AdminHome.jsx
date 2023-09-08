@@ -23,12 +23,17 @@ const AdminHome = () => {
 
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
-    const [address, setAddress] = useState('')
+    const [addressRu, setAddressRu] = useState('')
+    const [addressEn, setAddressEn] = useState('')
+    const [addressUz, setAddressUz] = useState('')
 
     useEffect(() => {
         setPhone(result?.data?.global_phone || '')
         setEmail(result?.data?.global_email || '')
-        setAddress(result?.data?.global_address || '')
+
+        setAddressRu(result?.data?.global_address_ru || '')
+        setAddressEn(result?.data?.global_address_en || '')
+        setAddressUz(result?.data?.global_address_uz || '')
     }, [result, effect])
 
 
@@ -45,9 +50,9 @@ const AdminHome = () => {
     const postAddress = () => {
         const item = {
             key: 'global_address',
-            valueRu: address,
-            valueEn: address,
-            valueUz: address
+            valueRu: addressRu,
+            valueEn: addressEn,
+            valueUz: addressUz
         }
         putData('/api/alidoorf/v1/content/update-content', item)
     }
@@ -101,15 +106,35 @@ const AdminHome = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </label>
-                        <label>
-                            <span className='txt'>Global address:</span>
-                            <textarea
-                                className='admin-inp'
-                                placeholder='Address . . .'
-                                value={address}
-                                onChange={(e) => setAddress(e.target.value)}
-                            />
-                        </label>
+                        <div>
+                            <label>
+                                <span className='txt'>Global address Ru:</span>
+                                <textarea
+                                    className='admin-inp'
+                                    placeholder='Address . . .'
+                                    value={addressRu}
+                                    onChange={(e) => setAddressRu(e.target.value)}
+                                />
+                            </label>
+                            <label>
+                                <span className='txt'>Global address En:</span>
+                                <textarea
+                                    className='admin-inp'
+                                    placeholder='Address . . .'
+                                    value={addressEn}
+                                    onChange={(e) => setAddressEn(e.target.value)}
+                                />
+                            </label>
+                            <label>
+                                <span className='txt'>Global address Uz:</span>
+                                <textarea
+                                    className='admin-inp'
+                                    placeholder='Address . . .'
+                                    value={addressUz}
+                                    onChange={(e) => setAddressUz(e.target.value)}
+                                />
+                            </label>
+                        </div>
                         <button className='admin-btn'>Submit</button>
                     </form>
                 </div>

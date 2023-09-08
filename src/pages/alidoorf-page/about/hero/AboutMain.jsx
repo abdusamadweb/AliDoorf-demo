@@ -23,6 +23,11 @@ const AboutMain = ({ lang, type }) => {
         'form_access_phone',
         'form_access_city',
         'form_access_email',
+
+        'form_name',
+        'form_phone',
+        'form_city',
+        'form_desc',
     ]
     useEffect(() => {
         const get = async () => {
@@ -108,7 +113,7 @@ const AboutMain = ({ lang, type }) => {
                             <input
                                 className='inp'
                                 type="text"
-                                placeholder='Ваше имя'
+                                placeholder={result.data?.form_name || '...'}
                                 onChange={(e) => setName(e.target.value)}
                             />
                         </label>
@@ -120,7 +125,7 @@ const AboutMain = ({ lang, type }) => {
                             <input
                                 className='inp'
                                 type="text"
-                                placeholder='Телефон'
+                                placeholder={result.data?.form_phone || '...'}
                                 onChange={(e) => setPhoneNumber(e.target.value)}
                             />
                         </label>
@@ -131,7 +136,7 @@ const AboutMain = ({ lang, type }) => {
                             <input
                                 className='inp'
                                 type="text"
-                                placeholder='Город'
+                                placeholder={result.data?.form_city || '...'}
                                 onChange={(e) => setAddress(e.target.value)}
                             />
                         </label>
@@ -142,7 +147,7 @@ const AboutMain = ({ lang, type }) => {
                             <input
                                 className='inp'
                                 type="text"
-                                placeholder='Email'
+                                placeholder={'Email'}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </label>
@@ -150,7 +155,7 @@ const AboutMain = ({ lang, type }) => {
                     <label className='form__label'>
                         <textarea
                             className='inp area'
-                            placeholder='Собшение'
+                            placeholder={result.data?.form_desc || '...'}
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </label>
