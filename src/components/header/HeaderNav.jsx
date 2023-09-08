@@ -121,7 +121,7 @@ const HeaderNav = ({ openNav, setOpenNav, lang, setLang, result }) => {
                         </div>
                     </div>
                     <div className="contact__titles">
-                        <span className='title'>Address:</span>
+                        <span className='title'>{ result.data?.menu_address }:</span>
                         <address className='address'>{ result.data?.global_address || '...' }</address>
                     </div>
                     <div className="contact__titles links" style={{marginBottom: '0'}}>

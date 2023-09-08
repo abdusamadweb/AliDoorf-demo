@@ -13,6 +13,7 @@ const Contacts = ({ lang }) => {
     const [result, setResult] = useState([])
     const arr = [
         'menu_contact',
+        'menu_address',
         'footer_flw_txt',
         'global_phone',
         'global_email',
@@ -34,7 +35,7 @@ const Contacts = ({ lang }) => {
                 <div className="contacts__body grid">
                     <div>
                         <div className='mb3'>
-                            <h3 className="title">Address</h3>
+                            <h3 className="title">{ result.data?.menu_address }</h3>
                             <address className='txt'>{result.data?.global_address || '...'}</address>
                         </div>
                         <div className='links'>
