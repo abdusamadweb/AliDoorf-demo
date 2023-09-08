@@ -113,7 +113,9 @@ const AdminForm = ({
             {
                 img ?
                     <span className='title d-block center fw500 fz22 mb2'>{ edit ? 'Edit' : 'Add' }</span>
-                    :
+                    : one === 'p' ?
+                    <></>
+                    : (type || setType) &&
                     <div className='row between'>
                         <span className='title fw500 fz18 mb1'>{ formTitle }:</span>
                         <select className='select mb1' onChange={(e) => changeType(e.target.value)}>

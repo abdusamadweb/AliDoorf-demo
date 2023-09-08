@@ -87,14 +87,17 @@ const AttachmentForm = ({
                     </div>
                     :
                     <div>
-                        <div className="row between">
-                            <div className='content__subtitle fz20 fw500 mb1'>{ formTitle }:</div>
-                            <select className='select mb1' onChange={(e) => changeType(e.target.value)}>
-                                <option value="ali">Alidoorf</option>
-                                <option value="prime">Primeloft</option>
-                                <option value="mebel">Mebel</option>
-                            </select>
-                        </div>
+                        {
+                            setType &&
+                            <div className="row between">
+                                <div className='content__subtitle fz20 fw500 mb1'>{ formTitle }:</div>
+                                <select className='select mb1' onChange={(e) => changeType(e.target.value)}>
+                                    <option value="ali">Alidoorf</option>
+                                    <option value="prime">Primeloft</option>
+                                    <option value="mebel">Mebel</option>
+                                </select>
+                            </div>
+                        }
                         <label>
                             <input
                                 className='admin-inp mb1'
