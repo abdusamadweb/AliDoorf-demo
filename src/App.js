@@ -38,6 +38,7 @@ import AlidoorfCatalogId from "./pages/admin/pages/alidoorf/catalog/id/AlidoorfC
 import Product from "./pages/admin/pages/alidoorf/catalog/id/Product";
 import NewsId from "./pages/alidoorf-page/news/id/NewsId";
 import SiteMap from "./pages/sitemap/SiteMap";
+import keywords from "./assets/scripts/metaKeywords";
 
 const Wrapper = ({children}) => {
     const location = useLocation()
@@ -48,6 +49,20 @@ const Wrapper = ({children}) => {
 }
 
 function App() {
+
+
+    useEffect(() => {
+        const keywordsString = keywords.join(', ')
+
+        const metaKeywordsTag = document.querySelector('meta[name="keywords"]')
+        if (metaKeywordsTag) {
+            metaKeywordsTag.setAttribute('content', keywordsString)
+        }
+    }, [])
+
+
+    const [lang, setLang] = useState(userLang)
+
 
     const [darkMode, setDarkMode] = useState(false)
 
@@ -95,9 +110,6 @@ function App() {
         const secondary2 = !darkMode ? (result.data?.color_secondary2_light || '#eee') : result.data?.color_secondary2_dark
         document.documentElement.style.setProperty('--bg-chat-contact', secondary2)
     }, [darkMode, result])
-
-
-    const [lang, setLang] = useState(userLang)
 
 
     return (
