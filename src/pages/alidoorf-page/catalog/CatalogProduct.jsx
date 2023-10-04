@@ -15,11 +15,11 @@ const CatalogProduct = ({ lang, type }) => {
     const [result, setResult] = useState([])
     useEffect(() => {
         const get = async () => {
-            const res = await getData(`/api/alidoorf/v1/product/${id}?page=0&size=50`)
+            const res = await getData(`/api/alidoorf/v1/product/${id}?page=0&size=50`, lang)
             setResult(res)
         }
         get()
-    }, [id])
+    }, [id, lang])
 
 
     const url = useHref()
