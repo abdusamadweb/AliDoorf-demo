@@ -5,6 +5,7 @@ import videoSc from "../../../assets/videos/alidoorf-video.mp4";
 import ChatUs from "./ChatUs";
 import {getPostDataUser} from "../../../api/apiResp";
 import {formatPhone} from "../../../assets/scripts/global";
+import {Link} from "react-router-dom";
 
 const Hero = ({ lang }) => {
 
@@ -17,6 +18,7 @@ const Hero = ({ lang }) => {
         'main_hero_tit_txt',
         'global_phone',
         'chat_us',
+        'header_catalog',
     ]
     useEffect(() => {
         const get = async () => {
@@ -28,7 +30,7 @@ const Hero = ({ lang }) => {
 
 
     return (
-        <div className='home page'>
+        <div className='home page grid-center'>
             <div className='home__videos'>
                 <button
                     className={`contact-btn ${chatUsBtn ? 'active' : ''}`}
@@ -60,6 +62,7 @@ const Hero = ({ lang }) => {
                         <i className="fa-solid fa-square-phone icon"/>
                         <span className='txt'>{ formatPhone(result.data?.global_phone || '+998') }</span>
                     </a>
+                    <Link className='catalog-btn' to='/alidoorf/catalog'>{result.data?.header_catalog || 'catalog'}</Link>
                 </div>
             </div>
             <ChatUs chatUsBtn={chatUsBtn} lang={lang} />

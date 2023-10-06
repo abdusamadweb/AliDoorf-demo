@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="adding meta tags">
+    <list default="true" id="7a5ec33e-9243-41d8-9232-385b16bbbd5a" name="Changes" comment="finish">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/alidoorf-page/catalog/CatalogProduct.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/hero/Hero.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/hero/Hero.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/hero/Hero.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,15 +181,8 @@
       <workItem from="1695045466786" duration="26000" />
       <workItem from="1695108456353" duration="1128000" />
       <workItem from="1695455019782" duration="3000" />
-      <workItem from="1696405630737" duration="335000" />
-    </task>
-    <task id="LOCAL-00005" summary="slider">
-      <option name="closed" value="true" />
-      <created>1690730399903</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1690730399903</updated>
+      <workItem from="1696405630737" duration="663000" />
+      <workItem from="1696599774988" duration="1485000" />
     </task>
     <task id="LOCAL-00006" summary="slider full">
       <option name="closed" value="true" />
@@ -574,7 +568,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694982178600</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="finish">
+      <option name="closed" value="true" />
+      <created>1696406163279</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1696406163279</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +595,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="admin header and some styles completed" />
     <MESSAGE value="admin" />
     <MESSAGE value="ftflyonta file added" />
     <MESSAGE value="done" />
@@ -618,6 +619,7 @@
     <MESSAGE value="CEO" />
     <MESSAGE value="bugs" />
     <MESSAGE value="adding meta tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding meta tags" />
+    <MESSAGE value="finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish" />
   </component>
 </project>

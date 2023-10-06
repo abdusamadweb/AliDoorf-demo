@@ -319,8 +319,7 @@ const Header = ({darkMode, setDarkMode, lang, setLang}) => {
                     </div>
                 </div>
                 <div className="row align-center">
-                    <Link className='link mr2'
-                          to='/alidoorf/catalog'>{result.data?.header_catalog || 'catalog'}</Link>
+                    <Link className='link mr2' to='/alidoorf/catalog'>{result.data?.header_catalog || 'catalog'}</Link>
                     <div className='navs'>
                         <button
                             className='open-nav-btn'
